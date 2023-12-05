@@ -370,7 +370,7 @@
 					</ul>
 					<figure>
 						<img class="plain" src="img/python_010.png" />
-						
+
 					</figure>
 				</section>
 				<section>
@@ -449,18 +449,11 @@
 				<section>
 					<h3>Pratique</h3>
 					<ul>
-						<li>créer un dictionnaire avec en clé les lettres du mot "programmation" et en valeur le nombre
-							de fois que la lettre apparaît dans le mot<br>
-							<code
-								style="font-size: 0.6em;">{'a': 2, 'g': 1, 'i': 1, 'm': 2, 'n': 1, 'o': 2, 'p': 1, 'r': 2, 't': 1}</code><br>
-							aide: boucle for, fonction count
-						</li>
-						<li>faire afficher "clé: valeur" du dictionnaire avec print et items()<br>&nbsp;</li>
-						<li>créer un dictionnaire avec comme clé les nombres de 1 à 10 et en valeur leur carré<br>
-							<code
-								style="font-size:0.6em">{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}</code>
-						</li>
-						<li>faire afficher "clé: valeur" du dictionnaire avec print et items()</li>
+						<li>créer un dictionnaire avec 4 paires clés / valeurs</li>
+						<li>faire afficher une valeur en appelant une clé</li>
+						<li>avec print, faire afficher toutes les paires clés / valeurs</li>
+						<li>ajouter une paire clé / valeur au dictionnaire existant</li>
+						<li>tester l'existance d'une clé dans le dictionnaire</li>
 					</ul>
 				</section>
 			</section>
@@ -471,49 +464,43 @@
 					<h2>Structure conditionnelle et boucles</h2>
 				</section>
 				<section>
-					<h3>if ... elif ... else</h3>
+					<h3>Structure conditionnelle : if ... elif ... else</h3>
 					<p class="align-left">
 						<code>
-                mon_nombre = 50<br>
+                			mon_nombre = 50<br>
 		  					if nom_nombre < 100:<br>
 		  					&nbsp;&nbsp;print("Le nombre est inférieur à 100")<br>
 		  					elif mon_nombre > 100:<br>
 		  					&nbsp;&nbsp;print("Le nombre est supérieur à 100")<br>
 		  					else:<br>
 		  					&nbsp;&nbsp;print("Le nombre est égal à 100")
-              </code>
+              			</code>
 					</p>
 				</section>
 				<section>
-					<ul>
-						<li>if ... else en une ligne</li>
-						<li>renvoie le résultat du test donc peut être stocké dans une variable</li>
-					</ul>
-					<figure>
-						<img class="plain" src="img/ifelse_000.png" />
-					</figure>
-				</section>
-				<section>
-					<h3>Boucle for</h3>
-					<p class="align-left">
+					<h3>Boucle for : répéter un ensemble d'instructions un nombre fini de fois</h3>
+					<p>
 						<code>
-                  for i in iterable:<br>
-              		&nbsp;&nbsp; print(i)
-              	</code>
+                  			for i in iterable:<br>
+              				&nbsp;&nbsp; print(i)
+              			</code>
+						<br>
+						un itérable : une liste, un tuple ou un dictionnaire sont des itérables
 					</p>
-					<ul>
-						<li>une liste, un tuple ou un dictionnaire sont des itérables</li>
-						<li>range(start, stop, step) crée un itérable qui va de start à stop-1 par intervalle de
-							step<br>
-							<code>for i in range(1, 11):<br>
-        					&nbsp;&nbsp;print(i)</code><br>
-							i prendra successivement les valeurs de 1 à 10
-						</li>
-						<li>une boucle répétée 10 fois: <code>for i in range(10)</code></li>
-						<li>l'itérable de <code>range</code> peut se transformer en liste, avec
-							<code>list(range(10))</code> qui donne <code>[0, 1, ..., 9]</code>
-						</li>
-					</ul>
+					<p style="font-size: 0.75em;"><span style="font-weight: bold;">Fonction <i>range</i></span><br>
+						fonction qui génère une séquence <br>
+						<code>range(start, stop, step)</code> <br>
+						start (inclusif): le nombre de départ (optionnel, par défaut 0)<br>
+						stop (exclusif): le nombre d'arrivée sera stop - 1 <br>
+						step : l'intervalle entre chaque nombre (optionnel, par défaut 1)<br>
+						<code>range(10)</code> génère les nombres 0 à 9 <br>
+						<code>range(0, 10, 2)</code> génère les nombres paires entre 0 et 9 <br>
+						souvent utilisée avec for : <br>
+						<code>for i in range(10) : <br>
+							&nbsp;&nbsp;instructions
+						</code> <br>
+						répète les instructions 10 fois.
+					</p>
 				</section>
 				<section>
 					<h3>Boucle while</h3>
@@ -524,13 +511,13 @@
 					</ul>
 					<p class="align-left">
 						<code>
-                  continuer = True<br>
+                  			continuer = True<br>
         					while continuer:<br>
-        					&nbsp;&nbsp; nombre_aleatoire = random.randint(1, 100)<br>
-									&nbsp;&nbsp; print(nombre_aleatoire) <br>
-        					&nbsp;&nbsp; if nombre_aleatoire < 25:<br>
+        					&nbsp;&nbsp; nombre_aleatoire = random.random()<br>
+							&nbsp;&nbsp; print(nombre_aleatoire) <br>
+        					&nbsp;&nbsp; if nombre_aleatoire < 0.25:<br>
         					&nbsp;&nbsp;&nbsp;&nbsp; continuer = False
-                </code>
+                		</code>
 					</p>
 				</section>
 				<section>
@@ -539,23 +526,11 @@
 					<p class="align-left">
 						<code>
         					while True:<br>
-        					&nbsp;&nbsp; nombre_aleatoire = random.randint(1, 100)<br>
-									&nbsp;&nbsp; print(nombre_aleatoire) <br>
-        					&nbsp;&nbsp; if nombre_aleatoire < 25:<br>
+        					&nbsp;&nbsp; nombre_aleatoire = random.random()<br>
+							&nbsp;&nbsp; print(nombre_aleatoire) <br>
+        					&nbsp;&nbsp; if nombre_aleatoire < 0.25:<br>
         					&nbsp;&nbsp;&nbsp;&nbsp; break
-                </code>
-					</p>
-				</section>
-				<section>
-					<p>ou une boucle for</p>
-					<p class="align-left">
-						<code>
-        					for i in range(50):<br>
-        					&nbsp;&nbsp; nombre_aleatoire = random.randint(1, 100)<br>
-									&nbsp;&nbsp; print(nombre_aleatoire) <br>
-        					&nbsp;&nbsp; if nombre_aleatoire < 25:<br>
-        					&nbsp;&nbsp;&nbsp;&nbsp; break
-                </code>
+                		</code>
 					</p>
 				</section>
 				<section>
@@ -564,18 +539,18 @@
 					<p class="align-left">
 						<code>
         					for i in range(51):<br>
-        					&nbsp;&nbsp; if i % 2 > 0: <br>
+        					&nbsp;&nbsp; if i % 5 == 0: <br>
         					&nbsp;&nbsp;&nbsp;&nbsp; continue <br>
-									&nbsp;&nbsp; print(i)
-                </code>
+							&nbsp;&nbsp; print(i)
+                		</code>
 					</p>
 				</section>
 				<section>
 					<h3>Pratique</h3>
 					<ul>
-						<li>créer une liste de 1 à 10 avec <code>range</code></li>
-						<li>faire afficher chaque élément de la liste au carré et le supprimer selon la méthode FIFO en
-							utilisant une boucle while et la fonction pop</li>
+						<li>faire afficher les nombres multiples de 10 entre 0 et 100 (compris) </li>
+						<li>utiliser une boucle while pour afficher un nombre aléatoire. Arrêter la boucle si le nombre
+							est supérieur à 0.75</li>
 					</ul>
 				</section>
 			</section>
@@ -618,14 +593,11 @@
 				</section>
 				<section>
 					<h3>Pratique</h3>
-					<ul>
-						<li>créer une liste de tuples: le nombre et son carré, pour tous les nombres multiples de 4
-							compris entre 0 et 100<br>
-							<code>[(0, 0), (4, 16), (8, 64), ..., (96, 9216), (100, 10000)]</code><br>&nbsp;
-						</li>
-						<li>créer un dictionnaire avec en clé les lettres du mot "programmation" et
-							en valeur le nombre de fois que la lettre apparaît dans le mot</li>
-					</ul>
+					<p>
+						créer une liste de tuples: le nombre et son carré, pour tous les nombres multiples de 4
+						compris entre 0 et 100<br>
+						<code>[(0, 0), (4, 16), (8, 64), ..., (96, 9216), (100, 10000)]</code><br>&nbsp;
+					</p>
 				</section>
 			</section>
 
@@ -646,20 +618,21 @@
 							<i>renvoie de None par défaut si pas de return</i>
 						</li>
 						<li>se documente avec des docstrings (triples guillemets)<br>
-							help(fonction) affiche cette documentation</li>
+							help(fonction) affiche cette documentation
+						</li>
 					</ul>
 				</section>
 				<section>
-					<p class="align-left">
+					<p>
 						<code>
-                  def agir(arguments):<br>
+                  			def agir(arguments):<br>
           					&nbsp;&nbsp; """La documentation de la fonction"""<br>
           					&nbsp;&nbsp; instructions avec les arguments<br>
           					&nbsp;&nbsp; return resultat
-                </code>
+                		</code>
 					</p>
 					<figure>
-						<img class="plain" src="img/fonctions_000.png" />
+						<img class="plain" src="img/python_016.png" />
 					</figure>
 				</section>
 				<section>
@@ -678,22 +651,26 @@
 						<li>paramètres: noms spécifiés dans la signature de la fonction</li>
 						<li>arguments: objets/valeurs passés lors de l'appel de la fonction</li>
 					</ul>
-					<p class="align-left">
+					<p>
 						<code>
-                      def power(le_nombre, quelle_puissance):<br>
-  											&nbsp;&nbsp;return le_nombre ** quelle_puissance
-                  </code>
+                      		def power(le_nombre, quelle_puissance):<br>
+							&nbsp;&nbsp;return le_nombre ** quelle_puissance
+                  		</code>
 					</p>
-					<p class="align-left">le_nombre et quelle_puissance sont les paramètres de la fonction</p>
-					<p class="align-left"><code>power(10, 3)</code><br>10 et 3 sont les arguments de la fonction</p>
+					<p>le_nombre et quelle_puissance sont les paramètres de la fonction</p>
+					<p><code>power(10, 3)</code><br>10 et 3 sont les arguments passés lors de l'appel
+						de la fonction
+					</p>
 				</section>
 				<section>
 					<ul>
 						<li>paramètres facultatifs ont une valeur par défaut et sont
 							placés après les paramètres obligatoires dans la signature
 							de la fonction <br>
-							<code>def power(quel_nombre, quelle_puissance=2):<br>
-      					&nbsp;&nbsp; return le_nombre ** quelle_puissance</code><br>&nbsp;
+							<code>
+								def power(quel_nombre, quelle_puissance=2):<br>
+      							&nbsp;&nbsp; return le_nombre ** quelle_puissance
+							</code>
 						</li>
 						<li>la fonction peut être appelée avec un seul argument (celui obligatoire)<br>
 							<code>power(10)</code> renvoie 100
@@ -704,159 +681,21 @@
 					</ul>
 				</section>
 				<section>
-					<p class="align-left">si plusieurs arguments obligatoires ou facultatifs, soit les
-						donner dans l'ordre, soit utiliser leur nom</p>
-					<figure>
-						<img class="plain" src="img/fonctions_002.png" />
-					</figure>
-				</section>
-				<section>
 					<h3>Pratique</h3>
 					<ul style="font-size: 0.75em;">
 						<li>écrire une fonction qui prend une liste de nombres en
-							paramètre et qui renvoie la somme des éléments de la liste</li>
+							paramètre et qui renvoie la somme des éléments de la liste
+						</li>
 						<li>écrire une fonction qui prend une liste en paramètre et
 							qui renvoie une nouvelle liste avec les éléments unique de la
-							liste initiale</li>
-						<li>écrire une fonction "get_passwd" qui prend en paramètre
-							obligatoire une chaîne de caractères et en paramètre facultatif
-							un nombre (par défaut 4). La signature de la fonction est:
-							<code>get_passwd(le_mot, nb_lettres=4)</code><br>
-							La fonction renvoie un mot de passe composé de: "!" +
-							les nb_lettres premières lettres en majuscules + "_" +
-							le nombre d'occurence de ces nb_lettres dans le mot + "=$"<br>
-							<code>get_passwd("universite")</code> renvoie !UNIV_1121=$<br>
-							<code>get_passwd("universite", 5)</code> renvoie !UNIVE_11212=$
+							liste initiale
 						</li>
-					</ul>
-					<ul style="font-size: 0.75em;">
-						<li style="list-style-type: none"><i>Aide</i></li>
-						<li><code>"".join(iterable de str)</code> permet de concaténer
-							les éléments d'une liste dans une chaîne de caractères avec ""
-							en séparateur. Ainsi <code>"".join(["1", "2", "3"])</code> donne
-							<code>"123"</code>
+						<li>écrire une fonction qui prend 2 listes de même taille en paramètre et qui renvoie un
+							dictionnaire dans lequel la clé est l'élément de la première liste et la valeur celui de la
+							deuxième liste <br>
+							par exemple l'appel de la fonction avec <code>["A", "B", "C"], [1, 2, 3]</code> renvoie 
+							<code>{"A": 1, "B": 2, "C": 3}</code>
 						</li>
-						<li><code>map(str, liste_entiers)</code> permet d'appliquer
-							la fonction str à chaque élément de la liste <code>liste_entiers</code>.
-							Ainsi <code>map(str, [1, 2, 3])</code> donne <code>["1", "2", "3"]</code>
-						</li>
-					</ul>
-				</section>
-			</section>
-
-			<!--EXCEPTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-			<section id="exceptions">
-				<section>
-					<h2>Les exceptions</h2>
-				</section>
-				<section>
-					<ul>
-						<li>erreurs durant l'exécution du programme</li>
-						<li>viennent soit d'une erreur de logique soit d'une situation non anticipée</li>
-						<li>les erreurs/exceptions sont "soulevées" (raised) par le code / l'interpréteur</li>
-						<li>une exception stoppe l'execution du programme</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Principales exceptions</h3>
-					<table style="font-size: 0.75em;">
-						<tr>
-							<th>Exception</th>
-							<th>Origine</th>
-						</tr>
-						<tr>
-							<td>IndexError</td>
-							<td>index d'un itérable indexé (liste, tuple) est hors limite</td>
-						</tr>
-						<tr>
-							<td>KeyError</td>
-							<td>demande d'accès à une clé inexistante dans un dictionnaire</td>
-						</tr>
-						<tr>
-							<td>NameError</td>
-							<td>demande d'accès à une variable non existante</td>
-						</tr>
-						<tr>
-							<td>TypeError</td>
-							<td>l'argument envoyé à une fonction n'est pas du bon type</td>
-						</tr>
-						<tr>
-							<td>ValueError</td>
-							<td>la valeur de l'argument envoyé à une fonction est invalide</td>
-						</tr>
-						<tr>
-							<td>ZeroDivisionError</td>
-							<td>tentative de division par 0</td>
-						</tr>
-						<tr>
-							<td>AttributeError</td>
-							<td>demandé d'accès à un attribut d'un objet qui n'existe pas</td>
-						</tr>
-						<tr>
-							<td>IOError</td>
-							<td>erreur lors de l'ouverture/fermeture d'un fichier</td>
-						</tr>
-					</table>
-				</section>
-				<section>
-					<h3>Interception d'une exception</h3>
-					<ul>
-						<li>try: ... except: ...</li>
-						<li>on essaie une instruction et si elle lève une exception on agit</li>
-					</ul>
-					<p class="align-left">
-						<code>
-                    try:<br>
-            					&nbsp;&nbsp;instruction susceptible de lever une exception<br>
-          					except Exception:<br>
-            					&nbsp;&nbsp;instruction si cette exception est levée
-                  </code>
-					</p>
-					<p class="align-left">
-						Exemple : <br>
-						<code>
-                  try:<br>
-	        					&nbsp;&nbsp; mon_dict["ma_cle"] += 1<br>
-        					except KeyError:<br>
-	        					&nbsp;&nbsp; mon_dict["ma_cle"] = 1
-                </code>
-					</p>
-				</section>
-				<section class="align-left">
-					<p>Possible d'intercepter plusieurs exceptions à la suite</p>
-					<p>
-						<code>
-                try:<br>
-									&nbsp;&nbsp;instruction susceptible de lever une erreur<br>
-								except TypeError:<br>
-									&nbsp;&nbsp; print("Erreur de type")<br>
-								except ValueError:<br>
-									&nbsp;&nbsp; print("Erreur de valeur")
-              </code>
-					</p>
-					<p>
-						Pas obligé de séparer la gestion de l'erreur : <br>
-						<code>
-              	try:<br>
-									&nbsp;&nbsp;instruction susceptible de lever une erreur<br>
-								except (TypeError, ValueError) as e:<br>
-                  &nbsp;&nbsp;print(e)<br>
-									&nbsp;&nbsp;instruction
-              </code>
-					</p>
-				</section>
-				<section>
-					<h3>Pratique</h3>
-					<ul>
-						<li>déterminer les erreurs potentielles dans les fonctions créées précédemment
-							<ul>
-								<li>fonction qui renvoie la somme de la liste : si l'argument n'est pas une liste, si un
-									des éléments de la liste n'est pas un nombre</li>
-								<li>fonction get_passwd : si l'argument n'est pas une liste, si un des éléments de la
-									liste est lui même une liste ...</li>
-							</ul>
-						</li>
-						<li>identifier les erreurs possibles et proposer des solutions pour y répondre</li>
 					</ul>
 				</section>
 			</section>
@@ -872,28 +711,12 @@
 						<li>permet d'ouvrir un fichier s'il existe</li>
 						<li>ou de le créer s'il n'existe pas</li>
 						<li>plusieurs mode d'ouverture: lecture "r" (defaut), écriture "w" ou ajout "a"</li>
-						<li><code>fichier = open("chemin", "mode")</code> où chemin est le chemin absolu du fichier et
-							mode est "r", "w" ou "a"</li>
-						<li><code>fichier.close()</code> pour fermer le fichier une fois terminé<br>&nbsp;</li>
 					</ul>
-					<p class="align-left">
+					<p>
 						<code>
-                      fichier = open("chemin", "w"):<br>
-                      &nbsp;&nbsp;ecriture dans le fichier<br>
-                      fichier.close()
-                  </code>
-					</p>
-				</section>
-				<section>
-					<h4>Utilisation de with pour éviter fichier.close()</h4>
-					<p class="align-left">
-						<code>
-	                    with open("chemin", "w") as f:<br>
-	                    &nbsp;&nbsp;ecriture dans le fichier f<br>
-	                </code>
-					</p>
-					<p class="align-left">
-						Avec with, le fichier est fermé automatiquement dès la sortie du bloc d'instructions
+						with open("chemin", "w") as fichier:<br>
+						&nbsp;&nbsp;ecriture dans le fichier<br>
+						</code>
 					</p>
 				</section>
 				<section>
@@ -914,27 +737,27 @@
 					<ul style="font-size:0.9em;">
 						<li><code>read()</code> lit tout le contenu et le place dans une chaîne de caractères</li>
 					</ul>
-					<p class="align-left">
+					<p>
 						<code>
-                    with open(chemin, "r") as f:<br>
-                  &nbsp;&nbsp;contenu = f.read()<br>
-                </code>
+							with open(chemin, "r") as f:<br>
+							&nbsp;&nbsp;contenu = f.read()<br>
+                		</code>
 					</p>
 					<ul>
 						<li><code>readline()</code> lit la ligne courante et la place dans une chaîne de caractères<br>
 							<i>il faut donc faire une boucle pour lire tout le contenu</i>
 						</li>
 					</ul>
-					<p class="align-left">
+					<p>
 						<code>
-                contenu = ""<br>
-                with open("chemin", "r") as f:<br>
-					          &nbsp;&nbsp; while True:<br>
-											&nbsp;&nbsp;&nbsp;&nbsp; line = fichier.readline()<br>
-											&nbsp;&nbsp;&nbsp;&nbsp; if line == "":<br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break<br>
-											&nbsp;&nbsp;&nbsp;&nbsp; contenu += line
-            	</code>
+							contenu = ""<br>
+							with open("chemin", "r") as f:<br>
+							&nbsp;&nbsp; while True:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; line = fichier.readline()<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; if line == "":<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; contenu += line
+						</code>
 					</p>
 				</section>
 				<section>
@@ -1025,54 +848,6 @@
 							<td colspan=2>collections, copy, re ...</td>
 						</tr>
 					</table>
-				</section>
-				<section>
-					<h3>Création d'un module</h3>
-					<ul>
-						<li>dans un fichier *.py - Un fichier avec du code est un module</li>
-						<li>1ère ligne, le shebang: <code>#! /usr/bin/env python3</code></li>
-						<li>2ème ligne, l'encodage: <code># -*- coding: utf-8 -*-</code></li>
-						<li>Ensuite écrire le code (les classes, les fonctions etc.)<br></li>
-					</ul>
-				</section>
-				<section class="align-left">
-					<h3>Module "executable"</h3>
-					<p>c'est un module qui agit lorsque on l'exécute, c'est-à-dire lorsque
-						on le démarre avec un processus python <br>
-						Le module doit contenir le code suivant
-					</p>
-					<p>
-						<code>
-                if __name__ == "__main__":<br>
-									&nbsp;&nbsp; instructions
-                </code>
-					</p>
-					<p>
-						parce que lorsque le processus python démarre le module il lui
-						donne le nom "__main__".
-					</p>
-					<p>Pour executer le module</p>
-					<p>
-						<code>
-                  python fichier.py
-              </code>
-					</p>
-				</section>
-				<section>
-					<figure>
-						<img class="plain" src="img/modules_001.png" height="500px" alt="">
-					</figure>
-					<p style="font-size:0.75em;" class="align-left">
-						<code>input</code>: la console affiche le texte et récupère la saisie
-					</p>
-				</section>
-				<section>
-					<h3>Pratique</h3>
-					<ul>
-						<li>créer un fichier passwd.py</li>
-						<li>placer la fonction get_passwd créée antérieurement</li>
-						<li>rendre le script executable: ajout du <code>if __name__ == "__main__"</code></li>
-					</ul>
 				</section>
 			</section>
 

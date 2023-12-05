@@ -1,0 +1,999 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Python - Bases</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+		p.code {
+			text-align: left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                        TITRE ET CONTENU
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <section>
+                    <section>
+    					<h2>Python</h2>
+                        <img class="plain" src="img/logo.png" width="150px" />
+    					<h4>Dimitri Dubois</h4>
+    					<p><a href="mailto:dimitri.dubois@umontpellier.fr">dimitri.dubois@umontpellier.fr</a></p>
+    				</section>
+    				<section>
+    					<h2>Contenu</h2>
+    					<ul>
+        					<li><a href="#intro">Introduction</a></li>
+                            <li><a href="#builtin">Types intégrés et opérateurs de comparaison</a></li>
+        					<li><a href="#liste">L'objet liste</a></li>
+        					<li><a href="#str">La chaîne de caractères</a></li>
+        					<li><a href="#tuple">L'objet tuple</a></li>
+        					<li><a href="#dictionnaire">L'objet dictionnaire</a></li>
+        					<li><a href="#boucles">La structure conditionnelle et les boucles</a></li>
+        					<li><a href="#listcomprehension">La list-comprehension</a></li>
+        					<li><a href="#fonctions">Les fonctions</a></li>
+        					<li><a href="#exceptions">Les exceptions</a></li>
+        					<li><a href="#fichiers">La lecture et l'écriture dans un fichier</a></li>
+        					<li><a href="#modules">Les modules</a></li>
+                        </ul>
+    				</section>
+                </section>
+
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                        INTRODUCTION
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="intro">
+                    <section>
+	                   <h2>Introduction</h2>
+                   </section>
+					<section>
+    					<ul>
+        					<li>créé par Guido Van Rossum (Néerlandais)</li>
+        					<li>1ère version date de 1991</li>
+        					<li>géré par la Python Software Fondation depuis 2001</li>
+        					<li>site web: <a href="https://www.python.org" target="_blank">https://www.python.org</a></li>
+                            <li>actuellement branche python 3</li>
+        					<li>nom vient de la troupe des "Monty Python" (troupe d'humoristes anglais)</li>
+                        </ul>
+    					<img class="plain" src="img/guido.jpg" width="200px" />
+                    </section>
+					<section>
+    					<ul>
+        					<li>langage de haut niveau</li>
+        					<li>langage interprété</li>
+        					<li>dipose d'un ramasse-miettes (gestion automatique de la mémoire)</li>
+        					<li>multiplateforme</li>
+        					<li>permet de créer des scripts et des programmes complets</li>
+        					<li>de + en + utilisé pour l'analyse de données (data science, big data, machine learning ...)</li>
+        					<li>syntaxe simple, peu verbeuse</li>
+        					<li>fonctionnalités extensibles avec des packages</li>
+                        </ul>
+                    </section>
+					<section>
+                        <h3>Console Python</h3>
+    					<ul>
+        					<li>interpréteur Python</li>
+        					<li>permet d'écrire et d'exécuter du code mais ne le conserve pas</li>
+        					<li>consoles évoluées: ipython, jupyter-notebook</li>
+                            <li>utilistion d'IDE pour développement d'applications (PyCharm par exemple)</li>
+                        </ul>
+                    </section>
+					<section>
+	                   <h3>Règles d'écriture du code (<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8</a>)</h3>
+                        <ul>
+        					<li>pas d'accolades ni de point-virgule</li>
+        					<li>: et indentation pour définir les blocs d'instruction</li>
+        					<li>des underscores dans les noms de variables et fonctions</li>
+        					<li># pour les commentaires sur une ligne</li>
+        					<li>""" pour les commentaires multilignes</li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>The "Zen of Python", par Tim Peters</h3>
+    					<ol style="font-size:0.7em;">
+        					<li>Préférer le beau au laid</li>
+        					<li>l'explicite à l'implicite</li>
+        					<li>le simple au complexe</li>
+        					<li>le complexe au compliqué</li>
+        					<li>le déroulé à l'imbriqué</li>
+        					<li>l'aéré au compact</li>
+        					<li>la lisibilité compte</li>
+        					<li>les cas particuliers ne le sont jamais assez pour violer les règles, même s'il faut privilégier l'aspect pratique à la pureté</li>
+        					<li>ne jamais passer les erreurs sous silence, ou les faire taire explicitement</li>
+        					<li>face à l'ambiguité, ne pas se laisser tenter à deviner</li>
+        					<li>il doit y avoir une - et si possible une seule - façon évidente de procéder, même si cette façon n'est pas évidente à première vue, à moins d'être Néerlandais</li>
+        					<li>mieux vaut maintenant que jamais, même si jamais est souvent mieux qu'immédiatement</li>
+        					<li>si l'implémentation s'explique difficilement, c'est une mauvaise idée</li>
+        					<li>si l'implémentation s'explique facilement, c'est peut-être une bonne idée</li>
+        					<li>les espaces de nommage sont une sacrée bonne idée, utilisons les plus souvent!</li>
+                        </ol>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                        OBJETS DE BASE
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <section id="builtin">
+                    <section>
+                        <h2>Types intégrés (built-in types) et opérateurs de comparaison</h2>
+                    </section>
+                    <section>
+                        <h3>Nombres, chaînes de caractères et booléens</h3>
+    					<ul>
+        					<li>int: nombre entier</li>
+                            <li>float: nombre décimal</li>
+        					<li>str: chaîne de caractères</li>
+        					<li>bool: booléen</li>
+        					<li>None: rien<br>&nbsp;</li>
+        					<li>type(variable) renvoie le type</li>
+        					<li>int(), float(),  str(), bool() pour changer le type (si compatible)<br>&nbsp;</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Opérateurs de comparaison</h3>
+                        <ul>
+                            <li>+ - * / % (modulo) // (division entière) et ** (puissance)</li>
+        					<li>Comparaisons (valeur): < > <= >= == et !=</li>
+        					<li>Comparaison (référence): is et is not</li>
+        					<li>and et or pour comparaisons multiples</li>
+                        </ul>
+                    </section>
+					<section>
+                        <h3>Création d'une variable</h3>
+    					<ul>
+        					<li>typage dynamique</li>
+        					<li>affectation avec le signe = (<code>ma_variable = 10</code>)</li>
+        					<li>sensible à la casse (<code>ma_variable != ma_Variable</code>)</li>
+        					<li>ne pas utiliser les mots clés du langage comme nom de variable ou de fonction</li>
+                        </ul>
+    					<p>&nbsp;</p>
+    					<img src="img/keywords.png" />
+                    </section>
+                </section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                        LISTE
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="liste">
+                    <section>
+	                   <h2>L'objet Liste</h2>
+                   </section>
+					<section>
+    					<ul>
+        					<li>peut stocker des éléments de type différent (int, str, bool, float, etc.)</li>
+        					<li>éléments ordonnées</li>
+        					<li>premier index à 0</li>
+        					<li>la liste et les éléments de la liste peuvent être modifiés dynamiquement</li>
+        					<li>instanciation: list() ou [] pour une liste vide<br>
+        					<code>ma_liste = [1, "coucou", True]</code> pour une liste contenant déjà des éléments</li>
+        					<li><code>ma_liste[0]</code> affiche le premier élément de la liste (ici 1)<br>
+        					<code>ma_liste[1]</code> affiche "coucou"</li>
+                        </ul>
+                    </section>
+					<section>
+                        <h3>Tranches / slices</h3>
+    					<ul>
+        					<li>possible de travailler sur des tranches de liste (slice)</li>
+        					<li>permet d'afficher tout ou partie de la liste</li>
+        					<li>renvoie une nouvelle liste</li>
+        					<li>syntaxe: <code>ma_liste[start: stop: step]</code></li>
+        					<li><code>ma_liste[start: stop]</code> contient les éléments i tels que start <= i < stop<br>
+        					donc i va de start à stop-1</li>
+        					<li>par défaut l'intervalle est de 1</li>
+        					<li>chacun des éléments du slicing est optionnel<br>
+        					<code>ma_liste[:]</code> renvoie une copie de la liste<br>
+        					<code>ma_liste[:2]</code> renvoie les 2 premiers éléments (index 0 et 1)<br>
+        					<code>ma_liste[1:]</code> renvoie de l'index 1 à la fin<br>
+        					<code>ma_liste[::2]</code> renvoie toute la liste mais par intervalles de 2</li>
+                        </ul>
+                    </section>
+					<section>
+                        <h3>Index négatifs</h3>
+    					<img class="plain" src="img/slices.png" />
+    					<ul>
+        					<li>index négatifs pour partir de la fin<br>
+        					<code>ma_liste[-1]</code> renvoie le dernier élément</li>
+        					<li>un intervalle négatif fait afficher dans l'ordre inverse<br>
+        					<code>ma_liste[::-1]</code> renvoie [True, "coucou", 1]</li>
+                        </ul>
+					</section>
+					<section>
+    					<img class="plain" src="img/listes.png" />
+                    </section>
+					<section>
+                        <code>du_matieres = ["C", "HTML", "Python", "R"]</code>
+    					<img class="plain" src="img/listes2.png" />
+                    </section>
+					<section>
+                        <h3>Méthodes de l'objet liste</h3>
+    					<ul>
+        					<li><code>len(ma_liste)</code>: affiche la longueur de la liste (nombre d'éléments)</li>
+        					<li><code>del ma_liste[1]</code>: supprime l'élément à l'index 1<br>
+        					<code>del ma_liste[:]</code> vide la liste<br>&nbsp;</li>
+        					<li><code>ma_liste.append(objet)</code>: ajoute l'objet à la fin de la liste</li>
+        					<li><code>ma_liste.insert(index, objet)</code>: insère l'objet à l'index passé en argument</li>
+        					<li><code>ma_liste.remove(objet)</code>: supprime la première occurence de l'objet</li>
+        					<li><code>ma_liste.extend(autre_liste)</code>: ajoute les éléments de autre_liste à la liste<br>&nbsp;</li>
+        					<li><code>ma_liste.index(objet)</code>: renvoie le numéro d'index de la première occurence de l'objet</li>
+        					<li><code>element in ma_liste</code>: renvoie True si element est dans la liste et False sinon</li>
+                        </ul>
+                    </section>
+					<section>
+    					<ul>
+        					<li><code>ma_liste.pop()</code>: renvoie le dernier élément de la liste et le supprime</li>
+        					<li>avec pop possibilité de gérer les files d'attentes selon deux modalités: LIFO et FIFO<br>&nbsp;</li>
+        					<li>LIFO: Last In First Out - Traitement en partant de la fin de la liste<br>
+        					<code>print(ma_liste.pop())</code>: affiche le dernier élément puis le supprime<br>
+        					<code>print(ma_liste.pop())</code>: afficher le dernier élément (qui était l'avant dernier) et le supprime etc.<br>&nbsp;</li>
+        					<li>FIFO: Firt In First Out - Traitement en partant du début de la liste<br>
+        					<code>print(ma_liste.pop(0))</code>: affiche le premier élément de la liste et le supprime<br>
+        					<code>print(ma_liste.pop(0))</code>: affiche le premier élément (qui était second) et le supprime etc.</li>
+                        </ul>
+                    </section>
+					<section>
+                        <code>du_matieres = ["C", "HTML", "Python", "R"]</code>
+    					<img class="plain" src="img/listes3.png" />
+                    </section>
+					<section>
+    					<h3>Parcourir l'objet liste</h3>
+                        <p>Première façon</p>
+                        <div class="code">
+                            <code>
+                                for e in ma_liste:<br>
+            					&nbsp;&nbsp;print(e)
+                            </code>
+                        </div>
+        				<p>e va successivement prendre chaque valeur de la liste</p>
+                        </ul>
+    					<figure>
+		                   <img class="plain" src="img/listes4.png"/>
+                       </figure>
+					</section>
+					<section>
+                        <p>Deuxième façon</p>
+                        <div class="code">
+                            <code>
+                                for i, e in enumerate(ma_liste):<br>
+            					&nbsp;&nbsp;print("Index:", i, " Objet:", e)
+                            </code>
+                        </div>
+                        <p>i prend successivement le numéro de l'index et e l'élément correspondant</p>
+                        <figure>
+                            <img class="plain" src="img/listes6.png" />
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>créer un notebook</li>
+        					<li>pour chaque consigne ci-dessous mettre le code dans une nouvelle cellule<br>&nbsp;</li>
+        					<li>créer une liste (pays, joueurs de foot, etc.)</li>
+        					<li>faire afficher la longueur de la liste</li>
+        					<li>faire afficher les deux derniers éléments de la liste</li>
+        					<li>ajouter un élément à la liste</li>
+        					<li>enlever le deuxième élément de la liste</li>
+                            <li>le remettre à sa place</li>
+        					<li>faire afficher chaque élément de la liste avec une boucle for</li>
+        					<li>faire afficher chaque élément de la liste et son index avec enumerate</li>
+                        </ul>
+                    </section>
+				</section>
+
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    CHAINE DE CARACTERES
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="str">
+                    <section>
+                       <h2>La chaîne de caractères</h2>
+                   </section>
+					<section>
+    					<ul>
+        					<li>création: <code>ma_chaine = "le contenu"</code></li>
+                            <li>est considérée comme une liste de caractères</li>
+        					<li>slices fonctionnent comme pour les listes: <code>ma_chaine[:2]</code> donne "le"</li>
+                        </ul>
+    					<figure>
+		                   <img class="plain" src="img/chaines_caracteres.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<h3>Méthodes de la chaîne de caractères</h3>
+    					<ul>
+        					<li>capitalize(), upper(), lower(), split(separateur), count(caractere) etc.</li>
+                            <li>ne modifient pas la chaîne initiale, renvoie une nouvelle chaîne</li>
+                        </ul>
+    					<img class="plain" src="img/chaines_caracteres1.png" height="350px" />
+                    </section>
+					<section>
+    					<h3>Concaténation de plusieurs chaînes de caractères</h3>
+    					<ul>
+        					<li>concaténation avec le signe "+"</li>
+        					<li>passage en chaîne de catactères avec str() si l'objet n'est pas une chaîne de caractères</li>
+                        </ul>
+                        <figure>
+		                   <img class="plain" src="img/chaines_caracteres2.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<h3>Formatage</h3>
+    					<ul>
+        					<li>insérer des variables dans une chaîne sans changer explicitement le type</li>
+        					<li>pour les float possibilité de spécifier le nombre de décimales</li>
+                            <li>possible d'intégrer des appels à des méthodes</li>
+                        </ul>
+                        <figure>
+		                   <img class="plain" src="img/chaines_caracteres3.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>créer une chaîne de caractères et faire afficher (print) les 2 premières et les 2 dernières lettres<br>
+        					exemple: <code>ma_chaine = "mon premier exercice"</code> donne <code>moce</code></li>
+        					<li><code>prenom, nom, age = "jean", "dupont", 35.57895</code><br>
+        					faire afficher (avec print et en utilisant le formatage): <code>"Je m'appelle Jean DUPONT, j'ai 35.58 ans."</code></li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    TUPLE
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="tuple">
+                    <section>
+	                   <h2>L'objet tuple</h2>
+                   </section>
+                   <section>
+    					<ul>
+        					<li>comme une liste sauf que non mutable</li>
+        					<li>création avec parenthèses: <code>mon_tuple = (1, "A", True)</code></li>
+        					<li>création d'un tuple avec un seul élément: <code>mon_tuple = ("A",)</code></li>
+        					<li>peut-être transformé en liste: <code>ma_liste = list(mon_tuple)</code></li>
+        					<li>peut transformer une liste: <code>tuple(mon_liste)</code></li>
+        					<li>plus sûr qu'une liste pour stocker des éléments qui ne doivent pas être modifiés</li>
+                        </ul>
+                        <figure>
+		                   <img class="plain" src="img/tuples.png" height="350px;"/>
+                       </figure>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    DICTIONNAIRE
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="dictionnaire">
+                    <section>
+	                    <h2>L'objet dictionnaire</h2>
+                    </section>
+					<section>
+    					<ul>
+                            <li>objet qui stocke sous forme clé: valeur</li>
+        					<li>objet non mutable pour les clés, n'importe quel objet pour les valeurs</li>
+        					<li>les paires clés/valeurs ne sont pas ordonnées</li>
+                        </ul>
+                        <p>Instanciation</p>
+                        <div class="code">
+                            <code>
+                                mon_dict_1 = dict(prenom="Jean", nom="Dupont", age=35)<br>
+                                mon_dict_2 = {"prenom": "Jean", "nom": "Dupont", "age": 35}
+                            </code>
+                        </div>
+                        <p>
+                            <i>La seconde méthode est obligatoire si au moins une des clés est un nombre</i>
+                        </p>
+                        <p>&nbsp;</p>
+                        <figure>
+                            <figcaption>Création d'un dictionnaire à partir d'une liste de liste/tuple</figcaption>
+                            <img class="plain" src="img/dictionnaire_000.png"/>
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Ajout et suppression de paires</h3>
+    					<ul>
+        					<li>pour ajouter un élément, mettre la clé entre crochets<br>
+        					<code>mon_dict["ma_cle"] = valeur</code></li>
+        					<li>si la clé existe déjà, la valeur est remplacée<br>&nbsp;</li>
+        					<li>pour accéder à une valeur appellée par la clé<br>
+        					<code>mon_dict[ma_cle]</code> renvoie la valeur associée à "ma_cle"</li>
+        					<li>KeyError si on essaie d'accéder à une clé qui n'existe pas<br>&nbsp;</li>
+        					<li><code>del mon_dict[ma_cle]</code> pour supprimer la paire "ma_cle"</li>
+                        </ul>
+					</section>
+					<section>
+    					<img class="plain" src="img/dict_000.png" />
+                    </section>
+					<section>
+    					<h3>Les méthodes de l'objet dictionnaire</h3>
+    					<ul>
+        					<li><code>mon_dict.clear()</code> vide le dictionnaire</li>
+        					<li><code>mon_dict.get(ma_cle, "valeur à renvoyer sinon")</code> renvoie "valeur à renvoyer sinon" si la clé n'existe pas (évite KeyError)<br>&nbsp;</li>
+        					<li><code>mon_dict.keys()</code> renvoie la liste des clés</li>
+        					<li><code>mon_dict.values()</code> renvoie la liste des valeurs</li>
+        					<li><code>mon_dict.items()</code> renvoie la liste des tuples (clé, valeur)<br>&nbsp;</li>
+        					<li>pour tester l'existence d'une clé dans le dictionnaire<br>
+        					<code>ma_cle in mon_dict.keys()</code> renvoie True or False</li>
+                        </ul>
+                    </section>
+					<section>
+	                   <img class="plain" src="img/dict_001.png" />
+                   </section>
+					<section>
+    					<h3>Parcours du dictionnaire</h3>
+    					<ul>
+        					<li><code>for k in mon_dict.keys():<br>
+        					&nbsp;&nbsp;instructions avec k</code><br>&nbsp;</li>
+        					<li><code>for v in mon_dict.values():<br>
+        					&nbsp;&nbsp;instructions avec v</code><br>&nbsp;</li>
+        					<li><code>for k, v in mon_dict.items():<br>
+        					&nbsp;&nbsp;instructions avec k et/ou v</code></li>
+                        </ul>
+    					<figure>
+                            <img class="plain" src="img/dict_002.png" />
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>créer un dictionnaire avec en clé les lettres du mot "programmation" et en valeur le nombre de fois que la lettre apparaît dans le mot<br>
+        					<code style="font-size: 0.6em;">{'a': 2, 'g': 1, 'i': 1, 'm': 2, 'n': 1, 'o': 2, 'p': 1, 'r': 2, 't': 1}</code><br>
+        					aide: boucle for, fonction count</li>
+        					<li>faire afficher "clé: valeur" du dictionnaire avec print et items()<br>&nbsp;</li>
+        					<li>créer un dictionnaire avec comme clé les nombres de 1 à 10 et en valeur leur carré<br>
+        					<code style="font-size:0.6em">{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}</code></li>
+        					<li>faire afficher "clé: valeur" du dictionnaire avec print et items()</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            STRUCTURES CONDITIONNELLES ET BOUCLES
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="boucles">
+                    <section>
+	                   <h2>Structure conditionnelle et boucles</h2>
+                   </section>
+					<section>
+    					<h3>if ... elif ... else</h3>
+                        <div class="code">
+                            <code>
+                                mon_nombre = 50<br>
+            					if nom_nombre < 100:<br>
+            					&nbsp;&nbsp;print("Le nombre est inférieur à 100")<br>
+            					elif mon_nombre > 100:<br>
+            					&nbsp;&nbsp;print("Le nombre est supérieur à 100")<br>
+            					else:<br>
+            					&nbsp;&nbsp;print("Le nombre est égal à 100")
+                            </code>
+                        </div>
+                    </section>
+					<section>
+    					<ul>
+        					<li>if ... else en une ligne</li>
+        					<li>renvoie le résultat du test donc peut être stocké dans une variable</li>
+                        </ul>
+    					<figure>
+                            <img class="plain" src="img/ifelse_000.png" />
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Boucle for</h3>
+    					<div class="code">
+                            <code>
+                                for i in iterable:<br>
+		                        &nbsp;&nbsp;print(i)
+                            </code>
+                        </div>
+    					<ul>
+        					<li>une liste, un tuple ou un dictionnaire sont des itérables</li>
+        					<li>range(start, stop, step) crée un itérable qui va de start à stop-1 par intervalle de step<br>
+        					<code>for i in range(1, 11):<br>
+        					&nbsp;&nbsp;print(i)</code><br>
+        					i prendra successivement les valeurs de 1 à 10</li>
+        					<li>une boucle répétée 10 fois: <code>for i in range(10)</code></li>
+        					<li>l'itérable de <code>range</code> peut se transformer en liste, avec <code>list(range(10))</code> qui donne <code>[0, 1, ..., 9]</code></li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>Boucle while</h3>
+    					<ul>
+        					<li>tant que</li>
+        					<li>utilisée lorsque l'on ne connaît pas à l'avance le nombre de répétitions à faire</li>
+        					<li>attention à la boucle infinie</li>
+                        </ul>
+    					<div class="code">
+                            <code>
+                                continuer = True<br>
+            					while continuer:<br>
+            					&nbsp;&nbsp;nombre_aleatoire = random.randint(1, 100)<br>
+            					&nbsp;&nbsp;if nombre_aleatoire < 25:<br>
+            					&nbsp;&nbsp;&nbsp;&nbsp;continuer = False
+                            </code>
+                        </div>
+                    </section>
+					<section>
+    					<h3>L'instruction break</h3>
+    					<p>permet de stopper une boucle while</p>
+                        <figure>
+		                   <img class="plain" src="img/break_000.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<p>ou une boucle for</p>
+                        <figure>
+    	                   <img class="plain" src="img/break_001.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<h3>L'instruction continue</h3>
+    					<p>permet de sauter un ou plusieurs éléments dans une boucle</p>
+                        <figure>
+		                   <img class="plain" src="img/continue.png" />
+                       </figure>
+                   </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+                            <li>créer une liste de 1 à 10 avec <code>range</code></li>
+        					<li>faire afficher chaque élément de la liste au carré et le supprimer selon la méthode FIFO en utilisant une boucle while et la fonction pop</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                LIST-COMPREHENSION
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="listcomprehension">
+                    <section>
+	                    <h2>La list-comprehension</h2>
+                    </section>
+					<section>
+    					<ul>
+        					<li>création d'une liste à partir d'une autre liste<br>
+        					forme générale: <code>[expression for value in iterable]</code><br>
+        					<code style="font-size: 0.7em;">[i**2 for i in range(10)]</code> donne <code style="font-size: 0.7em;">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code><br>&nbsp;</li>
+        					<li>possible d'ajouter une condition<br>
+        					<code style="font-size: 0.7em;">[i**2 for i in range(10) if i%2==0]</code> donne <code style="font-size: 0.7em;">[0, 4, 16, 36, 64]</code><br>&nbsp;</li>
+        					<li>et même plusieurs<br>
+        					<code style="font-size: 0.7em;">[i**2 for i in range(10) if i>2 and i%2==0]</code> donne <code style="font-size: 0.7em;">[16, 36, 64]</code></li>
+                        </ul>
+                    </section>
+					<section>
+    					<ul>
+        					<li>possible de créer un dictionnaire<br>
+        					<code style="font-size: 0.7em;">{i: i**2 for i in range(10)}</code> donne <br>
+        					<code style="font-size: 0.7em;">{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}</code><br>&nbsp;</li>
+        					<li>aussi avec conditions<br>
+        					<code style="font-size: 0.7em;">{i: i**2 for i in range(10) if i>2 and i%2==0}</code> donne<br>
+        					<code style="font-size: 0.7em;">{4: 16, 6: 36, 8: 64]</code></li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>créer une liste de tuples: le nombre et son carré, pour tous les nombres multiples de 4 compris entre 0 et 100<br>
+        					<code>[(0, 0), (4, 16), (8, 64), ..., (96, 9216), (100, 10000)]</code><br>&nbsp;</li>
+        					<li>créer un dictionnaire avec en clé les lettres du mot "programmation" et en valeur le nombre de fois que la lettre apparaît dans le mot</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    LES FONCTIONS
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="fonctions">
+                    <section>
+	                    <h2>Les fonctions</h2>
+                    </section>
+					<section>
+    					<h3>Utilité et syntaxe</h3>
+    					<ul>
+        					<li>permet de regrouper plusieurs instructions dans un bloc nommé qui peut être appelé par la suite (et à plusieurs reprises)</li>
+        					<li>déclaration avec le mot clé <code>def</code></li>
+        					<li>l'indentation qui suit la déclaration définit le bloc d'instructions</li>
+        					<li>peut nécessiter un ou plusieurs paramètres pour fonctionner</li>
+        					<li>peut renvoyer une valeur ou un objet avec l'instruction return<br>
+        					<i>renvoie de None par défaut si pas de return</i></li>
+        					<li>se documente avec des docstrings (triples guillemets)<br>
+        					help(fonction) affiche cette documentation</li>
+                        </ul>
+					</section>
+					<section>
+    					<div class="code">
+                            <code>
+                                def agir(arguments):<br>
+            					&nbsp;&nbsp;"""La documentation de la fonction"""<br>
+            					&nbsp;&nbsp;instructions avec les arguments<br>
+            					&nbsp;&nbsp;return resultat
+                            </code>
+                        </div>
+                        <figure>
+		                   <img class="plain" src="img/fonctions_000.png" />
+                       </figure>
+                    </section>
+					<section>
+    					<h3>built-in functions (fonctions intégrées)</h3>
+    					<figure>
+                            <img class="plain" src="img/fonctions_001.png" style="width: 70%;" />
+                        </figure>
+    					<p style="font-size:0.75em;">
+                            documentation de ces fonctions: <a href="https://docs.python.org/3/library/functions.html" target="_blank">https://docs.python.org/3/library/functions.html</a>
+                        </p>
+                    </section>
+					<section>
+    					<h3>Paramètres et arguments</h3>
+    					<ul>
+        					<li>paramètres: noms spécifiés dans la signature de la fonction</li>
+        					<li>arguments: objets/valeurs passés lors de l'appel de la fonction</li>
+                        </ul>
+                        <div class="code">
+                            <code>
+                                def power(le_nombre, quelle_puissance):<br>
+            					&nbsp;&nbsp;return le_nombre ** quelle_puissance
+                            </code>
+                        </div>
+    					<p>le_nombre et quelle_puissance sont les paramètres de la fonction</p>
+                        <p><code>power(10, 3)</code><br>10 et 3 sont les arguments de la fonction</p>
+                    </section>
+					<section>
+    					<ul>
+        					<li>paramètres facultatifs ont une valeur par défaut et sont placés après les paramètres obligatoires dans la signature de la fonction
+        					&nbsp;<br>
+        					<code>def power(quel_nombre, quelle_puissance=2):<br>
+        					&nbsp;&nbsp;return le_nombre ** quelle_puissance</code><br>&nbsp;</li>
+        					<li>la fonction peut être appelée avec un seul argument (celui obligatoire)<br>
+        					<code>power(10)</code> renvoie 100<br>&nbsp;</li>
+        					<li>ou avec deux arguments<br>
+        					<code>power(10, 3)</code> renvoie 1000</li>
+                        </ul>
+                    </section>
+					<section>
+    					<p>si plusieurs arguments obligatoires ou facultatifs, soit les donner dans l'ordre, soit utiliser leur nom</p>
+    					<figure>
+                            <img class="plain" src="img/fonctions_002.png" />
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul style="font-size: 0.75em;">
+        					<li>écrire une fonction qui prend une liste de nombres en paramètre et qui renvoie la somme des éléments de la liste<br>&nbsp;</li>
+        					<li>écrire une fonction qui prend une liste en paramètre et qui renvoie une nouvelle liste avec les éléments unique de la liste initiale<br>&nbsp;</li>
+        					<li>écrire une fonction "get_passwd" qui prend en paramètre obligatoire une chaîne de caractères et en paramètre facultatif un nombre (par défaut 4).
+        					La signature de la fonction est: <code>get_passwd(le_mot, nb_lettres=4)</code><br>
+        					La fonction renvoie un mot de passe composé de: "!" + les nb_lettres premières lettres en majuscules + "_" + le nombre d'occurence de ces nb_lettres dans le mot + "=$"<br>
+        					<code>get_passwd("universite")</code> renvoie !UNIV_1121=$<br>
+        					<code>get_passwd("universite", 5)</code> renvoie !UNIVE_11212=$</li>
+                        </ul>
+                        <p style="text-align: left;"><strong>Aide</strong></p>
+                        <ul style="font-size: 0.75em;">
+                            <li><code>"".join(iterable de str)</code> permet de concaténer les éléments d'une liste dans une chaîne de caractères avec "" en séparateur.
+                                Ainsi <code>"".join(["1", "2", "3"])</code> donne <code>"123"</code></li>
+                            <li><code>map(str, liste_entiers)</code> permet d'appliquer la fonction str à chaque élément de la liste <code>liste_entiers</code>.
+                            Ainsi <code>map(str, [1, 2, 3])</code> donne <code>["1", "2", "3"]</code></li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXCEPTIONS
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="exceptions">
+                    <section>
+                       <h2>Les exceptions</h2>
+                   </section>
+					<section>
+    					<ul>
+        					<li>erreurs durant l'exécution du programme</li>
+        					<li>viennent soit d'une erreur de logique soit d'une situation non anticipée</li>
+        					<li>les erreurs/exceptions sont "soulevées" (raised) par le code / l'interpréteur</li>
+        					<li>une exception stoppe l'execution du programme</li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>Principales exceptions</h3>
+    					<table style="font-size: 0.75em;">
+        					<tr><th>Exception</th><th>Origine</th></tr>
+        					<tr><td>IndexError</td><td>index d'une séquence est hors limite</td></tr>
+        					<tr><td>KeyError</td><td>demande d'accès à une clé inexistante dans un dictionnaire</td></tr>
+        					<tr><td>NameError</td><td>demande d'accès à une variable non existante</td></tr>
+        					<tr><td>TypeError</td><td>l'argument envoyé à une fonction n'est pas du bon type</td></tr>
+        					<tr><td>ValueError</td><td>la valeur de l'argument envoyé à une fonction est invalide</td></tr>
+        					<tr><td>ZeroDivisionError</td><td>tentative de division par 0</td></tr>
+        					<tr><td>AttributeError</td><td>demandé d'accès à un attribut d'un objet qui n'existe pas</td></tr>
+        					<tr><td>IOError</td><td>erreur lors de l'ouverture/fermeture d'un fichier</td></tr>
+                        </table>
+                    </section>
+					<section>
+    					<h3>Interception d'une exception</h3>
+    					<ul>
+        					<li>try: ... except: ...</li>
+        					<li>on essaie une instruction et si elle lève une exception on agit</li>
+                        </ul>
+                        <div class="code">
+        					<code>
+                                try:<br>
+            					&nbsp;&nbsp;instruction susceptible de lever une exception<br>
+            					except Exception:<br>
+            					&nbsp;&nbsp;instruction si cette exception est levée
+                            </code>
+                        </div>
+                        <div class="code">
+        					<code>
+                                try:<br>
+            					&nbsp;&nbsp;mon_dict["ma_cle"] += 1<br>
+            					except KeyError:<br>
+            					&nbsp;&nbsp;mon_dict["ma_cle"] = 1
+                            </code>
+                        </div>
+                    </section>
+					<section>
+                        <p>Possible d'intercepter plusieurs exceptions à la suite</p>
+                        <div class="code">
+        					<code>
+                                try:<br>
+            					&nbsp;&nbsp;instruction susceptible de lever une erreur<br>
+            					except TypeError:<br>
+            					&nbsp;&nbsp;print("Erreur de type")<br>
+            					except ValueError:<br>
+            					&nbsp;&nbsp;print("Erreur de valeur")
+                            </code>
+                        </div>
+                        <div class="code">
+        					<code>
+                                try:<br>
+            					&nbsp;&nbsp;instruction susceptible de lever une erreur<br>
+            					except (TypeError, ValueError) as e:<br>
+                                &nbsp;&nbsp;print(e)<br>
+            					&nbsp;&nbsp;instruction
+                            </code>
+                        </div>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>déterminer les erreurs potentielles dans les fonctions créées précédemment
+                                <ul>
+                                    <li>fonction qui renvoie la somme de la liste : si l'argument n'est pas une liste, si un des éléments de la liste n'est pas un nombre</li>
+                                    <li>fonction get_passwd : si l'argument n'est pas une liste, si un des éléments de la liste est lui même une liste ...</li>
+                                </ul>
+                            </li>
+        					<li>intercepter ces erreurs et proposer des solutions pour y répondre</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    FICHIERS
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="fichiers">
+                    <section>
+		                <h2>Lecture / écriture dans un fichier</h2>
+                    </section>
+					<section>
+    					<h3>La fonction open</h3>
+    					<ul>
+        					<li>permet d'ouvrir un fichier s'il existe</li>
+        					<li>ou de le créer s'il n'existe pas</li>
+        					<li>plusieurs mode d'ouverture: lecture "r" (defaut), écriture "w" ou ajout "a"</li>
+        					<li><code>fichier = open("chemin", "mode")</code> où chemin est le chemin absolu du fichier et mode est "r", "w" ou "a"</li>
+        					<li><code>fichier.close()</code> pour fermer le fichier une fois terminé<br>&nbsp;</li>
+                        </ul>
+                        <div class="code">
+                            <code>
+                                fichier = open("chemin", "w"):<br>
+                                &nbsp;&nbsp;ecriture dans le fichier<br>
+                                fichier.close()
+                            </code>
+                        </div>
+					</section>
+                    <section>
+                        <h4>Utilisation de with pour éviter fichier.close()</h4>
+                        <div class="code">
+                            <code>
+                                with open("chemin", "w") as f:<br>
+                                &nbsp;&nbsp;ecriture dans le fichier f<br>
+                            </code>
+                        </div>
+                        <p>
+                            Avec with, le fichier est fermé automatiquement dès la sortie du bloc d'instructions
+                        </p>
+                    </section>
+                    <section>
+    					<h3>Ecriture dans un fichier</h3>
+    					<ul>
+        					<li><code>write(contenu)</code> - contenu est une chaîne de caractères<br>
+        					il faut ajouter des "\n" à la fin des lignes pour ajouter un retour à la ligne<br>
+        					<img class="plain" src="img/fichiers_002.png" />
+        					<li><code>writelines(contenu)</code> - contenu est une liste de chaînes de caractères</li>
+                            <img class="plain" src="img/fichiers_003.png" /></li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>Lecture d'un fichier</h3>
+    					<ul style="font-size:0.9em;">
+        					<li><code>read()</code> lit tout le contenu et le place dans une chaîne de caractères</li>
+        					<div class="code">
+                                <code>
+                                    with open(chemin, "r") as f:<br>
+	                                &nbsp;&nbsp;contenu = f.read()<br>
+                                </code>
+                            </div>
+        					<li><code>readline()</code> lit la ligne courante et la place dans une chaîne de caractères<br>
+        					<i>il faut donc faire une boucle pour lire tout le contenu</i></li>
+                            <div class="code">
+			                    <code>
+                                    contenu = ""<br>
+                                    with open("chemin", "r") as f:<br>
+			                        &nbsp;&nbsp;while True:<br>
+                					&nbsp;&nbsp;&nbsp;&nbsp;line = fichier.readline()<br>
+                					&nbsp;&nbsp;&nbsp;&nbsp;if line == "":<br>
+                					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                					&nbsp;&nbsp;&nbsp;&nbsp;contenu += line
+                                </code>
+                            </div>
+                        </ul>
+                    </section>
+					<section>
+    					<ul>
+        					<li><code>readlines()</code> lit tout le contenu et le place dans une liste de chaînes de caractères - une ligne = un élément de la liste<br>
+        					<code>
+        					contenu = f.readlines()</code><br>
+        					contenu est une liste<br>&nbsp;</li>
+        					<li>pour un fichier lourd il faut préférer readline qui est moins consommateur de mémoire (traitement ligne par ligne)</li>
+                        </ul>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>écrire du texte dans un fichier</li>
+        					<li>ouvrir le fichier, le lire et afficher le contenu</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    MODULES
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<section id="modules">
+                    <section>
+		                <h2>Les modules</h2>
+                    </section>
+					<section>
+    					<ul>
+        					<li>fichiers contenant des objets et fonctions que l'on peut importer</li>
+        					<li>par exemple dans le built-in il y a les fonctions sum(), max() et min()</li>
+        					<li>mais il existe aussi le module math qui contient beaucoup d'autres fonctions, objets et valeurs<br>
+        					<code>import math</code> permet d'importer le module math<br>
+        					<code>from math import pow</code> permet d'importer la fonction pow du module math<br>
+        					<code>from math import pow, sqrt</code> permet d'importer les fonctions pow et sqrt</li>
+                        </ul>
+    					<div class="code">
+                            <code>
+            					from math import pow<br>
+            					pow(10, 3)
+                            </code>
+                        </div>
+                    </section>
+					<section>
+    					<ul>
+        					<li>les <code>import</code> se placent en haut du fichier de code</li>
+        					<li><code>dir(math)</code> affiche la liste des objets et fonctions proposés par le module</li>
+        					<li><code>help(math)</code> affiche la documentation du module</li>
+        					<li><code>help(math.pow)</code> affiche la documentation de la fonction pow</li>
+                        </ul>
+                        <figure>
+                            <img class="plain" src="img/modules_003.png" />
+                        </figure>
+                    </section>
+					<section>
+    					<h3>Principaux modules du built-in</h3>
+    					<table style="font-size: 0.75em;">
+        					<tr><th>Nom</th><th>Utilité</th></tr>
+        					<tr><td>os</td><td>interactions avec l'OS</td></tr>
+        					<tr><td>sys</td><td>interactions avec l'interpréteur</td></tr>
+        					<tr><td>time</td><td>objets et fonctions liés au temps</td></tr>
+        					<tr><td>math</td><td>constantes et fonctions de base en maths</td></tr>
+        					<tr><td>random</td><td>génération d'aléas (nombre, sélection etc.)</td></tr>
+        					<tr><td colspan=2>collections, copy, re ...</td></tr>
+                        </table>
+                    </section>
+					<section>
+    					<h3>Création d'un module</h3>
+    					<ul>
+        					<li>dans un fichier *.py</li>
+        					<li>1ère ligne, le shebang: <code>#! /usr/bin/env python3</code></li>
+        					<li>2ème ligne, l'encodage: <code># -*- coding: utf-8 -*-</code></li>
+        					<li>Ensuite écrire le code (les classes, les fonctions etc.)<br></li>
+                        </ul>
+					</section>
+					<section>
+                        <h3>Module "executable"</h3>
+                        <p>Le module doit contenir le code suivant</p>
+                        <div class="code">
+                            <code>
+                                if __name__ == "__main__":<br>
+            					&nbsp;&nbsp;instructions
+                            </code>
+                        </div>
+                        <p>&nbsp;</p>
+                        <p>Pour executer le module</p>
+                        <div class="code">
+                            <code>
+                                python3 fichier.py
+                            </code>
+                        </div>
+                    </section>
+                    <section>
+    					<figure>
+                            <img class="plain" src="img/modules_001.png" height="500px"/>
+                        </figure>
+    					<p style="text-align: left; font-size:0.75em;"><code>input</code>: la console affiche le texte et récupère la saisie</p>
+                    </section>
+					<section>
+    					<h3>Pratique</h3>
+    					<ul>
+        					<li>créer un fichier passwd.py</li>
+        					<li>placer la fonction get_passwd créée antérieurement</li>
+        					<li>rendre le script executable: ajout du <code>if __name__ == "__main__"</code></li>
+                        </ul>
+                    </section>
+				</section>
+
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    ALLER PLUS LOIN
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <section id="plus_loin">
+                    <section>
+        				<h2>Pour aller plus loin ...</h2>
+        				<ul>
+                            <li>*args et **kwargs dans les paramètres d'une fonction</li>
+                            <li>création d'une fonction avec lambda</li>
+            				<li>les générateurs</li>
+            				<li>les décorateurs</li>
+            				<li>sérialisation avec pickle</li>
+            				<li>...</li>
+                        </ul>
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+			});
+			Reveal.configure({
+				slideNumber: 'c/t'
+			});
+		</script>
+	</body>
+</html>

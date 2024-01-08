@@ -743,12 +743,28 @@
 							&nbsp;&nbsp;contenu = f.read()<br>
                 		</code>
 					</p>
+				</section>
+				<section>
+					<p>
+						<code>readlines()</code> lit tout le contenu et le place dans une liste de chaînes de caractères <br>
+						une ligne = un élément de la liste<br>
+						<code>
+    					contenu = f.readlines()</code><br>
+						contenu est une liste
+					</p>
+				</section>
+				<section>
+					<p>
+						pour un fichier lourd il faut préférer readline qui est moins
+						consommateur de mémoire (traitement ligne par ligne)
+					</p>
 					<ul>
-						<li><code>readline()</code> lit la ligne courante et la place dans une chaîne de caractères<br>
+						<li><code>readline()</code> lit la ligne courante et la place dans une chaîne de caractères ou dans une liste selon ses préférences<br>
 							<i>il faut donc faire une boucle pour lire tout le contenu</i>
 						</li>
 					</ul>
 					<p>
+						Récupération et affectation dans une variable <br>
 						<code>
 							contenu = ""<br>
 							with open("chemin", "r") as f:<br>
@@ -761,16 +777,18 @@
 					</p>
 				</section>
 				<section>
-					<ul>
-						<li><code>readlines()</code> lit tout le contenu et le place dans
-							une liste de chaînes de caractères - une ligne = un élément de la liste<br>
-							<code>
-    					contenu = f.readlines()</code><br>
-							contenu est une liste
-						</li>
-						<li>pour un fichier lourd il faut préférer readline qui est moins
-							consommateur de mémoire (traitement ligne par ligne)</li>
-					</ul>
+					<p>
+						Récupération et stockage dans une liste <br>
+						<code>
+							contenu = []<br>
+							with open("chemin", "r") as f:<br>
+							&nbsp;&nbsp; while True:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; line = fichier.readline()<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; if line == "":<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break<br>
+							&nbsp;&nbsp;&nbsp;&nbsp; contenu.append(line)
+						</code>
+					</p>
 				</section>
 				<section>
 					<h3>Pratique</h3>

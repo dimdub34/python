@@ -734,22 +734,20 @@
 				</section>
 				<section>
 					<h3>Lecture d'un fichier</h3>
-					<ul style="font-size:0.9em;">
-						<li><code>read()</code> lit tout le contenu et le place dans une chaîne de caractères</li>
-					</ul>
 					<p>
+						<code>read()</code> lit tout le contenu et le place dans une chaîne de caractères <br>
 						<code>
 							with open(chemin, "r") as f:<br>
 							&nbsp;&nbsp;contenu = f.read()<br>
-                		</code>
+						</code>
 					</p>
-				</section>
-				<section>
 					<p>
 						<code>readlines()</code> lit tout le contenu et le place dans une liste de chaînes de caractères <br>
 						une ligne = un élément de la liste<br>
 						<code>
-    					contenu = f.readlines()</code><br>
+						with open(chemin, "r") as f:<br>
+						&nbsp;&nbsp;contenu = f.readlines()
+						</code><br>
 						contenu est une liste
 					</p>
 				</section>

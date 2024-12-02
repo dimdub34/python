@@ -16454,6 +16454,505 @@ Ces types permettent de :</p>
 </div>
 </div>
 </div>
+</div></section></section><section ><section >
+<div id="cell-id=aff5c836-c82d-4b75-b3f3-9f39d8f38ddd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Le-tuple">Le tuple<a class="anchor-link" href="#Le-tuple">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0d6b45ab-363d-4498-8227-9a1cede72318" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pr%C3%A9sentation">Pr&#233;sentation<a class="anchor-link" href="#Pr%C3%A9sentation">&#182;</a></h2><ul>
+<li>Un <strong>tuple</strong> est une collection <strong>ordonnée</strong> et <strong>non modifiable</strong> (<em>immuable</em>, une fois créé, un tuple ne peut pas être modifié).</li>
+<li>Comme les listes, un tuple peut contenir des éléments de types différents.</li>
+<li>Délimité par des parenthèses <code>()</code>.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="p">)</span>  <span class="c1"># (1, 2, 3, &#39;Python&#39;, True)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=412d88bc-525d-4d07-b198-da5111684f4d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Avantages-des-tuples">Avantages des tuples<a class="anchor-link" href="#Avantages-des-tuples">&#182;</a></h2><ol>
+<li><strong>Immuabilité</strong> :<ul>
+<li>Idéal pour des données constantes.</li>
+<li>Plus sûr, car les tuples ne peuvent pas être modifiés accidentellement.</li>
+</ul>
+</li>
+<li><strong>Efficacité</strong> :<ul>
+<li>Les tuples sont généralement plus rapides que les listes.</li>
+</ul>
+</li>
+<li><strong>Clé dans un dictionnaire</strong> :<ul>
+<li>Les tuples peuvent être utilisés comme clés (contrairement aux listes).</li>
+</ul>
+</li>
+</ol>
+<p><em>Cas d'utilisation</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">coordonnees</span> <span class="o">=</span> <span class="p">(</span><span class="mf">43.6</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">)</span>  <span class="c1"># Latitude, longitude</span>
+<span class="n">jours_semaine</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;vendredi&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=82e16b32-df57-4ddf-a480-3083f3130925" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Acc%C3%A8s-aux-%C3%A9l%C3%A9ments">Acc&#232;s aux &#233;l&#233;ments<a class="anchor-link" href="#Acc%C3%A8s-aux-%C3%A9l%C3%A9ments">&#182;</a></h2><ul>
+<li>Comme les listes, on utilise les <strong>indices</strong> pour accéder aux éléments.</li>
+<li><strong>Découpage (slicing)</strong> est également possible.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># 20</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># (10, 20, 30)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># (40, 50)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=f7064c2f-507d-4105-ac95-1f3431466ebf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Op%C3%A9rations-courantes">Op&#233;rations courantes<a class="anchor-link" href="#Op%C3%A9rations-courantes">&#182;</a></h2><ul>
+<li>Concaténation : Ajouter deux tuples ensemble.</li>
+<li>Répétition : Répéter un tuple plusieurs fois.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span><span class="p">)</span>   <span class="c1"># (1, 2, 3, 4, 5)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># (1, 2, 3, 1, 2, 3)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=28c6a7fd-3cd7-46ab-a521-75b7fded9aee" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="V%C3%A9rification-d'appartenance">V&#233;rification d'appartenance<a class="anchor-link" href="#V%C3%A9rification-d'appartenance">&#182;</a></h2><p><code>in</code> : Vérifie si un élément est dans un tuple.</p>
+<div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">mon_tuple</span><span class="p">)</span>   <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="n">mon_tuple</span><span class="p">)</span>   <span class="c1"># False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=f5f81a56-fce6-4b2c-8c14-3000d1267054" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="M%C3%A9thodes">M&#233;thodes<a class="anchor-link" href="#M%C3%A9thodes">&#182;</a></h2><ul>
+<li><strong><code>count(element)</code></strong> : Compte le nombre d’occurrences d’un élément.</li>
+<li><strong><code>index(element)</code></strong> : Retourne l’index de la première occurrence d’un élément.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># 3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=5021ab3f-ba6f-49fd-999a-fd31979f7e7d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Conversion-entre-liste-et-tuple">Conversion entre liste et tuple<a class="anchor-link" href="#Conversion-entre-liste-et-tuple">&#182;</a></h2><p><strong>tuple vers liste</strong></p>
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>  <span class="c1"># [1, 2, 3]</span>
+</pre></div>
+<p><strong>liste vers tuple</strong></p>
+<div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  <span class="c1"># (4, 5, 6)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a7d21be4-7516-42f6-9e93-a73484280de0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="It%C3%A9ration-et-d%C3%A9ballage">It&#233;ration et d&#233;ballage<a class="anchor-link" href="#It%C3%A9ration-et-d%C3%A9ballage">&#182;</a></h2><p><strong>Itération</strong></p>
+<div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">mon_tuple</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="c1"># Affiche : a, b, c</span>
+</pre></div>
+<p><strong>Déballage</strong></p>
+<div class="highlight"><pre><span></span><span class="n">coordonnees</span> <span class="o">=</span> <span class="p">(</span><span class="mf">43.6</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">)</span>
+<span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span> <span class="o">=</span> <span class="n">coordonnees</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>  <span class="c1"># 43.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">longitude</span><span class="p">)</span> <span class="c1"># 3.9</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=078cdf77-4a6b-48dd-b8d6-04937a1ccd32" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="La-fonction-zip">La fonction <code>zip</code><a class="anchor-link" href="#La-fonction-zip">&#182;</a></h2><ul>
+<li>La fonction <strong><code>zip</code></strong> combine plusieurs collections (listes, tuples, etc.) <strong>élément par élément</strong>.</li>
+<li>Retourne un objet <code>zip</code> contenant des <strong>tuples</strong> regroupant les éléments correspondants de chaque collection.</li>
+<li>Les collections doivent avoir des tailles similaires pour que tous les éléments soient pris en compte.</li>
+<li>Si les collections ont des longueurs différentes, zip s'arrête au plus court.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">noms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+
+<span class="n">resultat</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">noms</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span>  <span class="c1"># [(&#39;Alice&#39;, 25), (&#39;Bob&#39;, 30), (&#39;Charlie&#39;, 35)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=cc466dea-8cae-48cf-b49f-d90c10ed0b4d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>*</code> pour &quot;dézipper&quot; des collections combinées.</p>
+<div class="highlight"><pre><span></span><span class="n">combines</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]</span>
+<span class="n">noms</span><span class="p">,</span> <span class="n">ages</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">combines</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">noms</span><span class="p">)</span>  <span class="c1"># (&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>  <span class="c1"># (25, 30, 35)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=00942089-10e6-42e6-ae62-54079cf2d4e6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pratique">Pratique<a class="anchor-link" href="#Pratique">&#182;</a></h2><h3 id="Exercice-1-:-Cr%C3%A9ation-et-acc%C3%A8s">Exercice 1 : Cr&#233;ation et acc&#232;s<a class="anchor-link" href="#Exercice-1-:-Cr%C3%A9ation-et-acc%C3%A8s">&#182;</a></h3><ul>
+<li>Créez un tuple contenant les éléments suivants : (&quot;Python&quot;, &quot;Java&quot;, &quot;C++&quot;, &quot;Ruby&quot;).</li>
+<li>Affichez :<ul>
+<li>Le premier élément.</li>
+<li>Le dernier élément.</li>
+<li>Les deux premiers éléments (en utilisant le slicing).</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=d0bbeaa6-7a77-471f-8b0a-64425b5c4444" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-2-:-D%C3%A9ballage-d%E2%80%99un-tuple">Exercice 2 : D&#233;ballage d&#8217;un tuple<a class="anchor-link" href="#Exercice-2-:-D%C3%A9ballage-d%E2%80%99un-tuple">&#182;</a></h3><ul>
+<li>Créez un tuple contenant : (2024, &quot;Décembre&quot;, 1).</li>
+<li>Déballez ce tuple dans trois variables : annee, mois, jour.</li>
+<li>Affichez ces variables.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8f3acb21-b4e7-4f04-a84f-e81b0c0d2172" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-3-:-Conversion-liste-%E2%86%94-tuple">Exercice 3 : Conversion liste &#8596; tuple<a class="anchor-link" href="#Exercice-3-:-Conversion-liste-%E2%86%94-tuple">&#182;</a></h3><ul>
+<li>Créez une liste contenant : <code>[10, 20, 30]</code>.</li>
+<li>Convertissez cette liste en un tuple.</li>
+<li>Convertissez ce tuple en une liste et ajoutez-y l’élément 40.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=fec35f76-bbff-4bd6-a5d0-e1e037d8886d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-4-:-Combinaison-de-collections">Exercice 4 : Combinaison de collections<a class="anchor-link" href="#Exercice-4-:-Combinaison-de-collections">&#182;</a></h3><ul>
+<li>Créez deux listes :<ul>
+<li>noms = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;]</li>
+<li>ages = [25, 30, 35]</li>
+</ul>
+</li>
+<li>Utilisez zip pour associer chaque nom à un âge.</li>
+<li>Affichez le résultat sous forme de liste de tuples.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=fd006bca-d7a7-4d87-9e22-641486fadfd7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-5-:-D%C3%A9zipper-des-donn%C3%A9es">Exercice 5 : D&#233;zipper des donn&#233;es<a class="anchor-link" href="#Exercice-5-:-D%C3%A9zipper-des-donn%C3%A9es">&#182;</a></h3><ul>
+<li>Créez une liste : <code>[(&quot;Alice&quot;, 25), (&quot;Bob&quot;, 30), (&quot;Charlie&quot;, 35)]</code>.</li>
+<li>Utilisez zip pour séparer les noms et les âges dans deux tuples distincts.</li>
+<li>Affichez-les.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a36c837c-3077-4c8d-8d76-6d1c93973aba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-6-:-Liste-index%C3%A9e">Exercice 6 : Liste index&#233;e<a class="anchor-link" href="#Exercice-6-:-Liste-index%C3%A9e">&#182;</a></h3><ul>
+<li>Créez une liste contenant les éléments suivants : [&quot;Chat&quot;, &quot;Chien&quot;, &quot;Oiseau&quot;].</li>
+<li>Transformez cette liste en une liste de tuples avec les indices en utilisant enumerate.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=5b4eecf8-e575-4517-a53d-3f691ad27285" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Le-dictionnaire">Le dictionnaire<a class="anchor-link" href="#Le-dictionnaire">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=413bb591-7093-4b3a-9c8f-2846cee8c670" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pr%C3%A9sentation">Pr&#233;sentation<a class="anchor-link" href="#Pr%C3%A9sentation">&#182;</a></h2><ul>
+<li>Un <strong>dictionnaire</strong> est une collection modifiable et indexée.</li>
+<li>Il associe des <strong>clés</strong> à des <strong>valeurs</strong>. Chaque clé est unique et sert d’identifiant pour accéder à une valeur.</li>
+<li>Délimité par des accolades <code>{}</code>.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;ville&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">])</span>  <span class="c1"># Alice</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">[</span><span class="s2">&quot;âge&quot;</span><span class="p">])</span>  <span class="c1"># 25</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">)</span>  <span class="c1"># {&#39;nom&#39;: &#39;Alice&#39;, &#39;age&#39;: 25, &#39;ville&#39;: &#39;Paris&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=9afd9e6e-790e-48a7-8f0f-20729796a5b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Caract%C3%A9ristiques">Caract&#233;ristiques<a class="anchor-link" href="#Caract%C3%A9ristiques">&#182;</a></h2><ul>
+<li>Clés uniques : Chaque clé dans un dictionnaire est unique.</li>
+<li>Indexation par clé : Les valeurs sont accessibles via leur clé.</li>
+<li>Modifiable : Les paires clé-valeur peuvent être ajoutées, modifiées ou supprimées.</li>
+<li>Types acceptés :<ul>
+<li>Les clés doivent être immutables (types : <code>str</code>, <code>int</code>, <code>tuple</code>, etc.).</li>
+<li>Les valeurs peuvent être de tout type.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=6af8d9b5-78d7-4c4f-8d14-7e6ac01f8ff8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Ajouter-ou-modifier-une-paire-cl%C3%A9-valeur">Ajouter ou modifier une paire cl&#233;-valeur<a class="anchor-link" href="#Ajouter-ou-modifier-une-paire-cl%C3%A9-valeur">&#182;</a></h2><div class="highlight"><pre><span></span><span class="n">dictionnaire</span><span class="p">[</span><span class="s2">&quot;nouvelle_cle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;nouvelle_valeur&quot;</span>
+
+    <span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">}</span>
+    <span class="n">mon_dictionnaire</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># Ajout</span>
+    <span class="n">mon_dictionnaire</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>  <span class="c1"># Modification</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">)</span>  <span class="c1"># {&#39;nom&#39;: &#39;Bob&#39;, &#39;age&#39;: 25}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a5423a20-1122-4200-9396-b5c66614af10" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Supprimer-une-paire-cl%C3%A9-valeur">Supprimer une paire cl&#233;-valeur<a class="anchor-link" href="#Supprimer-une-paire-cl%C3%A9-valeur">&#182;</a></h2><ul>
+<li><code>pop(key)</code> : Supprime une clé et retourne sa valeur.</li>
+<li><code>del dictionnaire[key]</code> : Supprime la clé sans retour de valeur.</li>
+<li><code>clear()</code> : Vide complètement le dictionnaire.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)</span>         <span class="c1"># Supprime et retourne 25</span>
+<span class="k">del</span> <span class="n">mon_dictionnaire</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">]</span>         <span class="c1"># Supprime la clé &quot;nom&quot;</span>
+<span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>            <span class="c1"># Vide le dictionnaire</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=e8cd1572-6940-40b2-a783-0699ffe3941a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Obtenir-les-cl%C3%A9s,-valeurs,-et-paires-cl%C3%A9-valeur">Obtenir les cl&#233;s, valeurs, et paires cl&#233;-valeur<a class="anchor-link" href="#Obtenir-les-cl%C3%A9s,-valeurs,-et-paires-cl%C3%A9-valeur">&#182;</a></h2><ol>
+<li><strong><code>keys()</code></strong> : Retourne les clés du dictionnaire.</li>
+<li><strong><code>values()</code></strong> : Retourne les valeurs.</li>
+<li><strong><code>items()</code></strong> : Retourne les paires clé-valeur sous forme de tuples.</li>
+</ol>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>   <span class="c1"># dict_keys([&#39;nom&#39;, &#39;age&#39;])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># dict_values([&#39;Alice&#39;, 25])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>  <span class="c1"># dict_items([(&#39;nom&#39;, &#39;Alice&#39;), (&#39;age&#39;, 25)])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=131db566-b5ef-449f-9470-448bd5621f2b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Parcourir-les-cl%C3%A9s,-les-valeurs,-et-les-paires-cl%C3%A9-valeur">Parcourir les cl&#233;s, les valeurs, et les paires cl&#233;-valeur<a class="anchor-link" href="#Parcourir-les-cl%C3%A9s,-les-valeurs,-et-les-paires-cl%C3%A9-valeur">&#182;</a></h2><p><strong>Les clés</strong></p>
+<div class="highlight"><pre><span></span><span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;ville&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">mon_dictionnaire</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+<span class="c1"># Affiche : nom, âge, ville</span>
+</pre></div>
+<p><strong>Les valeurs</strong></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+<span class="c1"># Affiche : Alice, 25, Paris</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8c4d11bb-f438-48c0-9629-30fb4844ba11" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Les paires</strong></p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cle</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">mon_dictionnaire</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cle</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">valeur</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Affiche :</span>
+<span class="c1"># nom: Alice</span>
+<span class="c1"># âge: 25</span>
+<span class="c1"># ville: Paris</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=fcf4cca2-f4d1-458f-a065-3b2a15270c3a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Cr%C3%A9er-un-dictionnaire-avec-zip">Cr&#233;er un dictionnaire avec <code>zip</code><a class="anchor-link" href="#Cr%C3%A9er-un-dictionnaire-avec-zip">&#182;</a></h2><div class="highlight"><pre><span></span><span class="n">cles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;ville&quot;</span><span class="p">]</span>
+<span class="n">valeurs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">]</span>
+<span class="n">dictionnaire</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cles</span><span class="p">,</span> <span class="n">valeurs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dictionnaire</span><span class="p">)</span>  <span class="c1"># {&#39;nom&#39;: &#39;Alice&#39;, &#39;age&#39;: 25, &#39;ville&#39;: &#39;Paris&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

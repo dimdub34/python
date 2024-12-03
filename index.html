@@ -15193,6 +15193,9 @@ div.jp-OutputPrompt {
 <li><a href="#/6">Types numériques</a></li>
 <li><a href="#/7">Booléen</a></li>
 <li><a href="#/8">Liste</a></li>
+<li><a href="#/9">Tuple</a></li>
+<li><a href="#/10">Dictionnaire</a></li>
+<li><a href="#/11">Set</a></li>
 </ul>
 
 </div>
@@ -16948,6 +16951,368 @@ Ces types permettent de :</p>
 <span class="n">valeurs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">]</span>
 <span class="n">dictionnaire</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cles</span><span class="p">,</span> <span class="n">valeurs</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionnaire</span><span class="p">)</span>  <span class="c1"># {&#39;nom&#39;: &#39;Alice&#39;, &#39;age&#39;: 25, &#39;ville&#39;: &#39;Paris&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=14a3c0d9-a8c2-4075-be4b-54aaaebf6d1b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Trier-un-dictionnaire">Trier un dictionnaire<a class="anchor-link" href="#Trier-un-dictionnaire">&#182;</a></h2><p><strong>Par clé</strong></p>
+<div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="n">scores_tries</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores_tries</span><span class="p">)</span>  <span class="c1"># {&#39;Alice&#39;: 50, &#39;Bob&#39;: 75, &#39;Charlie&#39;: 100}</span>
+</pre></div>
+<p><strong>Par valeur</strong></p>
+<div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="n">scores_tries</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores_tries</span><span class="p">)</span>  <span class="c1"># {&#39;Alice&#39;: 50, &#39;Bob&#39;: 75, &#39;Charlie&#39;: 100}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ca89c7f7-262b-4f1e-a0bf-879bed414bdb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Fusionner-deux-dictionnaires">Fusionner deux dictionnaires<a class="anchor-link" href="#Fusionner-deux-dictionnaires">&#182;</a></h2><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ville&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;profession&quot;</span><span class="p">:</span> <span class="s2">&quot;Ingénieure&quot;</span><span class="p">}</span>
+<span class="n">fusion</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fusion</span><span class="p">)</span>
+<span class="c1"># {&#39;nom&#39;: &#39;Alice&#39;, &#39;âge&#39;: 25, &#39;ville&#39;: &#39;Paris&#39;, &#39;profession&#39;: &#39;Ingénieure&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ab7a479b-cce1-4535-a608-23df0266ab38" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pratique">Pratique<a class="anchor-link" href="#Pratique">&#182;</a></h2><h3 id="Exercice-1-:-Cr%C3%A9ation-et-acc%C3%A8s">Exercice 1 : Cr&#233;ation et acc&#232;s<a class="anchor-link" href="#Exercice-1-:-Cr%C3%A9ation-et-acc%C3%A8s">&#182;</a></h3><ul>
+<li>Créez un dictionnaire contenant les informations suivantes :<ul>
+<li>nom: &quot;Alice&quot;</li>
+<li>âge: 25</li>
+<li>ville: &quot;Paris&quot;</li>
+</ul>
+</li>
+<li>Affichez :<ul>
+<li>La valeur associée à la clé &quot;nom&quot;.</li>
+<li>La valeur associée à la clé &quot;âge&quot;.</li>
+</ul>
+</li>
+<li>Ajoutez une nouvelle clé profession avec la valeur &quot;Ingénieure&quot;.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=62e156be-b813-4e89-af6d-5a224c886cf5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-2-:-Modification-et-suppression">Exercice 2 : Modification et suppression<a class="anchor-link" href="#Exercice-2-:-Modification-et-suppression">&#182;</a></h3><ul>
+<li>Modifiez l’âge de l’étudiante &quot;Alice&quot; à 30.</li>
+<li>Supprimez la clé &quot;ville&quot;.</li>
+<li>Affichez le dictionnaire mis à jour.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=0e4d761c-bbed-4a91-bf12-62813adaca8c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-3-:-V%C3%A9rification-d%E2%80%99existence">Exercice 3 : V&#233;rification d&#8217;existence<a class="anchor-link" href="#Exercice-3-:-V%C3%A9rification-d%E2%80%99existence">&#182;</a></h3><ul>
+<li>Créez un dictionnaire <code>inventaire = {&quot;pommes&quot;: 10, &quot;bananes&quot;: 20, &quot;oranges&quot;: 15}</code>.</li>
+<li>Vérifiez si les clés &quot;pommes&quot; et &quot;raisins&quot; existent dans le dictionnaire.</li>
+<li>Ajoutez &quot;raisins&quot; avec une quantité de 5 uniquement si cette clé n’existe pas encore.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=e6d45c94-dfc3-47a2-bf2a-e38ba2437094" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-4-:-Parcourir-un-dictionnaire">Exercice 4 : Parcourir un dictionnaire<a class="anchor-link" href="#Exercice-4-:-Parcourir-un-dictionnaire">&#182;</a></h3><ul>
+<li>Créez un dictionnaire contenant :<ul>
+<li>math: 18</li>
+<li>anglais: 16</li>
+<li>informatique: 20</li>
+</ul>
+</li>
+<li>Parcourez le dictionnaire pour afficher :<ul>
+<li>Chaque matière et sa note.</li>
+<li>La moyenne des notes.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=20c68496-86ec-493c-b3d1-258a2a04fbff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-5-:-Compter-les-occurrences">Exercice 5 : Compter les occurrences<a class="anchor-link" href="#Exercice-5-:-Compter-les-occurrences">&#182;</a></h3><ul>
+<li>Créez une chaîne de caractères : &quot;abracadabra&quot;.</li>
+<li>Comptez le nombre d’occurrences de chaque caractère dans la chaîne et stockez-les dans un dictionnaire.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=6066bab9-ea6a-4934-976f-da071d35e6ce" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-6-:-Fusionner-deux-dictionnaires">Exercice 6 : Fusionner deux dictionnaires<a class="anchor-link" href="#Exercice-6-:-Fusionner-deux-dictionnaires">&#182;</a></h3><ul>
+<li>Créez deux dictionnaires :<ul>
+<li><code>personne = {&quot;nom&quot;: &quot;Alice&quot;, &quot;âge&quot;: 25}</code></li>
+<li><code>infos = {&quot;ville&quot;: &quot;Paris&quot;, &quot;profession&quot;: &quot;Ingénieure&quot;}</code></li>
+</ul>
+</li>
+<li>Fusionnez-les dans un nouveau dictionnaire.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=17f34187-8517-467f-9fdc-47a38465b78b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exercice-7-:-Trier-un-dictionnaire">Exercice 7 : Trier un dictionnaire<a class="anchor-link" href="#Exercice-7-:-Trier-un-dictionnaire">&#182;</a></h3><ul>
+<li>Créez un dictionnaire contenant les notes suivantes : <code>{&quot;Alice&quot;: 85, &quot;Bob&quot;: 70, &quot;Charlie&quot;: 90}</code></li>
+<li>Triez le dictionnaire :<ul>
+<li>Par clé (ordre alphabétique).</li>
+<li>Par valeur (ordre croissant).</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=925830af-af16-494d-aea8-72a8576c3ecd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Le-set">Le set<a class="anchor-link" href="#Le-set">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=b9d4e4ae-f6ba-4c9f-93e3-278724977825" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Pr%C3%A9sentation">Pr&#233;sentation<a class="anchor-link" href="#Pr%C3%A9sentation">&#182;</a></h2><ul>
+<li>Un <strong>set</strong> est une collection <strong>non ordonnée</strong> et <strong>sans doublons</strong>.</li>
+<li>Délimité par des accolades <code>{}</code> ou créé avec la fonction <strong><code>set()</code></strong>.</li>
+<li>Utile pour effectuer des opérations mathématiques comme les <strong>unions</strong>, <strong>intersections</strong>, et <strong>différences</strong>.</li>
+</ul>
+<p><em>Exemple</em> :</p>
+<div class="highlight"><pre><span></span><span class="n">mon_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_set</span><span class="p">)</span>  <span class="c1"># {1, 2, 3, 4} (les doublons sont supprimés)</span>
+
+<span class="n">vide</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Créer un set vide</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">vide</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;set&#39;&gt;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=d1deced6-89bc-48fe-9ddd-b6b4b83b8579" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Caract%C3%A9ristiques">Caract&#233;ristiques<a class="anchor-link" href="#Caract%C3%A9ristiques">&#182;</a></h2><ul>
+<li>Non ordonnés : Les éléments ne sont pas stockés dans un ordre particulier.</li>
+<li>Sans doublons : Chaque élément est unique.</li>
+<li>Modifiables : Vous pouvez ajouter ou supprimer des éléments.</li>
+<li>Incompatibles avec des types non hashables : les clés doivent être immuables (pas de listes ou dictionnaires dans un set).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=24c5f040-c77a-488e-83f5-be9dcda27f96" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Ajouter-des-%C3%A9l%C3%A9ments">Ajouter des &#233;l&#233;ments<a class="anchor-link" href="#Ajouter-des-%C3%A9l%C3%A9ments">&#182;</a></h2><div class="highlight"><pre><span></span><span class="n">mon_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">mon_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_set</span><span class="p">)</span>  <span class="c1"># {1, 2, 3, 4}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=884b5efd-9848-4f65-bc86-41e5db59c18f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Supprimer-des-%C3%A9l%C3%A9ments">Supprimer des &#233;l&#233;ments<a class="anchor-link" href="#Supprimer-des-%C3%A9l%C3%A9ments">&#182;</a></h2><ul>
+<li><strong><code>remove(element)</code></strong> : Supprime un élément. Lève une erreur si l’élément n’existe pas.</li>
+<li><strong><code>discard(element)</code></strong> : Supprime un élément sans lever d’erreur.</li>
+<li><strong><code>pop()</code></strong> : Supprime un élément arbitraire (car le set est non ordonné).</li>
+<li><strong><code>clear()</code></strong> : Vide le set.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">mon_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">mon_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># Supprime 2</span>
+<span class="n">mon_set</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Ne fait rien (4 n&#39;existe pas)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_set</span><span class="p">)</span>      <span class="c1"># {1, 3}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=8e717af2-8a61-43bf-a103-d38d51a0a5ac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Op%C3%A9rations-sur-les-ensembles">Op&#233;rations sur les ensembles<a class="anchor-link" href="#Op%C3%A9rations-sur-les-ensembles">&#182;</a></h2><h3 id="Union">Union<a class="anchor-link" href="#Union">&#182;</a></h3><p>Combine les éléments de deux sets (<strong><code>|</code></strong> ou <strong><code>union()</code></strong>).</p>
+<div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set1</span> <span class="o">|</span> <span class="n">set2</span><span class="p">)</span>          <span class="c1"># {1, 2, 3, 4, 5}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>     <span class="c1"># {1, 2, 3, 4, 5}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=cd34c61a-26ff-4b1f-ac51-9eb5cce9b475" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Intersection">Intersection<a class="anchor-link" href="#Intersection">&#182;</a></h3><p>Trouve les éléments communs (&amp; ou intersection()).</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span><span class="p">)</span>          <span class="c1"># {3}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>  <span class="c1"># {3}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=fd7b88b5-b6e4-4697-8e04-d7244cd187dd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Diff%C3%A9rence">Diff&#233;rence<a class="anchor-link" href="#Diff%C3%A9rence">&#182;</a></h3><p>Trouve les éléments dans un set mais pas dans l’autre (- ou difference()).</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span><span class="p">)</span>          <span class="c1"># {1, 2}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>  <span class="c1"># {1, 2}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=0f8a3f0f-7150-46b7-8dc1-1202af9f1d4f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Diff%C3%A9rence-sym%C3%A9trique">Diff&#233;rence sym&#233;trique<a class="anchor-link" href="#Diff%C3%A9rence-sym%C3%A9trique">&#182;</a></h3><p>Trouve les éléments présents dans un seul des deux sets (^ ou symmetric_difference()).</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">set1</span> <span class="o">^</span> <span class="n">set2</span><span class="p">)</span>                  <span class="c1"># {1, 2, 4, 5}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>  <span class="c1"># {1, 2, 4, 5}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=6a9bcfe2-6bf8-44c4-bc66-178640eaa244" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Applications-pratiques">Applications pratiques<a class="anchor-link" href="#Applications-pratiques">&#182;</a></h2><h3 id="Suppression-des-doublons">Suppression des doublons<a class="anchor-link" href="#Suppression-des-doublons">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span>  <span class="c1"># {1, 2, 3, 4}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=5eb51b07-5dc7-411c-9e68-639e1b4c02b7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Union,-intersection-et-diff%C3%A9rence">Union, intersection et diff&#233;rence<a class="anchor-link" href="#Union,-intersection-et-diff%C3%A9rence">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">maths</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">}</span>
+<span class="n">informatique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">}</span>
+
+<span class="c1"># Étudiants inscrits à au moins une matière</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maths</span> <span class="o">|</span> <span class="n">informatique</span><span class="p">)</span>  <span class="c1"># Union</span>
+
+<span class="c1"># Étudiants inscrits aux deux matières</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maths</span> <span class="o">&amp;</span> <span class="n">informatique</span><span class="p">)</span>  <span class="c1"># Intersection</span>
+
+<span class="c1"># Étudiants inscrits uniquement en maths</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maths</span> <span class="o">-</span> <span class="n">informatique</span><span class="p">)</span>  <span class="c1"># Différence</span>
+<span class="n">maths</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">}</span>
+<span class="n">informatique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">}</span>
 </pre></div>
 
 </div>

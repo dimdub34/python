@@ -21290,7 +21290,8 @@ Le programme demande à l'utilisateur s'il souhaite :</p>
 <li><strong>CSV</strong> : Comma-Separated Values.</li>
 <li>Format simple pour représenter des tableaux (lignes et colonnes).</li>
 </ul>
-<h3 id="Lire-un-fichier-CSV">Lire un fichier CSV<a class="anchor-link" href="#Lire-un-fichier-CSV">&#182;</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<p><strong>Lecture</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fichier</span><span class="p">)</span>
     <span class="n">contenu</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv_reader</span><span class="p">)</span>
@@ -21306,7 +21307,8 @@ Le programme demande à l'utilisateur s'il souhaite :</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Ecrire-dans-un-fichier-csv">Ecrire dans un fichier csv<a class="anchor-link" href="#Ecrire-dans-un-fichier-csv">&#182;</a></h3><p><strong>Ligne par ligne</strong></p>
+<p><strong>Ecriture</strong></p>
+<p><strong>Ligne par ligne</strong></p>
 <div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">fichier</span><span class="p">)</span>
     <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;Nom&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Ville&quot;</span><span class="p">])</span>
@@ -21333,13 +21335,15 @@ Le programme demande à l'utilisateur s'il souhaite :</p>
 <li>Format texte utilisé pour échanger des données.</li>
 <li>Représente des structures complexes (dictionnaires, listes, etc.).</li>
 </ul>
-<h3 id="%C3%89crire-un-objet-dans-un-fichier-JSON">&#201;crire un objet dans un fichier JSON<a class="anchor-link" href="#%C3%89crire-un-objet-dans-un-fichier-JSON">&#182;</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<p><strong>Ecriture</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;ville&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">}</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fichier</span><span class="p">)</span>
 </pre></div>
-<h3 id="Lire-un-fichier-json">Lire un fichier json<a class="anchor-link" href="#Lire-un-fichier-json">&#182;</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<p><strong>Lecture</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichier</span><span class="p">)</span>

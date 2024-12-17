@@ -21271,7 +21271,7 @@ Le programme demande à l'utilisateur s'il souhaite :</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Ecriture">Ecriture<a class="anchor-link" href="#Ecriture">&#182;</a></h2><p><em>Exemple</em> :</p>
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">fichier</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Bonjour, Python !&quot;</span><span class="p">)</span>
     <span class="n">fichier</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">C&#39;est génial.&quot;</span><span class="p">)</span>
 </pre></div>

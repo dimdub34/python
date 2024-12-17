@@ -21251,11 +21251,13 @@ Le programme demande à l'utilisateur s'il souhaite :</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Lecture">Lecture<a class="anchor-link" href="#Lecture">&#182;</a></h2><h3 id="Tout-le-contenu">Tout le contenu<a class="anchor-link" href="#Tout-le-contenu">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
+<h2 id="Lecture">Lecture<a class="anchor-link" href="#Lecture">&#182;</a></h2><p><strong>Tout d'un coup</strong></p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="n">contenu</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
 </pre></div>
-<h3 id="Ligne-par-ligne">Ligne par ligne<a class="anchor-link" href="#Ligne-par-ligne">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
+<p><strong>Ligne par ligne</strong></p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemple.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fichier</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
 </pre></div>

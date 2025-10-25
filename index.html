@@ -7544,9 +7544,51 @@ main {
 <li>distribution Python avec de nombreux packages et outils pré-installés</li>
 <li>permet une installation séparée de celle du système d'exploitation</li>
 <li>permet de créer des environnements virtuels, c'est à dire différentes installations de Python (versions et/ou packages)</li>
-<li>site web : <a href="https://www.anaconda.com">https://www.anaconda.com</a></li>
+<li>site web : <a href="https://www.anaconda.com/download/success">https://www.anaconda.com</a></li>
 </ul>
 <img alt="Anaconda Logo" src="img/anaconda.png" style="width: 250px"/>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=998c80fc-db2a-4501-8819-9f876857aa9c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Quelques commandes Anaconda (depuis Anaconda prompt):</p>
+<ul>
+<li>Afficher la liste des environnements existants : <code>conda env list</code></li>
+<li>Créer un nouvel environnement :
+<code>conda create -n nomEnv python=3.xx</code> où <code>nomEnv</code> est le nom donné à l'environnement et <code>3.xx</code> est la version de python souhaitée.<br/>
+→ Activer l'environnement : <code>conda activate nomEnv</code><br/>
+→ Désactiver l'environnement : <code>conda deactivate</code></li>
+<li>Exporter un environnement : <code>conda env export &gt; nomFichier.yml</code></li>
+<li>Créer un environnement à partir d'un fichier <code>*.yml</code> : <code>conda env create -f nomFichier.yml</code></li>
+<li>Installer des packages python dans un environnement : <code>conda install pandas numpy matplotplib</code></li>
+<li>Si le package n'existe pas avec la commande <code>conda</code>, l'installer avec la commande <code>pip</code> (Python Index Packages) : <code>pip install seaborn</code></li>
+</ul>
+<p>📌 Lors de l'installation de packages Python, Anaconda installe automatiquement les dépendances, et vérifie la compatibilité des versions des différents packages.</p>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff2a2389-966a-42a0-b9b4-0a4f06baa1a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>➡️ <strong>Pratique</strong></p>
+<ul>
+<li>Installez Anaconda</li>
+<li>Ouvrir Anaconda Prompt</li>
+<li>Créer un nouvel environnement : <code>conda create -n analyses python=3.13</code></li>
+<li>Activez cet environnement : <code>conda activate analyses</code></li>
+<li>Affichez la liste des packages python installés : <code>conda list</code></li>
+<li>Installez les packages pandas, numpy, matplotplib et searborn</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7560,9 +7602,15 @@ main {
 <h2 id="L'interpr%C3%A9teur-Python">L'interpréteur Python<a class="anchor-link" href="#L'interpr%C3%A9teur-Python">¶</a></h2><p>L'interpréteur Python exécute le code Python ligne par ligne, permettant une exécution immédiate :</p>
 <ul>
 <li>Traduction du code source Python en instructions machine compréhensibles par l'ordinateur.</li>
-<li>Interaction interactive via le mode REPL (<strong>Read-Eval-Print Loop</strong>).</li>
+<li>Interaction interactive (instructions → réponses)</li>
 </ul>
 <p>L'interpréteur Python installé avec Anaconda peut-être démarré en ouvrant un terminal Anaconda (Anaconda Prompt) puis en tapant <code>python</code>.</p>
+<p>➡️ <strong>Pratique</strong> :</p>
+<ul>
+<li>Démarrez l'interpréteur Python dans la console : <code>python</code></li>
+<li>Tapez <code>10+10</code> puis Entrée</li>
+<li><code>exit</code> pour quitter l'interpréteur.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7576,10 +7624,13 @@ main {
 <h2 id="L'interpr%C3%A9teur-Jupyter">L'interpréteur Jupyter<a class="anchor-link" href="#L'interpr%C3%A9teur-Jupyter">¶</a></h2><ul>
 <li>Un environnement interactif utilisé pour écrire et exécuter du code dans un navigateur.</li>
 <li>Idéal pour des analyses de données.</li>
-<li>La distribution <strong>Anaconda</strong> inclut Jupyter Notebook par défaut.</li>
 <li>Permet d'exécuter des cellules contenant du code, du texte ou des graphiques.</li>
 </ul>
-<p>Pour démarrer Jupyter, ouvrir un terminal Anaconda (Anaconda Prompt) puis taper <code>jupyter-lab</code></p>
+<p>➡️ <strong>Pratique</strong></p>
+<ul>
+<li>Installez Jupyter : <code>conda install jupyter</code></li>
+<li>Démarrer l'environnement jupyter : <code>jupyter-lab</code></li>
+</ul>
 </div>
 </div>
 </div>
@@ -7590,7 +7641,46 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pratique">Pratique<a class="anchor-link" href="#Pratique">¶</a></h2><p>Démarrer Jupyter-lab et créer un notebook.</p>
+<p><strong>Le Jupyter Notebook</strong></p>
+<p><em>Un Notebook est un document interactif qui combine :</em></p>
+<ul>
+<li>du code exécutable (Python, R, etc.),</li>
+<li>du texte (avec Markdown),</li>
+<li>des graphiques, images, et résultats.</li>
+</ul>
+<p><em>Chaque Notebook est composé de cellules :</em></p>
+<ul>
+<li>Cellule de code : contient du code Python à exécuter.</li>
+<li>Cellule Markdown : contient du texte formaté (titres, listes, équations…).</li>
+<li>Cellule de sortie : affiche les résultats (texte, tableaux, graphiques).</li>
+</ul>
+<p><em>Avantages :</em></p>
+<ul>
+<li>Favorise l’apprentissage interactif et la reproductibilité.</li>
+<li>Permet d’expliquer le code et les résultats dans un même document.</li>
+<li>Très utilisé en science des données, enseignement et recherche.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d36523c7-8da6-43b8-a290-2297b8cb8019">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Commandes utiles dans JupyterLab :</em></p>
+<ul>
+<li><code>Shift + Enter</code> : exécuter la cellule et passer à la suivante</li>
+<li><code>Ctrl + Enter</code> : exécuter sans changer de cellule</li>
+<li><code>Esc</code> : passer en mode commande<ul>
+<li>A / B : insérer une cellule au-dessus / en dessous</li>
+<li>M → transformer en Markdown</li>
+<li>Y → transformer en code</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8169,8 +8259,8 @@ Python est génial
 <li>Déclarez une variable contenant le texte : <code>"Python est amusant !"</code>.</li>
 <li>Convertissez cette chaîne en majuscules.</li>
 <li>Convertissez cette chaîne en minuscules.</li>
-<li>Affichez les résultats avec la fonction <code>print</code>.</li>
 </ol>
+<p>📌 Affichez les résultats avec la fonction <code>print</code>.</p>
 </div>
 </div>
 </div>
@@ -8185,7 +8275,6 @@ Python est génial
 <li>Déclarez une chaîne contenant : <code>"Python est Pythonique car Python est simple."</code></li>
 <li>Comptez combien de fois le mot <code>"Python"</code> apparaît dans cette chaîne.</li>
 <li>Remplacez tous les <code>"Python"</code> par <code>"Génial"</code>.</li>
-<li>Affichez les résultats.</li>
 </ol>
 </div>
 </div>
@@ -8201,7 +8290,6 @@ Python est génial
 <li>Déclarez une chaîne contenant : <code>"Apprendre Python pas à pas"</code>.</li>
 <li>Séparez cette chaîne en une liste de mots.</li>
 <li>Réassemblez les mots en une nouvelle chaîne, séparés par un tiret <code>"-"</code>.</li>
-<li>Affichez la liste des mots et la nouvelle chaîne.</li>
 </ol>
 </div>
 </div>
@@ -8217,23 +8305,6 @@ Python est génial
 <li>Déclarez deux variables : <code>nom = "Alice"</code> et <code>age = 25</code>.</li>
 <li>Utilisez un f-string pour afficher : <code>"Bonjour Alice, vous avez 25 ans."</code></li>
 <li>Modifiez la variable <code>age</code> en lui ajoutant 5, et affichez à nouveau la phrase : <code>"Bonjour Alice, vous aurez 30 ans dans 5 ans."</code></li>
-</ol>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed085a77-c875-49e3-90ed-bf88cef4ec7f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Exercice-5-:-Combiner-les-m%C3%A9thodes">Exercice 5 : Combiner les méthodes<a class="anchor-link" href="#Exercice-5-:-Combiner-les-m%C3%A9thodes">¶</a></h3><ol>
-<li>Déclarez une chaîne : <code>"   Python est simple mais puissant.   "</code></li>
-<li>Supprimez les espaces au début et à la fin de la chaîne.</li>
-<li>Convertissez la chaîne en majuscules.</li>
-<li>Remplacez <code>"PUISSANT"</code> par <code>"INCROYABLE"</code>.</li>
-<li>Séparez les mots dans une liste et affichez-les.</li>
 </ol>
 </div>
 </div>
@@ -8778,7 +8849,7 @@ True
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
-<p>Calculez et affichez :</p>
+<p>Affichez :</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>
 <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span>
 <span class="ow">not</span> <span class="n">a</span>
@@ -8863,7 +8934,8 @@ True
 <h2 id="Pr%C3%A9sentation">Présentation<a class="anchor-link" href="#Pr%C3%A9sentation">¶</a></h2><ul>
 <li>Une liste est une collection <strong>ordonnée</strong> et <strong>modifiable</strong> : les éléments ont un index, de <code>0</code> à <code>len(liste)-1</code>.</li>
 <li>Elle peut contenir des éléments de types différents.</li>
-<li>Définie par des crochets <code>[]</code> et séparée par des virgules.</li>
+<li>Définie par des crochets <code>[]</code></li>
+<li>Les éléments sont séparés par des virgules.</li>
 </ul>
 <p><em>Exemple</em> :</p>
 </div>
@@ -12642,25 +12714,6 @@ b
 [86, 77, 22, 78, 13]
 </pre>
 </div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=135100e1-b856-4a76-a200-351fbebaff4f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Module-os">Module os<a class="anchor-link" href="#Module-os">¶</a></h3><ul>
-<li>Le module <strong><code>os</code></strong> permet d’interagir avec le système d’exploitation.</li>
-<li>Il offre des fonctionnalités pour :<ul>
-<li>Gérer les fichiers et dossiers.</li>
-<li>Accéder aux variables d’environnement.</li>
-<li>Exécuter des commandes système.</li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 </div>

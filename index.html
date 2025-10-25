@@ -7565,7 +7565,7 @@ main {
 → Activer l'environnement : <code>conda activate nomEnv</code><br/>
 → Désactiver l'environnement : <code>conda deactivate</code></li>
 <li>Exporter un environnement : <code>conda env export &gt; nomFichier.yml</code></li>
-<li>Créer un environnement à partir d'un fichier <code>*.yml</code> : <code>conda env create -f nomFichier.yml</code></li>
+<li>Créer un environnement à partir d'un fichier <code>*.yml</code> : <code>conda env create -n nomEnv -f nomFichier.yml</code></li>
 <li>Installer des packages python dans un environnement : <code>conda install pandas numpy matplotplib</code></li>
 <li>Si le package n'existe pas avec la commande <code>conda</code>, l'installer avec la commande <code>pip</code> (Python Index Packages) : <code>pip install seaborn</code></li>
 </ul>
@@ -7582,7 +7582,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>➡️ <strong>Pratique</strong></p>
 <ul>
-<li>Installez Anaconda</li>
+<li>Installez Miniconda</li>
 <li>Ouvrir Anaconda Prompt</li>
 <li>Créer un nouvel environnement : <code>conda create -n analyses python=3.13</code></li>
 <li>Activez cet environnement : <code>conda activate analyses</code></li>

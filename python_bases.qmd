@@ -9,7 +9,7 @@ format:
     css: ceem-slides.css
     navigation-mode: vertical
     controls-layout: bottom-right
-    # embed-resources: true
+    embed-resources: true
     logo: img/logo.png
     slide-number: true
     show-slide-number: all
@@ -18,7 +18,7 @@ format:
     auto-stretch: false
     code-line-numbers: true
     code-copy: true
-    chalkboard: true
+    # chalkboard: true
     preview-links: auto
 jupyter: quartoenv
 output-file: index.html

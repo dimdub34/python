@@ -1,0 +1,2731 @@
+---
+title: "Python"
+subtitle: "Bases"
+author: "Dimitri Dubois"
+institute: "CNRS - Univ. Montpellier"
+format:
+  revealjs:
+    theme: default
+    css: ceem-slides.css
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    # embed-resources: true
+    logo: img/logo.png
+    slide-number: true
+    show-slide-number: all
+    overview: true
+    scrollable: false
+    auto-stretch: false
+    code-line-numbers: true
+    code-copy: true
+    chalkboard: true
+    preview-links: auto
+jupyter: quartoenv
+output-file: index.html
+execute:
+  echo: true
+  error: true
+  warning: false
+---
+
+
+# Contenu
+
+---
+
+::: {.columns}
+::: {.column width="50%"}
+- [Introduction](#/introduction)
+- [Installation](#/installation)
+- [Règles d'écriture](#/règles-décriture)
+- [Variables et types](#/variables-et-types)
+- [Chaînes de caractères](#/les-chaînes-de-caractères)
+- [Types numériques](#/les-types-numériques)
+- [Booléen](#/le-type-booléen)
+- [Liste](#/la-liste)
+- [Tuple](#/le-tuple)
+:::
+::: {.column width="50%"}
+- [Dictionnaire](#/le-dictionnaire)
+- [Set](#/le-set)
+- [Structures conditionnelles et boucles](#/structures-conditionnelles-et-boucles)
+- [List-comprehension](#/les-list-comprehension)
+- [Fonctions](#/les-fonctions)
+- [Modules](#/les-modules)
+- [Fichiers](#/manipulation-de-fichiers)
+- [Exceptions](#/les-exceptions)
+- [Sources](#/sources)
+:::
+:::
+
+
+# Introduction
+
+## Création et gestion 
+
+- créé par [Guido Van Rossum](https://fr.wikipedia.org/wiki/Guido_van_Rossum) (Néerlandais)
+- la 1ère version en 1991
+- géré par la Python Software Fondation, depuis 2001
+- site web : [https://www.python.org](https://www.python.org)
+- Python vient de "[Monty Python](https://fr.wikipedia.org/wiki/Monty_Python)" une troupe d'humoristes anglais
+- actuellement version 3.14
+
+![Guido Van Rossum](img/guido.jpg){fig-align="left" width=50%}
+
+---
+
+## Caractéristiques 
+
+- language de haut niveau
+- syntaxe simple
+- language interprété
+- multiplateforme
+- peut être utilisé pour des scripts simples ou des applications complexes
+- utilisation croissante pour l'analyse de données et le machine learning
+
+
+<!---------------------------------------------------------------------------->
+# Installation
+
+## Environnement virtuel Python
+
+Un **environnement virtuel** est un espace de travail isolé et indépendant sur votre machine.
+
+- **Éviter les conflits de versions** : le projet A a besoin de `pandas 1.5` tandis que le projet B nécessite `pandas 2.2`.
+- **Protéger votre système** : ne jamais installer de bibliothèques directement sur le Python du système d'exploitation (risque de casser des outils système).
+- **Reproductibilité** : figer et exporter facilement la liste exacte des dépendances pour partager vos analyses (`environment.yml`).
+- **Propreté** : on teste, on installe, et on peut supprimer l'environnement en une commande sans laisser de traces.
+
+---
+
+## Les outils : `venv` vs `Miniconda`
+
+::: {.columns}
+::: {.column width="48%"}
+### L'outil standard : `venv`
+- Intégré directement à Python (`python -m venv env`)
+- Léger et pratique pour des scripts simples
+- **Limites** :
+  - Obligé d'utiliser la version de Python installée sur la machine
+  - Gère uniquement les packages Python (`pip`), pas les dépendances système binaires
+:::
+
+::: {.column width="48%"}
+### Pourquoi nous utiliserons **Conda** ?
+- **Version de Python au choix** (ex. 3.11, 3.12, 3.13...) indépendamment de votre machine
+- **Gestion centralisée** de tous vos environnements (`conda env list`)
+- **Bibliothèques binaires C / C++ / Fortran** : indispensables pour le calcul scientifique (`numpy`, `scipy`, BLAS/MKL)
+- **Miniconda** : version légère et rapide de Conda (on n'installe que ce dont on a besoin)
+:::
+:::
+
+---
+
+## Anaconda / Miniconda 
+
+- distribution Python avec de nombreux packages et outils pré-installés
+- permet une installation séparée de celle du système d'exploitation
+- permet de créer des environnements virtuels, c'est à dire différentes installations de Python (versions et/ou packages)
+- site web : [https://www.anaconda.com](https://www.anaconda.com/download/success)
+  
+![](img/anaconda.png){fig-align="center" width="150px"}
+
+→ Téléchargez et installez **Miniconda** pour votre OS.
+
+---
+
+## Commandes Conda (1/2)
+
+*Depuis Anaconda Prompt*
+
+- Afficher la liste des environnements existants : `conda env list`
+- Créer un nouvel environnement :
+  `conda create -n nomEnv python=3.xx`  
+  où `nomEnv` est le nom donné à l'environnement et `3.xx` est la version de python souhaitée.  
+- Activer l'environnement : `conda activate nomEnv`  
+- Désactiver l'environnement : `conda deactivate`
+
+::: {.callout-tip title="Reproductibilité"}
+- Exporter un environnement : `conda env export > nomFichier.yml`
+- Créer un environnement à partir d'un fichier `*.yml` : `conda env create -n nomEnv -f nomFichier.yml`
+:::
+
+---
+
+## Commandes Conda (2/2)
+
+- Installer des packages python dans un environnement : `conda install pandas numpy matplotplib`
+- Si le package n'existe pas avec la commande `conda`, l'installer avec la commande `pip` (Python Index Packages) : `pip install seaborn`
+
+::: {.callout-note}
+Lors de l'installation de packages Python, Anaconda installe automatiquement les dépendances, et vérifie la compatibilité des versions des différents packages.
+:::
+
+---
+
+## Pratique
+
+- Installez Miniconda
+- Ouvrir Anaconda Prompt
+- Créer un nouvel environnement : `conda create -n analyses python=3.13`
+- Activez cet environnement : `conda activate analyses`
+- Affichez la liste des packages python installés : `conda list`
+- Installez les packages pandas, numpy, matplotplib et searborn
+
+---
+
+## L'interpréteur Python
+
+L'interpréteur Python exécute le code Python ligne par ligne, permettant une exécution immédiate : 
+
+- Traduction du code source Python en instructions machine compréhensibles par l'ordinateur.
+- Interaction interactive (instructions → réponses)
+
+L'interpréteur Python installé avec Anaconda peut-être démarré en ouvrant un terminal Anaconda (Anaconda Prompt) puis en tapant `python`.
+
+---
+
+## Jupyter-lab
+
+- Un environnement interactif utilisé pour écrire et exécuter du code dans un navigateur.
+- Idéal pour des analyses de données.
+- Permet d'exécuter des cellules contenant du code, du texte ou des graphiques.
+
+::: {.callout-tip title="Installation de Jupyter"}
+- `conda install jupyter`
+- démarrer l'environnement jupyter : `jupyter-lab`
+:::
+
+---
+
+## Notebook
+
+*Un Notebook est un document interactif qui combine :*
+
+- du code exécutable (Python, R, etc.),
+- du texte (avec Markdown),
+- des graphiques, images, et résultats.
+
+*Chaque Notebook est composé de cellules :*
+
+- Cellule de code : contient du code Python à exécuter.
+- Cellule Markdown : contient du texte formaté (titres, listes, équations…).
+- Cellule de sortie : affiche les résultats (texte, tableaux, graphiques).
+
+---
+
+## Intérêt du Notebook
+
+- Favorise l’apprentissage interactif et la reproductibilité.
+- Permet d’expliquer le code et les résultats dans un même document.
+- Très utilisé en science des données, enseignement et recherche.
+
+---
+
+## Commandes utiles dans le Notebook
+
+- `Shift + Enter` : exécuter la cellule et passer à la suivante
+- `Ctrl + Enter` : exécuter sans changer de cellule
+- `Esc` : passer en mode commande
+    - A / B : insérer une cellule au-dessus / en dessous
+    - M → transformer en Markdown
+    - Y → transformer en code
+
+<!---------------------------------------------------------------------------->
+# Règles d'écriture
+
+## The Zen of Python
+
+Le *Zen of Python*, écrit par Tim Peters, est une collection de principes qui guide la conception de Python. Ces principes peuvent être affichés en tapant `import this` dans un interpréteur Python. Ces principes ne sont pas absolus, mais ils reflètent la philosophie générale de Python et encouragent des pratiques de programmation propres et efficaces.
+
+---
+
+## Zen 1-8
+
+1. **Beautiful is better than ugly.** : La beauté est préférable à la laideur.
+2. **Explicit is better than implicit.** : L'explicite est préférable à l'implicite.
+3. **Simple is better than complex.** : La simplicité est préférable à la complexité.
+4. **Complex is better than complicated.** : La complexité est préférable à la complication.
+5. **Flat is better than nested.** : Le plat est préférable à l'imbrication.
+6. **Sparse is better than dense.** : L'aéré est préférable au dense.
+7. **Readability counts.** : La lisibilité compte.
+8. **Special cases aren't special enough to break the rules.** : Les cas particuliers ne sont pas suffisamment spéciaux pour briser les règles.
+
+---
+
+## Zen 9-14
+9. **Although practicality beats purity.** : Cependant, la praticité l'emporte sur la pureté.
+10. **Errors should never pass silently.** : Les erreurs ne devraient jamais passer silencieusement.
+11. **Unless explicitly silenced.** : Sauf si elles sont explicitement ignorées.
+12. **In the face of ambiguity, refuse the temptation to guess.** : Face à l'ambiguïté, refusez la tentation de deviner.
+13. **There should be one-- and preferably only one --obvious way to do it.** : Il devrait y avoir une — et de préférence une seule — manière évidente de le faire.
+14. **Although that way may not be obvious at first unless you're Dutch.** : Cependant, cette manière peut ne pas être évidente au premier abord, sauf si vous êtes Néerlandais.
+
+---
+
+## Zen 15-19
+
+15. **Now is better than never.** : Maintenant est préférable à jamais.
+16. **Although never is often better than *right* now.** : Bien que jamais soit souvent préférable à "tout de suite".
+17. **If the implementation is hard to explain, it's a bad idea.** : Si l'implémentation est difficile à expliquer, c'est une mauvaise idée.
+18. **If the implementation is easy to explain, it may be a good idea.** : Si l'implémentation est facile à expliquer, c'est peut-être une bonne idée.
+19. **Namespaces are one honking great idea -- let's do more of those!** : Les espaces de noms sont une idée géniale – utilisons-les davantage !
+
+---
+
+## Indentation
+
+- Python utilise l'**indentation** pour structurer le code (au lieu des accolades `{}` dans d'autres langages).
+- Chaque niveau doit être **aligné** (une indentation avec la touche `Tab` ou 4 espaces).
+
+_Exemple_ :
+```python
+if x > 0:
+    print("x est positif")
+else:
+    print("x est négatif ou nul")
+```
+
+---
+
+## Sensibilité à la casse
+
+- Python est sensible à la casse : `Variable` et `variable` sont deux noms différents.  
+- Selon les codes d'écriture ([PEP8](https://peps.python.org/pep-0008/)), les noms de variables doivent être en minuscules, avec des mots séparés par des tirets bas (underscore).  
+
+---
+
+## Noms de variables
+
+- Caractères autorisés : Lettres (a-z, A-Z), chiffres (0-9), underscore (_).  
+- Ne pas commencer par un chiffre.  
+- Interdits : Noms réservés comme `if`, `for`, `print`, etc.  
+
+Utiliser des noms explicites
+```python
+age_utilisateur = 30  # Clair
+a = 30  # Peu clair
+```
+
+---
+
+## Commentaires
+
+Commentaires sur une seule ligne : Utiliser `#`.
+
+```python
+print("Bonjour")  # Commentaire en ligne
+```
+
+Commentaires multi-lignes : Utiliser des guillemets triples `"""` ou `'''`.
+
+```python
+"""
+Cette fonction calcule la somme
+de deux nombres.
+"""
+```
+
+---
+
+## Guillemets
+
+Python accepte les guillemets simples `'` ou doubles `"`.
+```python
+texte1 = "Bonjour"
+texte2 = 'Bienvenue'
+```
+
+Pour des chaînes contenant des guillemets, alterner ou échapper 
+```python
+texte1 = "Il a dit : 'Python est génial !'"
+texte2 = "Il a dit : \"Python est génial !\""
+```
+
+
+<!---------------------------------------------------------------------------->
+# Variables et Types
+
+## Création de variable
+
+- Une variable est une étiquette pour un objet stocké en mémoire. 
+- Utilisation du signe `=` pour affecter une valeur à une variable.
+
+```{python}
+x = 5  # Affectation d'un entier
+y = "Python"  # Affectation d'une chaîne de caractères
+print(x, y)
+```
+
+La fonction `print` affiche des valeurs ou des messages dans la console.
+
+---
+
+## Typage dynamique 
+
+- L'interpréteur Python détermine automatiquement le `type` de la variable, en fonction de la valeur qui lui est affectée.  
+- La fonction `type()` appelée avec une variable en argument retourne le type de la variable.
+
+```{python}
+x = 42
+print(type(x))
+x = "Bonjour"
+print(type(x))
+```
+
+---
+
+## Les types intégrés (built-in types)
+
+- "Intégré" signifie que ces types sont fournis par défaut dans Python.  
+- Ces types permettent de :
+    - Représenter des données courantes (nombres, texte, etc.).
+    - Réaliser des opérations de base comme des calculs, des manipulations de texte, ou la gestion de collections.
+
+---
+
+## Liste des types intégrés
+
+- `None`: Valeur spéciale représentant "rien" ou "absence" (None).  
+- `str` : Texte (ex. "Bonjour", 'Python')   
+- `int` : Entiers (ex. 42, -5)
+- `float` : Nombres décimaux (ex. 3.14, -0.01)
+- `complex` : Nombres complexes (ex. 3 + 4j)
+- `bool` : Valeurs logiques (True, False)
+- `list` : Liste ordonnée, modifiable (ex. `[1, 2, 3]`)
+- `tuple` : Liste ordonnée, non modifiable (ex. `(1, 2, 3)`)
+- `dict` : Association clé-valeur (ex. `{"nom": "Alice", "âge": 30}`)
+- `set` : Ensemble non ordonné, sans doublons (ex. `{1, 2, 3}`)
+
+
+<!---------------------------------------------------------------------------->
+# Les chaînes de caractères
+
+## Présentation (1/2)
+
+- Une **chaîne de caractères** (type `str`) est une séquence de caractères.
+- Elle est délimitée par des guillemets simples `'` ou doubles `"`.
+
+*Exemples* :
+
+```{python}
+texte1 = "Bonjour"
+texte2 = 'Python est génial !'
+```
+
+Indexation possible : Chaque caractère est accessible par son indice.
+
+```{python}
+texte = "Python"
+print(texte[0])
+print(texte[1])
+```
+
+---
+
+## Présentation (2/2)
+
+Une fois créées, les chaînes ne peuvent pas être modifiées directement, on dit quelles sont `immuables`.  
+
+```{python}
+texte[0] = "L"
+```
+
+---
+
+## Méthodes courantes pour les chaînes de caractères
+
+- **`upper()`** : Convertit la chaîne en majuscules.
+- **`lower()`** : Convertit la chaîne en minuscules.
+- **`count(substring)`** : Compte le nombre d’occurrences d’un sous-texte.
+- **`replace(old, new)`** : Remplace une sous-chaîne par une autre.
+
+_Exemples_ : 
+
+```{python}
+texte = "Bonjour"
+print(texte.upper())  
+print(texte.lower())  
+
+texte = "Python est Pythonique"
+print(texte.count("Python"))  
+print(texte.replace("Python", "Génial"))
+```
+
+---
+
+## Gestion des espaces et découpage
+
+- **`strip()`** : Supprime les espaces au début et à la fin.
+- **`split(separator)`** : Découpe une chaîne en liste.
+- **`join(iterable)`** : Assemble une liste en chaîne.
+
+*Exemples* : 
+
+```{python}
+texte = "  Bonjour Python  "
+print(texte.strip())  # Affiche : Bonjour Python
+
+texte2 = "Python est génial"
+print(texte2.split())  # Affiche : ['Python', 'est', 'génial']
+
+liste = ["Python", "est", "génial"]
+print(" ".join(liste))  # Affiche : Python est génial
+```
+
+---
+
+## Les f-strings
+
+- Pour formater les chaînes.
+- Permettent d’insérer des variables ou des expressions directement dans une chaîne.
+- Syntaxe : **`f"texte {variable}"`**
+
+_Exemples_ :
+
+```{python}
+nom = "Alice"
+age = 30
+print(f"Bonjour {nom}, vous avez {age} ans.")
+
+# Calculs dans les f-strings
+print(f"5 + 3 = {5 + 3}")
+```
+
+---
+
+## Pratique (1/2)
+
+### Exercice 1 : Manipuler la casse
+1. Déclarez une variable contenant le texte : `"Python est amusant !"`.
+2. Convertissez cette chaîne en majuscules.
+3. Convertissez cette chaîne en minuscules.
+
+::: {.callout-tip}
+Affichez les résultats avec `print`.
+:::
+
+### Exercice 2 : Compter et remplacer
+
+1. Déclarez une chaîne contenant : `"Python est Pythonique car Python est simple."`
+2. Comptez combien de fois le mot `"Python"` apparaît dans cette chaîne.
+3. Remplacez `"Pythonique"` par `"Génial"`.
+
+---
+
+## Pratique (2/2)
+
+### Exercice 3 : Découper et assembler
+
+1. Déclarez une chaîne contenant : `"Apprendre Python pas à pas"`.
+2. Séparez cette chaîne en une liste de mots.
+3. Réassemblez les mots en une nouvelle chaîne, séparés par un tiret `"-"`.
+
+### Exercice 4 : Les f-strings
+
+1. Déclarez deux variables : `nom = "Alice"` et `age = 25`.
+2. Utilisez un f-string pour afficher : `"Bonjour Alice, vous avez 25 ans."`
+3. Modifiez la variable `age` en lui ajoutant 5, et affichez à nouveau la phrase : `"Bonjour Alice, vous aurez 30 ans dans 5 ans."`
+
+
+<!---------------------------------------------------------------------------->
+# Les types numériques
+
+## Liste des types et caractéristiques 
+
+- **int** : Entiers (ex. `42`, `-5`)
+- **float** : Nombres décimaux (ex. `3.14`, `-0.01`)
+
+**Caractéristiques**
+
+- Les entiers (`int`) peuvent être de taille illimitée.
+- Les flottants (`float`) utilisent une précision limitée (base 64 bits).
+- Les conversions entre types se font facilement
+
+```{python}
+print(float(42))  
+print(int(3.14))
+```
+
+---
+
+## Opérations sur les types numériques
+
+- Addition `+` | Soustraction `-` 
+- Multiplication `*` | Division `/` 
+- Division entière `//` | Modulo `%`
+- Puissance `**`
+
+_Exemples_ :
+
+```{python}
+print(10 + 3)  
+print(10 // 3) 
+print(2 ** 3)  
+print(10 % 3) 
+```
+
+---
+
+## Fonctions courantes
+- `abs(x)` : Valeur absolue.
+- `round(x, n)` : Arrondit x à n décimales.
+- `pow(x, y)` : Puissance de x à la y.
+- `divmod(a, b)` : Retourne `(a // b, a % b)`.
+
+_Exemples_ :
+
+```{python}
+print(abs(-42))  
+print(round(3.14159, 2))  
+print(pow(2, 3)) 
+print(divmod(10, 3))  
+```
+
+---
+
+## Le module `math`
+
+Contient des attributs et méthodes utiles :  
+
+- `sqrt(x)` : Racine carrée.
+- `log(x)` : Logarithme naturel.
+- `sin(x)`, `cos(x)` : Fonctions trigonométriques.
+- `pi` : le nombre Pi
+
+```{python}
+import math
+
+print(math.sqrt(16))  # 4.0
+print(math.log(10))  # 2.302585...
+```
+
+---
+
+## Le module `decimal` (1/2)
+
+- En Python, les flottants (`float`) sont représentés selon la norme **IEEE 754** (base 64 bits).
+- Cette représentation peut entraîner des erreurs d’arrondi, comme :
+  ```python
+  print(0.1 + 0.2)  # Affiche : 0.30000000000000004
+  ```
+
+Le module decimal permet de manipuler des nombres en évitant ces erreurs.  
+
+```{python}
+from decimal import Decimal
+x = Decimal("0.1")
+y = Decimal("0.2")
+print(x + y)  # Affiche : 0.3
+```
+
+::: {.callout-tip}
+Utiliser des chaînes de caractères pour initialiser les `Decimal`.
+:::
+
+---
+
+## Le module `decimal` (2/2)
+
+La précision peut être configurée avec `getcontext`
+
+```{python}
+from decimal import Decimal, getcontext
+getcontext().prec = 50  # Définit la précision à 50 chiffres
+
+x = Decimal("1") / Decimal("7")
+print(x)  # Affiche : 0.14285714285714285714285714285714285714285714285714
+```
+
+::: {.callout-note title="Remarque"}
+Le module `decimal` est adapté aux applications financières, scientifiques ou toute situation où les erreurs d’arrondi doivent être évitées. Mais, attention , il est plus lent que les flottants natifs, car Decimal effectue des calculs supplémentaires pour maintenir la précision.
+:::
+
+---
+
+## Pratique (1/2)
+
+### Exercice 1 : Opérations simples
+- Créez deux variables a et b contenant respectivement les valeurs 15 et 7.
+- Calculez et affichez :
+    + La somme de a et b.
+    + Leur différence.
+    + Leur produit.
+    + Le quotient (division).
+    + Le reste de la division de a par b.
+
+### Exercice 2 : Puissance et racine carrée
+
+- Calculez $2^8$ (2 puissance 8).
+- La racine carrée de 144 (utilisez le module math).
+
+---
+
+## Pratique (2/2)
+
+### Exercice 3 : Calculs avec des flottants
+
+- Déclarez deux nombres flottants x = 0.1 et y = 0.2.
+- Calculez et affichez :
+    - Leur somme (montrez l'erreur d'arrondi de Python).
+    - Leur somme précise en utilisant le module decimal.
+
+### Exercice 4 : Utilisation de divmod()
+
+- Déclarez deux variables a = 50 et b = 6.
+- Utilisez la fonction divmod() pour obtenir :
+    - Le quotient entier.
+    - Le reste.
+- Affichez les résultats séparément.
+
+
+<!---------------------------------------------------------------------------->
+# Le type booléen
+
+## Présentation
+
+- Un booléen peut être :
+  - `True` : Vrai
+  - `False` : Faux
+- Utilisé pour contrôler la logique des programmes :
+  - Conditions
+  - Boucles
+  - Expressions logiques
+
+---
+
+## Fonction `bool()`
+
+- En Python, tout objet peut être converti en booléen.
+- Les valeurs suivantes sont `False` :
+  - `0`, `0.0`
+  - `None`
+  - Chaîne vide : `""`
+  - Liste/dictionnaire/vecteur vide : `[]`, `{}`
+
+_Exemples_ :
+
+```{python}
+print(bool(0))      # False
+print(bool(42))     # True
+print(bool(""))     # False
+print(bool("Hello")) # True
+```
+
+---
+
+## Les opérateurs logiques
+
+- **`and`** : Vrai si **les deux** conditions sont vraies.
+- **`or`** : Vrai si **au moins une** condition est vraie.
+- **`not`** : Inverse la valeur logique.
+
+_Exemples_ :
+```python
+a = True
+b = False
+
+print(a and b)  # False
+print(a or b)   # True
+print(not a)    # False
+```
+
+---
+
+## Les opérateurs de comparaison
+
+- Égalité : `==`
+- Différence : `!=`
+- Plus grand/plus petit : `>`, `<`, `>=`, `<=`
+
+_Exemple_ :
+```python
+x = 10
+y = 20
+
+print(x > y)   # False
+print(x == 10) # True
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1 : Comprendre les booléens
+
+Déclarez deux variables :
+```python
+a = True
+b = False
+```
+Affichez :
+```python
+a and b
+a or b
+not a
+```
+
+---
+
+## Pratique (2/3)
+
+### Exercice 2 : Conversion en booléen
+
+Déclarez les variables suivantes :
+```python
+x = 0
+y = 42
+texte = ""
+texte2 = "Python"
+```
+
+Affichez leur conversion en booléen avec bool().
+
+---
+
+## Pratique (3/3)
+### Exercice 3 : Comparaisons
+
+- Déclarez deux variables `a = 10` et `b = 20`.
+- Effectuez et affichez les comparaisons suivantes :
+    - `a > b`
+    - `a == b`
+    - `a <= b`
+    - `a != b`
+
+### Exercice 4 : Expression logique combinée
+
+- Déclarez une variable `x = 15`.
+- Évaluez et affichez les expressions suivantes :
+    - `(x > 10) and (x < 20)`
+    - `(x < 10) or (x == 15)`
+    - `not (x == 15)`
+
+
+<!---------------------------------------------------------------------------->
+# La liste
+
+## Présentation
+
+- Une liste est une collection **ordonnée** et **modifiable** : les éléments ont un index, de `0` à `len(liste)-1`.
+- Elle peut contenir des éléments de types différents.
+- Définie par des crochets `[]` 
+- Les éléments sont séparés par des virgules.
+
+*Exemple* :
+
+```{python}
+ma_liste1 = [1, 2, 3, "Python", True]
+print(ma_liste1)  # [1, 2, 3, 'Python', True]
+
+ma_liste2 = ["a", "b", "c"]
+print(ma_liste2[0])  # 'a' (1er élément)
+print(ma_liste2[-1])  # 'c' (dernier élément)
+```
+
+---
+
+## Ajouter des éléments
+
+1. **`append(element)`** : Ajoute un élément à la fin.
+2. **`extend(iterable)`** : Ajoute plusieurs éléments à la fin.
+3. **`insert(index, element)`** : Insère un élément à un index spécifique.
+
+_Exemple_ :
+
+```{python}
+ma_liste = [1, 2, 3]
+ma_liste.append(4)       # [1, 2, 3, 4]
+ma_liste.extend([5, 6])  # [1, 2, 3, 4, 5, 6]
+ma_liste.insert(2, "X")  # [1, 2, 'X', 3, 4, 5, 6]
+print(ma_liste)
+```
+
+---
+
+## Supprimer des éléments
+
+- **`remove(element)`** : Supprime la 1<sup>ère</sup> occurrence d’un élément.
+- **`pop(index)`** : Supprime l’élément à un index (par défaut, le dernier).
+- **`clear()`** : Vide complètement la liste.
+
+```{python}
+ma_liste = [1, 2, 3, 4]
+ma_liste.remove(3)   # [1, 2, 4]
+ma_liste.pop(1)      # [1, 4]
+ma_liste.clear()     # []
+print(ma_liste)
+```
+
+---
+
+## Trier et inverser une liste
+
+1. **`sort()`** : Trie une liste en place (croissant par défaut).
+2. **`reverse()`** : Inverse l’ordre des éléments.
+
+_Exemple_ :
+
+```{python}
+ma_liste = [4, 1, 3, 2]
+ma_liste.sort()      # [1, 2, 3, 4]
+ma_liste.reverse()   # [4, 3, 2, 1]
+print(ma_liste)
+```
+
+---
+
+## Autres méthodes utiles
+
+- **`count(element)`** : Retourne le nombre d'occurrences d’un élément.
+- **`index(element)`** : Retourne l’index de la 1<sup>ère</sup> occurrence d’un élément.
+
+```{python}
+ma_liste = [1, 2, 3, 2, 1]
+print(ma_liste.count(2))  
+print(ma_liste.index(3))  
+```
+
+---
+
+## Accéder à des sous-listes 
+
+*Découpage ou "slicing"*
+
+```{python}
+ma_liste = [0, 1, 2, 3, 4, 5]
+print(ma_liste[1:4])  
+print(ma_liste[:3])   
+print(ma_liste[3:])   
+```
+
+---
+
+## Parcourir une liste avec une boucle for
+
+Par valeur 
+
+```{python}
+ma_liste = ["Python", "est", "génial"]
+for element in ma_liste:
+    print(element)
+```
+
+Par index et valeur avec `enumerate`
+
+```{python}
+ma_liste = ["Python", "est", "génial"]
+for index, element in enumerate(ma_liste):
+    print(f"{index}: {element}")
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1 : Création et accès aux éléments
+
+- Créez une liste contenant les éléments suivants : "Python", "Java", "C++", "Ruby".
+- Affichez :
+    - Le premier élément.
+    - Le dernier élément.
+    - Les deux premiers éléments (en utilisant le slicing).
+
+### Exercice 2 : Ajouter et supprimer des éléments
+
+- Créez une liste vide.
+- Ajoutez successivement les nombres 1, 2 et 3 à la liste.
+- Supprimez le deuxième élément (index 1).
+- Affichez la liste après chaque opération.
+
+---
+
+## Pratique (2/3)
+
+### Exercice 3 : Parcourir une liste
+
+- Créez une liste contenant les nombres de 1 à 5.
+- Parcourez la liste avec une boucle et affichez chaque élément multiplié par 2.
+
+### Exercice 4 : Trier et inverser une liste
+
+- Créez une liste contenant les nombres suivants : 4, 1, 3, 2.
+- Triez la liste en ordre croissant.
+- Inversez l’ordre des éléments.
+- Affichez les résultats après chaque opération.
+
+---
+
+## Pratique (3/3)
+
+### Exercice 5 : Méthodes count et index
+
+- Créez une liste contenant : `[1, 2, 3, 2, 4, 2]`.
+- Comptez combien de fois le nombre 2 apparaît dans la liste.
+- Trouvez l’index de la première occurrence du nombre 3.
+
+### Exercice 6 : Sous-listes (slicing)
+
+- Créez une liste contenant les nombres de 0 à 9.
+- Extrayez et affichez :
+    - Les trois premiers éléments.
+    - Les trois derniers éléments.
+    - Les éléments situés aux index pairs (0, 2, 4…).
+
+
+<!---------------------------------------------------------------------------->
+# Le tuple
+
+## Présentation
+
+- Un **tuple** est une collection **ordonnée** et **non modifiable** (*immuable*, une fois créé, un tuple ne peut pas être modifié).
+- Comme les listes, un tuple peut contenir des éléments de types différents.
+- Délimité par des parenthèses `()`.
+
+_Exemple_ :
+
+```{python}
+mon_tuple = (1, 2, 3, "Python", True)
+print(mon_tuple)
+```
+
+---
+
+## Avantages des tuples
+
+1. **Immuabilité** :
+   - Idéal pour des données constantes.
+   - Plus sûr, car les tuples ne peuvent pas être modifiés accidentellement.
+2. **Efficacité** :
+   - Les tuples sont généralement plus rapides que les listes.
+3. **Clé dans un dictionnaire** :
+   - Les tuples peuvent être utilisés comme clés (contrairement aux listes).
+
+_Cas d'utilisation_ :
+
+```python
+coordonnees = (43.6, 3.9)  # Latitude, longitude
+jours_semaine = ("lundi", "mardi", "mercredi", "jeudi", "vendredi")
+```
+
+---
+
+## Accès aux éléments
+
+- Comme les listes, on utilise les **indices** pour accéder aux éléments.
+- **Découpage (slicing)** est également possible.
+
+_Exemple_ :
+
+```{python}
+mon_tuple = (10, 20, 30, 40, 50)
+print(mon_tuple[1])    
+print(mon_tuple[:3])  
+print(mon_tuple[-2:])
+```
+
+---
+
+## Opérations courantes
+
+- Concaténation : Ajouter deux tuples ensemble.
+- Répétition : Répéter un tuple plusieurs fois.
+
+```{python}
+t1 = (1, 2, 3)
+t2 = (4, 5)
+print(t1 + t2)
+print(t1 * 2)  
+```
+
+---
+
+## Vérification d'appartenance
+
+`in` : Vérifie si un élément est dans un tuple.
+
+```{python}
+mon_tuple = (1, 2, 3, 4)
+print(3 in mon_tuple)   
+print(5 in mon_tuple)   
+```
+
+## Méthodes
+
+- **`count(element)`** : Compte le nombre d’occurrences d’un élément.
+- **`index(element)`** : Retourne l’index de la première occurrence d’un élément.
+
+_Exemple_ :
+
+```{python}
+mon_tuple = (1, 2, 2, 3, 4)
+print(mon_tuple.count(2))  
+print(mon_tuple.index(3))  
+```
+
+---
+
+## Conversion entre liste et tuple
+
+**tuple vers liste**
+
+```{python}
+t = (1, 2, 3)
+l = list(t)
+print(l) 
+```
+
+**liste vers tuple**
+
+```{python}
+l = [4, 5, 6]
+t = tuple(l)
+print(t)  
+```
+
+---
+
+## Itération et déballage
+
+**Itération**
+
+```{python}
+mon_tuple = ("a", "b", "c")
+for element in mon_tuple:
+    print(element)
+```
+
+**Déballage**
+
+```{python}
+coordonnees = (43.6, 3.9)
+latitude, longitude = coordonnees
+print(latitude)  
+print(longitude) 
+```
+
+---
+
+## La fonction `zip`
+
+- La fonction **`zip`** combine plusieurs collections (listes, tuples, etc.) **élément par élément**.
+- Retourne un objet `zip` contenant des **tuples** regroupant les éléments correspondants de chaque collection.
+- Les collections doivent avoir des tailles similaires pour que tous les éléments soient pris en compte.
+- Si les collections ont des longueurs différentes, zip s'arrête au plus court.
+
+_Exemple_ :
+
+```{python}
+noms = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+resultat = zip(noms, ages)
+print(list(resultat)) 
+```
+
+---
+
+## Unzip
+
+`*` pour "dézipper" des collections combinées.
+
+```{python}
+combines = [("Alice", 25), ("Bob", 30), ("Charlie", 35)]
+noms, ages = zip(*combines)
+
+print(noms) 
+print(ages) 
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1 : Création et accès
+
+- Créez un tuple contenant les éléments suivants : ("Python", "Java", "C++", "Ruby").
+- Affichez :
+    - Le premier élément.
+    - Le dernier élément.
+    - Les deux premiers éléments (en utilisant le slicing).
+
+### Exercice 2 : Déballage d’un tuple
+
+- Créez un tuple contenant : (2024, "Décembre", 1).
+- Déballez ce tuple dans trois variables : annee, mois, jour.
+- Affichez ces variables.
+
+---
+
+## Pratique (2/3)
+
+### Exercice 3 : Conversion liste ↔ tuple
+
+- Créez une liste contenant : `[10, 20, 30]`.
+- Convertissez cette liste en un tuple.
+- Convertissez ce tuple en une liste et ajoutez-y l’élément 40.
+
+### Exercice 4 : Combinaison de collections
+
+- Créez deux listes :
+    - noms = ["Alice", "Bob", "Charlie"]
+    - ages = [25, 30, 35]
+- Utilisez zip pour associer chaque nom à un âge.
+- Affichez le résultat sous forme de liste de tuples.
+
+---
+
+## Pratique (3/3)
+
+### Exercice 5 : Dézipper des données
+
+- Créez une liste : `[("Alice", 25), ("Bob", 30), ("Charlie", 35)]`.
+- Utilisez zip pour séparer les noms et les âges dans deux tuples distincts.
+- Affichez-les.
+
+### Exercice 6 : Liste indexée
+
+- Créez une liste contenant les éléments suivants : ["Chat", "Chien", "Oiseau"].
+- Transformez cette liste en une liste de tuples avec les indices en utilisant enumerate.
+
+
+<!---------------------------------------------------------------------------->
+# Le dictionnaire
+
+## Présentation
+
+- Un **dictionnaire** est une collection modifiable et indexée.
+- Il associe des **clés** à des **valeurs**. Chaque clé est unique et sert d’identifiant pour accéder à une valeur.
+- Délimité par des accolades `{}`.
+
+_Exemple_ :
+
+```{python}
+mon_dictionnaire = {"nom": "Alice", "age": 25, "ville": "Paris"}
+print(mon_dictionnaire["nom"])  # Alice
+print(mon_dictionnaire["age"])  # 25
+print(mon_dictionnaire)
+```
+
+---
+
+## Caractéristiques
+
+- Clés uniques : Chaque clé dans un dictionnaire est unique.
+- Indexation par clé : Les valeurs sont accessibles via leur clé.
+- Modifiable : Les paires clé-valeur peuvent être ajoutées, modifiées ou supprimées.
+- Types acceptés :
+    - Les clés doivent être immutables (types : `str`, `int`, `tuple`, etc.).
+    - Les valeurs peuvent être de tout type.
+
+---
+
+## Ajouter ou modifier une paire clé-valeur
+
+```python
+dictionnaire["nouvelle_cle"] = "nouvelle_valeur"
+```
+_Exemple_ :
+
+```{python}
+mon_dictionnaire = {"nom": "Alice"}
+mon_dictionnaire["age"] = 25  # Ajout
+mon_dictionnaire["nom"] = "Bob"  # Modification
+print(mon_dictionnaire)  
+```
+
+---
+
+## Supprimer une paire clé-valeur
+
+- `pop(key)` : Supprime une clé et retourne sa valeur.
+- `clear()` : Vide complètement le dictionnaire.
+
+```{python}
+mon_dictionnaire = {"nom": "Alice", "age": 25}
+mon_dictionnaire.pop("age")         # Supprime et retourne 25
+mon_dictionnaire.clear()            # Vide le dictionnaire
+```
+
+---
+
+## Obtenir les clés, valeurs, et paires clé-valeur
+
+1. **`keys()`** : Retourne les clés du dictionnaire.
+2. **`values()`** : Retourne les valeurs.
+3. **`items()`** : Retourne les paires clé-valeur sous forme de tuples.
+
+_Exemple_ :
+
+```{python}
+mon_dictionnaire = {"nom": "Alice", "age": 25}
+print(mon_dictionnaire.keys())   
+print(mon_dictionnaire.values()) 
+print(mon_dictionnaire.items())  
+```
+
+---
+
+## Parcourir les clés, les valeurs, et les paires clé-valeur
+
+**Les clés** 
+
+```{python}
+mon_dictionnaire = {"nom": "Alice", "âge": 25, "ville": "Paris"}
+for cle in mon_dictionnaire:
+    print(cle)
+```
+
+**Les valeurs** 
+
+```{python}
+for valeur in mon_dictionnaire.values():
+    print(valeur)
+```
+
+---
+
+**Les paires**
+
+```{python}
+for cle, valeur in mon_dictionnaire.items():
+    print(f"{cle}: {valeur}")
+```
+
+---
+
+## Créer un dictionnaire depuis une liste
+
+Si la liste comporte des itérables de taille 2, liste ou tuple, comme par exemple `[('nom', 'Alice'), ('âge', 25), ('ville', 'Paris')]` 
+
+_Exemple_ :
+
+```{python}
+ma_liste = [('nom', 'Alice'), ('age', 25), ('ville', 'Paris')]
+mon_dictionnaire = dict(ma_liste)
+print(mon_dictionnaire)
+```
+
+---
+
+## Créer un dictionnaire avec `zip`
+
+_Exemple_ :
+
+```{python}
+cles = ["nom", "age", "ville"]
+valeurs = ["Alice", 25, "Paris"]
+dictionnaire = dict(zip(cles, valeurs))
+print(dictionnaire)  
+```
+
+---
+
+## Trier un dictionnaire 
+
+**Par clé**
+
+```{python}
+scores = {"Bob": 100, "Alice": 75, "Charlie": 50}
+```
+
+```{python}
+print(sorted(scores.items()) )
+```
+
+**Par valeur**
+
+```{python}
+print(sorted(scores.items(), key=lambda x: x[1]))
+```
+
+::: {.callout-tip title="Fonction anonyme lambda"}
+Une fonction lambda est une petite fonction anonyme (sans nom) définie avec le mot-clé `lambda`. Elle est souvent utilisée pour des opérations simples, comme celles montrées ci-dessus. La syntaxe est : `lambda arguments: expression`.
+:::
+
+---
+
+## Fusionner deux dictionnaires
+
+_Exemple_ :
+
+```{python}
+dict1 = {"nom": "Alice", "âge": 25}
+dict2 = {"ville": "Paris", "profession": "Ingénieure"}
+fusion = {**dict1, **dict2}
+print(fusion)
+```
+
+---
+
+## Pratique (1/4)
+
+### Exercice 1 : Création et accès
+
+- Créez un dictionnaire contenant les informations suivantes :
+    - nom: "Alice"
+    - âge: 25
+    - ville: "Paris"
+- Affichez :
+    - La valeur associée à la clé "nom".
+    - La valeur associée à la clé "âge".
+- Ajoutez une nouvelle clé profession avec la valeur "Ingénieure".
+
+---
+
+## Pratique (2/4)
+
+### Exercice 2 : Modification et suppression
+
+- Modifiez l’âge de l’étudiante "Alice" à 30.
+- Supprimez la clé "ville".
+- Affichez le dictionnaire mis à jour.
+
+
+### Exercice 3 : Vérification d’existence
+
+- Créez un dictionnaire `inventaire = {"pommes": 10, "bananes": 20, "oranges": 15}`.
+- Vérifiez si les clés "pommes" et "raisins" existent dans le dictionnaire.
+- Ajoutez "raisins" avec une quantité de 5 uniquement si cette clé n’existe pas encore.
+
+---
+
+## Pratique (3/4)
+
+### Exercice 4 : Parcourir un dictionnaire
+
+- Créez un dictionnaire contenant :
+    - math: 18
+    - anglais: 16
+    - informatique: 20
+- Parcourez le dictionnaire pour afficher :
+    - Chaque matière et sa note.
+    - La moyenne des notes.
+
+
+### Exercice 5 : Compter les occurrences
+
+- Créez une chaîne de caractères : "abracadabra".
+- Comptez le nombre d’occurrences de chaque caractère dans la chaîne et stockez-les dans un dictionnaire.
+
+---
+
+## Pratique (4/4)
+
+### Exercice 6 : Fusionner deux dictionnaires
+
+- Créez deux dictionnaires :
+    - `personne = {"nom": "Alice", "âge": 25}`
+    - `infos = {"ville": "Paris", "profession": "Ingénieure"}`
+- Fusionnez-les dans un nouveau dictionnaire.
+
+### Exercice 7 : Trier un dictionnaire
+
+- Créez un dictionnaire contenant les notes suivantes : `{"Alice": 85, "Bob": 70, "Charlie": 90}`
+- Triez le dictionnaire :
+    - Par clé (ordre alphabétique).
+    - Par valeur (ordre croissant).
+
+
+<!---------------------------------------------------------------------------->
+
+# Le set
+
+## Présentation
+
+- Un **set** est une collection **non ordonnée** et **sans doublons**.
+- Délimité par des accolades `{}` ou créé avec la fonction **`set()`**.
+- Utile pour effectuer des opérations mathématiques comme les **unions**, **intersections**, et **différences**.
+
+_Exemple_ :
+
+```{python}
+mon_set = {1, 2, 3, 3, 4}
+print(mon_set)  # les doublons sont supprimés
+
+vide = set()  # Créer un set vide
+print(type(vide)) 
+```
+
+---
+
+## Caractéristiques
+
+- Non ordonnés : Les éléments ne sont pas stockés dans un ordre particulier.
+- Sans doublons : Chaque élément est unique.
+- Modifiables : Il est possible d'ajouter ou supprimer des éléments.
+- Les clés doivent être immuables (non mutables), c'est à dire pas de listes ou dictionnaires dans un set.
+
+---
+
+## Ajouter des éléments
+
+```{python}
+mon_set = {1, 2, 3}
+mon_set.add(4)
+print(mon_set) 
+```
+
+---
+
+## Supprimer des éléments
+
+- **`remove(element)`** : Supprime un élément. Lève une erreur si l’élément n’existe pas.
+- **`discard(element)`** : Supprime un élément sans lever d’erreur.
+- **`pop()`** : Supprime un élément arbitraire (car le set est non ordonné).
+- **`clear()`** : Vide le set.
+
+```{python}
+mon_set = {1, 2, 3}
+mon_set.remove(2)   # Supprime 2
+mon_set.discard(4)  # Ne fait rien (4 n'existe pas)
+print(mon_set)      
+```
+
+---
+
+## Opérations sur les ensembles
+
+### Union
+
+Combine les éléments de deux sets (**`|`** ou **`union()`**).
+
+```{python}
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1 | set2)          # {1, 2, 3, 4, 5}
+print(set1.union(set2))     # {1, 2, 3, 4, 5}
+```
+
+### Intersection
+
+Trouve les éléments communs (& ou intersection()).
+
+```{python}
+print(set1 & set2)          # {3}
+print(set1.intersection(set2))  # {3}
+```
+
+---
+
+### Différence
+
+Trouve les éléments dans un set mais pas dans l’autre (- ou difference()).
+
+```{python}
+print(set1 - set2)          
+print(set1.difference(set2)) 
+```
+
+### Différence symétrique
+
+Trouve les éléments présents dans un seul des deux sets (^ ou symmetric_difference()).
+
+```{python}
+print(set1 ^ set2)                 
+print(set1.symmetric_difference(set2))  
+```
+
+---
+
+## Applications pratiques 
+
+### Suppression des doublons
+
+```{python}
+liste = [1, 2, 3, 1, 2, 4]
+unique = set(liste)
+print(unique)  
+```
+
+### Union, intersection et différence
+
+```{python}
+maths = {"Alice", "Bob", "Charlie"}
+informatique = {"Alice", "David", "Charlie"}
+
+print("Inscrits à au moins une matière :", maths | informatique)  
+
+print("Inscrits aux deux matières :", maths & informatique) 
+
+print("Inscrits uniquement en maths :", maths - informatique)
+```
+
+---
+
+## Pratique (1/4)
+
+### Exercice 1 : Création et ajout
+
+- Créez un set contenant les éléments suivants : 1, 2, 3.
+- Ajoutez les éléments 4 et 5 au set.
+- Affichez le set mis à jour.
+
+### Exercice 2 : Suppression d’éléments
+
+- Créez un set contenant les éléments suivants : 10, 20, 30, 40.
+- Supprimez l’élément 20 en utilisant remove().
+- Essayez de supprimer l’élément 50 avec discard().
+- Affichez le set après chaque opération.
+
+---
+
+## Pratique (2/4)
+### Exercice 3 : Suppression des doublons dans une liste
+
+- Créez une liste contenant les éléments suivants : `[1, 2, 2, 3, 4, 4, 5]`.
+- Transformez cette liste en un set pour supprimer les doublons.
+- Convertissez à nouveau le set en liste.
+
+### Exercice 4 : Vérification d’appartenance
+
+- Créez un set contenant : `{"Alice", "Bob", "Charlie"}`.
+- Vérifiez si "Alice" et "David" sont dans le set.
+
+---
+
+## Pratique (3/4)
+
+### Exercice 5 : Opérations ensemblistes
+
+- Créez deux sets :
+    - `set1 = {1, 2, 3, 4}`
+    - `set2 = {3, 4, 5, 6}`
+- Effectuez et affichez les résultats des opérations suivantes :
+    - Union.
+    - Intersection.
+    - Différence (set1 - set2).
+    - Différence symétrique.
+
+---
+
+## Pratique (4/4)
+
+### Exercice 6 : Opérations sur des mots
+
+- Créez deux sets :
+    - `vowels = {"a", "e", "i", "o", "u"}`
+    - `letters_in_word = set("abracadabra")`
+- Affichez :
+    - Les voyelles présentes dans le mot (intersection).
+    - Les voyelles absentes dans le mot (difference).
+
+### Exercice 7 : Suppression des doublons et tri
+
+- Créez une liste contenant les éléments suivants : `[4, 1, 3, 2, 3, 4, 5]`.
+- Transformez la liste en set pour supprimer les doublons.
+- Affichez les éléments triés.
+
+
+<!---------------------------------------------------------------------------->
+# Structures conditionnelles et boucles
+
+## Les Structures Conditionnelles
+
+- permettent d’exécuter du code en fonction d’une **condition**.
+- Syntaxe de base :
+
+```python
+  if condition:
+      bloc_de_code
+```
+
+- `if` : Vérifie une condition.
+- `elif` (facultatif) : Vérifie d'autres conditions si la précédente est fausse.
+- `else` (facultatif) : S'exécute si aucune des conditions précédentes n'est vraie
+
+---
+
+## Exemples d'utilisation des structures conditionnelles
+
+*Exemple* : 
+
+```python
+age = 18
+if age < 18:
+    print("Mineur")
+elif age == 18:
+    print("Juste majeur")
+else:
+    print("Majeur")
+```
+
+Possible de créer des conditions imbriquées
+
+```python
+note = 15
+if note >= 10:
+    if note >= 16:
+        print("Excellent")
+    else:
+        print("Bien")
+else:
+    print("Insuffisant")
+```
+
+---
+
+## Opérateurs relationnels et logiques
+
+**Opérateurs relationnels**
+
+- **`>`** : Plus grand
+- **`<`** : Plus petit
+- **`>=`** : Plus grand ou égal
+- **`<=`** : Plus petit ou égal
+- **`==`** : Égalité
+- **`!=`** : Différent
+
+**Opérateurs logiques**
+
+- **`and`** : Toutes les conditions doivent être vraies.
+- **`or`** : Une seule condition doit être vraie.
+- **`not`** : Inverse la condition.
+
+---
+
+## Exemple d'utilisation des opérateurs relationnels et logiques
+
+```python
+age = 20
+if age > 18 and age < 25:
+    print("Jeune adulte")
+if age < 18 or age > 65:
+    print("En dehors de la tranche active")
+if not (age < 18):
+    print("Pas encore majeur")
+```
+
+---
+
+## La boucle `while`
+
+Répète un bloc de code tant qu’une **condition** est vraie.
+
+
+```python
+while condition:
+    bloc_de_code
+```
+
+*Exemple* (on ne sait pas à l'avance combien d'itérations seront nécessaires) :
+
+```{python}
+capital = 1000
+annees = 0
+
+# Combien d'années pour doubler le capital à 5% par an ?
+while capital < 2000:
+    capital *= 1.05
+    annees += 1
+
+print(f"Capital doublé en {annees} ans : {capital:.2f} €")
+```
+
+---
+
+## La boucle for
+
+Itère sur les éléments d’une collection (liste, tuple, chaîne, etc.).
+
+```python
+for element in iterable:
+    bloc_de_code
+```
+
+*Exemple* :
+
+```{python}
+nombres = [1, 2, 3]
+for nombre in nombres:
+    print(nombre)
+```
+
+---
+
+## L’instruction `break`
+
+Interrompt une boucle immédiatement.
+
+```{python}
+for nombre in range(10):
+    if nombre == 5:
+        break
+    print(nombre)
+```
+
+---
+
+## L’instruction continue
+
+Passe directement à l’itération suivante.
+
+```{python}
+for nombre in range(5):
+    if nombre == 3:
+        continue
+    print(nombre)
+```
+
+## Les Boucles Imbriquées
+
+*Exemple : Table de multiplication*
+
+```{python}
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"{i} x {j} = {i * j}")
+    print(f"--- fin de la table {i} ---")
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1
+
+Compter le nombre de voyelles dans la chaîne "abracadabra"
+
+### Exercice 2
+
+Calculer la somme cumulé des nombres de 1 à 5
+
+---
+
+## Pratique (2/3)
+
+### Exercice 3
+
+- Demandez à l’utilisateur d’entrer un mot de passe.
+- Affichez un message :
+  - Si la longueur est inférieure à 8 caractères, indiquez que le mot de passe est trop court.
+  - Sinon, indiquez qu’il est valide.
+
+::: {.callout-tip title="Aide"}
+Vous pouvez utiliser la fonction `input()` pour demander à l'utilisateur d'entrer une valeur.  
+La fonction `input()` retourne une chaîne de caractères.
+:::
+
+---
+
+## Pratique (3/3)
+
+### Exercice 4
+
+- Demandez à l’utilisateur d’entrer un nombre entier.
+- Affichez si le nombre est pair ou impair.
+
+### Exercice 5
+
+- Demandez à l’utilisateur d’entrer trois nombres : a, b, et c.
+- Utilisez des conditions pour afficher le plus grand des trois.
+
+### Exercice 6
+
+- Demandez à l’utilisateur d’entrer un nombre.
+- Affichez la table de multiplication de ce nombre jusqu’à 10.
+
+
+<!---------------------------------------------------------------------------->
+# Les list-comprehension
+
+## Fonctionnement 
+
+permet de créer ou transformer une liste en une seule ligne de code
+
+```python
+[expression for élément in iterable]
+```
+Création d'une nouvelle liste en appliquant une expression à chaque élément d'un itérable (liste, range, etc.).
+
+```{python}
+nombres = [1, 2, 3, 4]
+carrés = [x**2 for x in nombres]
+print(carrés)
+```
+
+---
+
+## Ajout de condition(s)
+
+On peut filtrer les éléments avec une condition `if`
+
+```{python}
+nombres = range(10)
+pairs = [x for x in nombres if x % 2 == 0]
+print(pairs)
+```
+
+**Condition ternaire dans l'expression**
+
+```{python}
+nombres = range(5)
+double_ou_rien = [x*2 if x % 2 == 0 else 0 for x in nombres]
+print(double_ou_rien)
+```
+
+---
+
+## Les set-comprehension
+
+```{python}
+nombres = [1, 2, 2, 3, 3, 4]
+unique = {x**2 for x in nombres}
+print(unique)
+```
+
+---
+
+## Les dict-comprehension
+
+```{python}
+#| editable: true
+#| slideshow: {slide_type: ''}
+#| tags: []
+noms = ["Alice", "Bob", "Charlie"]
+longueurs = {nom: len(nom) for nom in noms}
+print(longueurs)
+```
+
+---
+
+## Exemple d'application : transformation de données
+
+```{python}
+temperatures = [0, 10, 20, 30]
+en_fahrenheit = [t * 9/5 + 32 for t in temperatures]
+print(en_fahrenheit)
+```
+
+---
+
+## Pratique 
+
+### Exercice 1
+
+Créer la liste des nombres (<=20) pairs au carré
+
+### Exercice 2
+
+Écrivez une list comprehension pour extraire les voyelles d'un chaîne.
+
+### Exercice 3
+
+Créez un dictionnaire où les clés sont des nombres de 1 à 5, et les valeurs sont leurs cubes.
+
+### Exercice 4
+
+Écrivez une list comprehension pour extraire les mots d’une liste qui contiennent plus de 5 lettres.
+
+
+<!---------------------------------------------------------------------------->
+# Les fonctions
+
+## Définition
+
+- Une **fonction** est un bloc de code qui effectue une tâche spécifique.
+- Les fonctions permettent :
+  - De **réutiliser** du code.
+  - De rendre le code plus **lisible** et **structuré**.
+  - D’éviter les **répétitions**.
+
+*Exemple* : 
+
+```python
+def nom_de_fonction(parametres):
+    bloc_de_code
+```
+
+```{python}
+def saluer():
+    print("Bonjour, Python !")
+
+saluer()
+```
+
+---
+
+## Paramètres
+
+Une fonction peut prendre des **paramètres** pour recevoir des données en entrée.
+
+```{python}
+def saluer(nom):
+    print(f"Bonjour, {nom} !")
+
+saluer("Alice")
+```
+
+---
+
+## Paramètres avec valeur par défaut
+
+- si l'argument n'est pas fourni lors de l'appel, utilisation du paramètre par défaut
+- si l'argument est fourni, utilisation de la valeur fournie
+
+```{python}
+def saluer(nom="utilisateur"):
+    print(f"Bonjour, {nom} !")
+
+saluer() 
+saluer("Charlie")
+```
+
+---
+
+## Paramètres multiples
+
+```{python}
+def addition(a, b):
+    return a + b
+
+print(addition(3, 4)) 
+```
+
+---
+
+## Valeur de retour
+
+Une fonction peut **renvoyer une valeur** avec `return`
+
+```{python}
+def carre(x):
+    return x**2
+
+resultat = carre(5)
+print(resultat) 
+```
+
+---
+
+## Plusieurs valeurs de retour
+
+```{python}
+def operations(a, b):
+    return a + b, a - b, a * b
+
+
+somme, diff, produit = operations(5, 3)
+print(f"somme : {somme}", f"Différence: {diff}", f"produit: {produit}", sep="\n")
+```
+
+---
+
+## Variables locales vs globales (1/3)
+
+Les variables définies dans une fonction sont **locales** : elles ne sont accessibles qu'à l'intérieur de cette fonction.
+
+```{python}
+x = 1000
+
+def ma_fonction():
+    x = 10  # Locale
+    print("Valeur de x (local): ", x)
+
+ma_fonction()
+print("Valeur de x (global): ", x)
+```
+
+---
+
+## Variables locales vs globales (2/3)
+
+Une variable définie en dehors d’une fonction est **globale**, elle peut être utilisée dans une fonction :
+
+```{python}
+x = 5 
+def ma_fonction():
+    print(x)
+
+ma_fonction()
+```
+
+---
+
+## Variables locales vs globales (3/3)
+
+Utilisation du **mot clé `global`** pour modifier la valeur d'une variable globale dans une fonction
+
+```{python}
+x = 5
+
+def ma_fonction():
+    global x
+    x += 10
+    print(x)
+
+ma_fonction()
+```
+
+---
+
+## Les fonctions `lambda`
+
+- Une **fonction lambda** est une fonction **anonyme** :
+  - Définie en une seule ligne.
+  - Souvent utilisée pour des opérations simples.
+
+*Syntaxe* :
+
+```python
+lambda paramètres : expression
+```
+
+```{python}
+carre = lambda x: x**2
+print(carre(4))
+```
+
+Utilisation des fonctions *`lambda`* dans d'autres fonctions
+
+Les lambdas sont souvent utilisées comme arguments pour des fonctions comme `sorted`.
+
+---
+
+## Exemple avec `sorted`
+
+On trie la liste en fonction de la longueur des noms
+
+```{python}
+noms = ["Alice", "Charlie", "Bob"]
+triés = sorted(noms, key=lambda nom: len(nom))
+print(triés)
+```
+
+---
+
+## Pratique (1/2)
+
+### Exercice 1
+
+Ecrire la fonction `moyenne` qui prend une liste de notes (entiers compris entre 0 et 20) en paramètre et renvoie la moyenne.
+
+### Exercice 2
+
+Ecrire une fonction `table_multiplication` qui prend un nombre en paramètre et affiche la table de ce nombre.
+
+### Exercice 3
+
+- Écrivez une fonction analyse_nombre qui prend un entier en argument.
+- La fonction retourne trois informations sous forme de tuple :
+  - Si le nombre est pair ou impair.
+  - Le carré du nombre.
+  - Sa racine carrée.
+
+---
+
+## Pratique (2/2)
+
+### Exercice 4
+
+- Écrivez une fonction generer_dictionnaire qui prend un entier $n$ en paramètre.
+- La fonction retourne un dictionnaire où :
+  - Les clés sont les nombres de 1 à $n$
+  - Les valeurs sont leurs carrés.
+
+### Exercice 5
+
+- Créez une fonction lambda pour calculer le cube d’un nombre.
+- Utilisez cette fonction lambda avec map pour calculer les cubes des nombres de 1 à 5.
+
+```{python}
+?map
+```
+
+
+<!---------------------------------------------------------------------------->
+# Les modules
+
+## Présentation
+
+Un **module** est un fichier Python contenant du code réutilisable :
+
+- **Fonctions**.
+- **Variables**.
+- **Classes**.
+
+Utiliser des modules permet de :
+
+- Structurer le code.
+- Réutiliser des fonctionnalités.
+- Accéder à des bibliothèques avancées.
+
+---
+
+## Importer un module
+
+Utiliser **`import`** pour charger un module dans un programme.
+
+```{python}
+import math
+print(math.sqrt(16))
+```
+
+---
+
+## Les modules utiles de Python
+
+::: {.columns}
+::: {.column width="50%"}
+**Calculs & Données**
+
+- **`math`** : Fonctions mathématiques (`sqrt`, `log`, etc.)
+- **`statistics`** : Statistiques élémentaires (`mean`, `median`, `stdev`)
+- **`random`** : Nombres aléatoires et tirages
+- **`csv`** / **`json`** : Formats de fichiers et données
+:::
+
+::: {.column width="50%"}
+**Système & Outils**
+
+- **`datetime`** / **`time`** : Dates, durées et chronométrage
+- **`pathlib`** : Chemins de fichiers modernes
+- **`os`** / **`sys`** : Système et interpréteur
+- **`collections`** : Structures enrichies (`Counter`, etc.)
+:::
+:::
+
+---
+
+## Module math
+
+```{python}
+print(math.pi)
+print(math.factorial(5))  #  !5 
+```
+
+---
+
+## Module random
+
+```{python}
+import random
+
+print(random.random())
+# génère un nombre aléatoire entre 0 et 1 (exclu)
+
+print(random.randint(1, 100))
+# génére un nombre entier aléatoire entre 1 et 100 (inclu)
+
+print(random.choice(["a", "b", "c"]))
+# sélectionne aléatoirement un élément de la liste
+
+print(random.sample(range(100), 5))
+# sélectionne k éléments dans la liste
+```
+
+---
+
+## Module datetime
+
+```{python}
+from datetime import datetime, timedelta
+
+today = datetime.now()
+print("Aujourd'hui: ", today)
+print("Année: ", today.year)
+```
+
+```{python}
+futur = today + timedelta(days=30)
+
+print("Dans 30 jours : ", futur)
+```
+
+---
+
+## Module pathlib
+
+Manipulation moderne et orientée objet des chemins (gère automatiquement Windows et Mac/Linux) :
+
+```{python}
+from pathlib import Path
+
+# L'opérateur / assemble les chemins selon l'OS
+fichier = Path("donnees") / "ventes" / "rapport.csv"
+
+print("Chemin       :", fichier)
+print("Nom complet  :", fichier.name)      # 'rapport.csv'
+print("Sans suffixe :", fichier.stem)      # 'rapport'
+print("Extension    :", fichier.suffix)    # '.csv'
+print("Dossier      :", fichier.parent)    # donnees/ventes
+print("Existe ?     :", fichier.exists())  # True ou False
+```
+
+---
+
+## Module collections
+
+Fournit des structures de données enrichies pour compléter `dict`, `list` et `tuple` :
+
+```{python}
+from collections import Counter, defaultdict
+
+# Counter : comptage simple et rapide d'occurrences
+mots = ["python", "data", "python", "code", "python", "data"]
+compteur = Counter(mots)
+print("Compteur :", compteur)
+print("Top 1    :", compteur.most_common(1))
+
+# defaultdict : évite les KeyError en initialisant les clés inexistantes
+groupes = defaultdict(list)
+groupes["fruits"].append("pomme")
+groupes["fruits"].append("banane")
+print("Groupes  :", dict(groupes))
+```
+
+---
+
+## Écrire un module
+
+Un module est simplement un fichier Python :
+
+  ```python
+  # fichier : mon_module.py
+  def saluer(nom):
+      print(f"Bonjour, {nom} !")
+```
+
+---
+
+## Importer un module depuis un autre fichier python
+
+```python
+# fichier principal
+import mon_module
+
+mon_module.saluer("Alice")
+```
+
+***Avec un alias***
+
+```python
+import mon_module as mm
+
+mm.saluer("Alice")
+```
+
+---
+
+## Module exécutable
+
+Un fichier/script peut avoir deux comportements :
+
+  - **Exécution directe** : Lorsqu'il est exécuté en tant que programme principal.
+  - **Importation** : Lorsqu'il est importé dans un autre fichier.
+
+
+`if __name__ == "__main__"` permet de contrôler l’exécution d’un script lorsqu’il est **importé comme module**.
+
+**`__name__`** est une variable spéciale en Python :
+
+- Si le fichier est exécuté directement, **`__name__ = "__main__"`**.
+- Si le fichier est importé comme module, **`__name__` contient le nom du module**.
+
+---
+
+## Exemple de module exécutable
+
+```python
+# fichier : mon_module.py
+
+def saluer():
+    print("Bonjour, Python !")
+
+if __name__ == "__main__":
+    saluer()
+
+```
+
+Et ensuite :
+
+```bash
+python mon_module.py
+# Bonjour, Python !
+```
+
+---
+
+## Pratique : programme table_multiplication.py (1/2)
+
+**Étape 1** : Choisir une table  
+Le programme demande à l'utilisateur quelle table de multiplication il souhaite réviser.
+
+**Étape 2** : Poser les questions  
+Le programme sélectionne un nombre au hasard entre 0 et 10 sans remise.  
+Il demande à l'utilisateur le résultat du produit entre ce nombre et celui de la table choisie.
+
+**Scénarios** :
+
+- Si le résultat est correct : Le programme sélectionne un autre nombre non encore utilisé et pose une nouvelle question.
+- Si le résultat est incorrect : Le programme affiche : "Essaie encore, ce n'est pas le bon résultat".
+
+---
+
+## Pratique : programme table_multiplication.py (2/2)
+
+**Étape 3** : Révision terminée  
+Lorsque tous les nombres de 0 à 10 ont été utilisés, la révision de la table est terminée.
+
+**Étape 4** : Rejouer ou quitter  
+Le programme demande à l'utilisateur s'il souhaite :
+- Réviser une autre table.
+- Quitter.
+
+
+<!---------------------------------------------------------------------------->
+# Manipulation de fichiers
+
+## Ouverture
+
+Fonction `open()`.  
+3 modes d'ouverture : `r` (lecture), `w` (écriture) et `a` (ajout).
+
+*Syntaxe* :
+
+```python
+with open(chemin, mode):
+    lecture ou ecriture
+```
+
+`with` garantit la fermeture automatique du fichier 
+
+---
+
+## Lecture
+
+**Tout d'un coup**
+
+```python
+with open("exemple.txt", "r") as fichier:
+    contenu = fichier.read()
+    print(contenu)
+```
+
+**Ligne par ligne**
+
+```python
+with open("exemple.txt", "r") as fichier:
+    for ligne in fichier:
+        print(ligne)
+```
+
+---
+
+## Ecriture
+
+*Exemple* : 
+
+```python
+with open("exemple.txt", "w", encoding="utf-8") as fichier:
+    fichier.write("Bonjour, Python !")
+    fichier.write("\nC'est génial.")
+```
+
+---
+
+## Le format csv (1/2)
+
+- **CSV** : Comma-Separated Values.
+- Format simple pour représenter des tableaux (lignes et colonnes).
+
+**Lecture**
+
+```python
+import csv
+with open("data.csv", "r") as fichier:
+    csv_reader = csv.reader(fichier)
+    contenu = list(csv_reader)
+```
+
+---
+
+## Le format csv (2/2)
+
+**Ecriture**
+
+**Ligne par ligne**
+
+```python
+with open("data.csv", "w", newline="") as fichier:
+    csv_writer = csv.writer(fichier)
+    csv_writer.writerow(["Nom", "Age", "Ville"])
+    ecrivain.writerow(["Alice", 25, "Paris"])
+```
+
+***Toutes les lignes d'un coup***
+
+```python
+with open("data.csv", "w", newline="") as fichier:
+    csv_writer = csv.writer(fichier)
+    ecrivain.writerows([["Nom", "Age", "Ville"], ["Alice", 25, "Paris"]])
+```
+
+---
+
+## Le format JSON
+
+- **JSON** : JavaScript Object Notation.
+- Format texte utilisé pour échanger des données.
+- Représente des structures complexes (dictionnaires, listes, etc.).
+
+**Ecriture**
+
+```python
+import json
+
+data = {"nom": "Alice", "age": 25, "ville": "Paris"}
+with open("data.json", "w") as fichier:
+    json.dump(data, fichier)
+```
+
+**Lecture**
+
+```python
+import json
+
+with open("data.json", "r") as fichier:
+    data = json.load(fichier)
+print(data)
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1
+
+Créer un fichier texte qui contient les lignes suivantes
+
+> Python est génial.  
+> Apprendre Python est amusant.  
+> Les fichiers texte sont utiles.  
+> Python facilite la gestion des fichiers.
+
+---
+
+## Pratique (2/3)
+
+### Exercice 2
+
+- Créer un fichier csv contenant les lignes suivantes
+
+```
+Nom,Mathématiques,Physique,Chimie
+Alice,15,14,13
+Bob,10,12,9
+Charlie,18,17,19
+```
+
+- Lire le fichier etudiants.csv.
+- Calculer la moyenne des notes pour chaque étudiant.
+- Écrire les résultats dans un nouveau fichier resultats.csv avec les colonnes : nom, moyenne
+
+---
+
+## Pratique (3/3)
+
+### Exercice 3
+
+Créez un fichier JSON produits.json avec le contenu suivant :
+
+```
+[
+    {"nom": "Produit A", "prix": 25.0},
+    {"nom": "Produit B", "prix": 15.5},
+    {"nom": "Produit C", "prix": 40.0},
+    {"nom": "Produit D", "prix": 30.0}
+]
+
+```
+
+- Ecrire un programme qui :
+  - Demande à l’utilisateur un prix minimum.
+  - Lit le fichier produits.json.
+  - Filtre les produits ayant un prix supérieur ou égal à ce prix.
+
+
+
+<!---------------------------------------------------------------------------->
+
+# Les exceptions
+
+## Présentation 
+
+- Une **exception** est un événement anormal qui interrompt le flux normal du programme.
+- Survient lorsque le programme rencontre une situation imprévue (erreur d'entrée, division par zéro, fichier introuvable, etc.).
+
+*Exemple* :
+
+```{python}
+#| editable: true
+#| slideshow: {slide_type: ''}
+#| tags: []
+print(10/0)
+```
+
+Sans gestion d’exception, le programme s’arrête brutalement.
+
+---
+
+## Gérer les Exceptions avec `try-except`
+
+*Syntaxe* : 
+
+```python
+try:
+    # Code susceptible de générer une exception
+except ErreurType:
+    # Code exécuté si cette ErreurType est levée
+```
+
+```{python}
+try:
+    resultat = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zéro.")
+```
+
+Le programme ne s’arrête pas, il affiche un message d'erreur géré.
+
+---
+
+## Gérer Plusieurs Types d’Exceptions
+
+```{python}
+x = "coucou"
+try:
+    x = int(x)
+    print(10 / x)
+except ValueError:
+    print(f"'{x}' n'est pas un nombre valide.")
+except ZeroDivisionError:
+    print("Division par zéro interdite.")
+```
+
+Le bon bloc except est exécuté selon l'exception rencontrée : 
+
+- ValueError si valeur saisie est une chaîne de caractères par exemple
+- ZeroDivisionError si la valeur saisie est un entier, car tentative de division par zéro.
+
+---
+
+## Bloc `else`
+
+S’exécute si **aucune exception** n’est levée dans le bloc `try`.
+
+```{python}
+try:
+    fichier = open("exemple.txt", "r")
+except FileNotFoundError:
+    print("Fichier introuvable.")
+else:
+    contenu = fichier.read()
+    fichier.close()
+    print(contenu)
+```
+
+## Bloc finally
+
+S’exécute toujours, qu’il y ait une exception ou non.
+
+```{python}
+try:
+    fichier = open("exemple.txt", "r")
+except FileNotFoundError:
+    print("Fichier introuvable.")
+finally:
+    print("Bloc finally exécuté, même si exception.")
+```
+
+## Lever une exception avec `raise`
+
+Pour signaler un problème délibérément.
+
+```{python}
+def verifier_age(age):
+    if age < 0:
+        raise ValueError("L'âge ne peut pas être négatif.")
+    return age
+
+try:
+    verifier_age(-5)
+except ValueError as e:
+    print("Erreur :", e)
+```
+
+---
+
+## Bonnes Pratiques
+
+1. Gérez uniquement les exceptions que vous savez traiter.
+2. Évitez les `except:` génériques, ou alors utilisez-le en fin pour gérer l’inattendu.
+3. Ajoutez des messages d’erreur clairs et utiles.
+4. Combinez exceptions avec la validation d’entrée.
+
+```{python}
+x = -5
+try:
+    x = int(x)
+    if x < 0:
+        raise ValueError("Le nombre ne peut pas être négatif.")
+    print("Nombre valide :", x)
+except ValueError as e:
+    print("Erreur :", e)
+```
+
+---
+
+## Pratique (1/3)
+
+### Exercice 1
+
+Écrire un programme qui demande deux nombres à l’utilisateur et affiche le résultat de leur division.
+
+- Demandez à l’utilisateur de saisir deux nombres (numérateur et dénominateur).
+- Convertissez leurs saisies en entiers.
+- Tentez d’effectuer la division.
+- Gérez les exceptions suivantes :
+    - ValueError si l’utilisateur ne saisit pas un entier valide.
+    - ZeroDivisionError si le dénominateur est 0.
+    - Affichez un message d’erreur approprié dans chaque cas et redemandez les nombres si nécessaire.
+
+---
+
+## Pratique (2/3)
+
+### Exercice 2 : Lecture sécurisée d’un fichier
+
+Demandez à l’utilisateur le nom d’un fichier à ouvrir.
+
+- Utilisez un bloc try-except pour tenter d’ouvrir et de lire le contenu du fichier.
+- Gérez l’exception FileNotFoundError si le fichier n’existe pas. Affichez un message d’erreur et redemandez un nom de fichier.
+- S’il n’y a pas d’exception, affichez le contenu du fichier.
+- Ajoutez un bloc finally pour afficher un message, par exemple : "Opération terminée."
+
+---
+
+## Pratique (3/3)
+
+### Exercice 3 : Gestion multiple d’exceptions
+
+- Demandez à l’utilisateur un nombre.
+- Convertissez-le en entier à l’intérieur d’un try.
+- Calculez sa racine carrée (utilisez math.sqrt par exemple, après avoir importé math).
+- Gérez les exceptions :
+    - ValueError si l’entrée n’est pas un nombre.
+    - TypeError si la fonction reçoit une valeur inadéquate.
+    - Exception générique pour tout autre cas imprévu, avec un message "Erreur inattendue."
+    - Affichez un message approprié dans chaque cas.
+
+
+<!------------------------------------------------------------------------>
+# Sources
+
+- [Documentation officielle Python](https://docs.python.org/fr/3/)
+- [OpenClassRooms](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python?archived-source=235344)
+- [Developpez.com](https://python.developpez.com/)
+- [Youtube](https://youtube.com/) en recherchant 'Python Tutoriel Français'
+- [Apprendre à Programmer avec Python 3](apprendre_python_3_5)
+- [Un zeste de savoir](https://zestedesavoir.com/bibliotheque/informatique/programmation-et-algorithmique/)
+

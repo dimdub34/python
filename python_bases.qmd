@@ -35,31 +35,31 @@ execute:
 
 ::: {.columns}
 ::: {.column width="50%"}
-- [Introduction](#/introduction)
-- [Installation](#/installation)
-- [Règles d'écriture](#/règles-décriture)
-- [Variables et types](#/variables-et-types)
-- [Chaînes de caractères](#/les-chaînes-de-caractères)
-- [Types numériques](#/les-types-numériques)
-- [Booléen](#/le-type-booléen)
-- [Liste](#/la-liste)
-- [Tuple](#/le-tuple)
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Règles d'écriture](#regles-ecriture)
+- [Variables et types](#variables-et-types)
+- [Chaînes de caractères](#chaines-de-caracteres)
+- [Types numériques](#types-numeriques)
+- [Booléen](#booleen)
+- [Liste](#liste)
+- [Tuple](#tuple)
 :::
 ::: {.column width="50%"}
-- [Dictionnaire](#/le-dictionnaire)
-- [Set](#/le-set)
-- [Structures conditionnelles et boucles](#/structures-conditionnelles-et-boucles)
-- [List-comprehension](#/les-list-comprehension)
-- [Fonctions](#/les-fonctions)
-- [Modules](#/les-modules)
-- [Fichiers](#/manipulation-de-fichiers)
-- [Exceptions](#/les-exceptions)
-- [Sources](#/sources)
+- [Dictionnaire](#dictionnaire)
+- [Set](#set)
+- [Structures conditionnelles et boucles](#structures-conditionnelles-et-boucles)
+- [List-comprehension](#list-comprehension)
+- [Fonctions](#fonctions)
+- [Modules](#modules)
+- [Fichiers](#fichiers)
+- [Exceptions](#exceptions)
+- [Sources](#sources)
 :::
 :::
 
 
-# Introduction
+# Introduction {#introduction}
 
 ## Création et gestion 
 
@@ -85,7 +85,7 @@ execute:
 
 
 <!---------------------------------------------------------------------------->
-# Installation
+# Installation {#installation}
 
 ## Environnement virtuel Python
 
@@ -232,7 +232,7 @@ L'interpréteur Python installé avec Anaconda peut-être démarré en ouvrant u
     - Y → transformer en code
 
 <!---------------------------------------------------------------------------->
-# Règles d'écriture
+# Règles d'écriture {#regles-ecriture}
 
 ## The Zen of Python
 
@@ -344,7 +344,7 @@ texte2 = "Il a dit : \"Python est génial !\""
 
 
 <!---------------------------------------------------------------------------->
-# Variables et Types
+# Variables et Types {#variables-et-types}
 
 ## Création de variable
 
@@ -399,7 +399,7 @@ print(type(x))
 
 
 <!---------------------------------------------------------------------------->
-# Les chaînes de caractères
+# Les chaînes de caractères {#chaines-de-caracteres}
 
 ## Présentation (1/2)
 
@@ -529,7 +529,7 @@ Affichez les résultats avec `print`.
 
 
 <!---------------------------------------------------------------------------->
-# Les types numériques
+# Les types numériques {#types-numeriques}
 
 ## Liste des types et caractéristiques 
 
@@ -680,7 +680,7 @@ Le module `decimal` est adapté aux applications financières, scientifiques ou 
 
 
 <!---------------------------------------------------------------------------->
-# Le type booléen
+# Le type booléen {#booleen}
 
 ## Présentation
 
@@ -803,7 +803,7 @@ Affichez leur conversion en booléen avec bool().
 
 
 <!---------------------------------------------------------------------------->
-# La liste
+# La liste {#liste}
 
 ## Présentation
 
@@ -974,7 +974,7 @@ for index, element in enumerate(ma_liste):
 
 
 <!---------------------------------------------------------------------------->
-# Le tuple
+# Le tuple {#tuple}
 
 ## Présentation
 
@@ -1190,7 +1190,7 @@ print(ages)
 
 
 <!---------------------------------------------------------------------------->
-# Le dictionnaire
+# Le dictionnaire {#dictionnaire}
 
 ## Présentation
 
@@ -1429,7 +1429,7 @@ print(fusion)
 
 <!---------------------------------------------------------------------------->
 
-# Le set
+# Le set {#set}
 
 ## Présentation
 
@@ -1618,7 +1618,7 @@ print("Inscrits uniquement en maths :", maths - informatique)
 
 
 <!---------------------------------------------------------------------------->
-# Structures conditionnelles et boucles
+# Structures conditionnelles et boucles {#structures-conditionnelles-et-boucles}
 
 ## Les Structures Conditionnelles
 
@@ -1827,7 +1827,7 @@ La fonction `input()` retourne une chaîne de caractères.
 
 
 <!---------------------------------------------------------------------------->
-# Les list-comprehension
+# Les list-comprehension {#list-comprehension}
 
 ## Fonctionnement 
 
@@ -1919,7 +1919,7 @@ Créez un dictionnaire où les clés sont des nombres de 1 à 5, et les valeurs 
 
 
 <!---------------------------------------------------------------------------->
-# Les fonctions
+# Les fonctions {#fonctions}
 
 ## Définition
 
@@ -2134,7 +2134,7 @@ help(map)
 
 
 <!---------------------------------------------------------------------------->
-# Les modules
+# Les modules {#modules}
 
 ## Présentation
 
@@ -2374,7 +2374,7 @@ Le programme demande à l'utilisateur s'il souhaite :
 
 
 <!---------------------------------------------------------------------------->
-# Manipulation de fichiers
+# Manipulation de fichiers {#fichiers}
 
 ## Ouverture
 
@@ -2548,7 +2548,7 @@ Créez un fichier JSON produits.json avec le contenu suivant :
 
 <!---------------------------------------------------------------------------->
 
-# Les exceptions
+# Les exceptions {#exceptions}
 
 ## Présentation 
 
@@ -2720,7 +2720,7 @@ Demandez à l’utilisateur le nom d’un fichier à ouvrir.
 
 
 <!------------------------------------------------------------------------>
-# Sources
+# Sources {#sources}
 
 - [Documentation officielle Python](https://docs.python.org/fr/3/)
 - [OpenClassRooms](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python?archived-source=235344)

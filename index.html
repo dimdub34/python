@@ -1520,27 +1520,27 @@ Dimitri Dubois
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><a href="#//introduction">Introduction</a></li>
-<li><a href="#//installation">Installation</a></li>
-<li><a href="#//règles-décriture">Règles d’écriture</a></li>
-<li><a href="#//variables-et-types">Variables et types</a></li>
-<li><a href="#//les-chaînes-de-caractères">Chaînes de caractères</a></li>
-<li><a href="#//les-types-numériques">Types numériques</a></li>
-<li><a href="#//le-type-booléen">Booléen</a></li>
-<li><a href="#//la-liste">Liste</a></li>
-<li><a href="#//le-tuple">Tuple</a></li>
+<li><a href="#/introduction">Introduction</a></li>
+<li><a href="#/installation">Installation</a></li>
+<li><a href="#/regles-ecriture">Règles d’écriture</a></li>
+<li><a href="#/variables-et-types">Variables et types</a></li>
+<li><a href="#/chaines-de-caracteres">Chaînes de caractères</a></li>
+<li><a href="#/types-numeriques">Types numériques</a></li>
+<li><a href="#/booleen">Booléen</a></li>
+<li><a href="#/liste">Liste</a></li>
+<li><a href="#/tuple">Tuple</a></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><a href="#//le-dictionnaire">Dictionnaire</a></li>
-<li><a href="#//le-set">Set</a></li>
-<li><a href="#//structures-conditionnelles-et-boucles">Structures conditionnelles et boucles</a></li>
-<li><a href="#//les-list-comprehension">List-comprehension</a></li>
-<li><a href="#//les-fonctions">Fonctions</a></li>
-<li><a href="#//les-modules">Modules</a></li>
-<li><a href="#//manipulation-de-fichiers">Fichiers</a></li>
-<li><a href="#//les-exceptions">Exceptions</a></li>
-<li><a href="#//sources">Sources</a></li>
+<li><a href="#/dictionnaire">Dictionnaire</a></li>
+<li><a href="#/set">Set</a></li>
+<li><a href="#/structures-conditionnelles-et-boucles">Structures conditionnelles et boucles</a></li>
+<li><a href="#/list-comprehension">List-comprehension</a></li>
+<li><a href="#/fonctions">Fonctions</a></li>
+<li><a href="#/modules">Modules</a></li>
+<li><a href="#/fichiers">Fichiers</a></li>
+<li><a href="#/exceptions">Exceptions</a></li>
+<li><a href="#/sources">Sources</a></li>
 </ul>
 </div></div>
 </section></section>
@@ -1767,7 +1767,7 @@ où <code>nomEnv</code> est le nom donné à l’environnement et <code>3.xx</co
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="règles-décriture" class="title-slide slide level1 center">
+<section id="regles-ecriture" class="title-slide slide level1 center">
 <h1>Règles d’écriture</h1>
 
 </section>
@@ -1873,7 +1873,7 @@ où <code>nomEnv</code> est le nom donné à l’environnement et <code>3.xx</co
 <li>Une variable est une étiquette pour un objet stocké en mémoire.</li>
 <li>Utilisation du signe <code>=</code> pour affecter une valeur à une variable.</li>
 </ul>
-<div id="0c44b171" class="cell" data-execution_count="1">
+<div id="f1727709" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>x <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Affectation d&#39;un entier</span></span>
 <span id="cb7-2"><a href></a>y <span class="op">=</span> <span class="st">&quot;Python&quot;</span>  <span class="co"># Affectation d&#39;une chaîne de caractères</span></span>
 <span id="cb7-3"><a href></a><span class="bu">print</span>(x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1890,7 +1890,7 @@ où <code>nomEnv</code> est le nom donné à l’environnement et <code>3.xx</co
 </li>
 <li>La fonction <code>type()</code> appelée avec une variable en argument retourne le type de la variable.</li>
 </ul>
-<div id="c5d34bd6" class="cell" data-execution_count="2">
+<div id="b6904b7f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a>x <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb9-2"><a href></a><span class="bu">print</span>(<span class="bu">type</span>(x))</span>
 <span id="cb9-3"><a href></a>x <span class="op">=</span> <span class="st">&quot;Bonjour&quot;</span></span>
@@ -1932,7 +1932,7 @@ où <code>nomEnv</code> est le nom donné à l’environnement et <code>3.xx</co
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-chaînes-de-caractères" class="title-slide slide level1 center">
+<section id="chaines-de-caracteres" class="title-slide slide level1 center">
 <h1>Les chaînes de caractères</h1>
 
 </section>
@@ -1943,12 +1943,12 @@ où <code>nomEnv</code> est le nom donné à l’environnement et <code>3.xx</co
 <li>Elle est délimitée par des guillemets simples <code>&#39;</code> ou doubles <code>&quot;</code>.</li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="bb9a4fda" class="cell" data-execution_count="3">
+<div id="9541485a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a>texte1 <span class="op">=</span> <span class="st">&quot;Bonjour&quot;</span></span>
 <span id="cb11-2"><a href></a>texte2 <span class="op">=</span> <span class="st">&#39;Python est génial !&#39;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Indexation possible : Chaque caractère est accessible par son indice.</p>
-<div id="ee2be27b" class="cell" data-execution_count="4">
+<div id="b6f40906" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>texte <span class="op">=</span> <span class="st">&quot;Python&quot;</span></span>
 <span id="cb12-2"><a href></a><span class="bu">print</span>(texte[<span class="dv">0</span>])</span>
 <span id="cb12-3"><a href></a><span class="bu">print</span>(texte[<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1961,7 +1961,7 @@ y</code></pre>
 <section id="présentation-22" class="slide level2">
 <h2>Présentation (2/2)</h2>
 <p>Une fois créées, les chaînes ne peuvent pas être modifiées directement, on dit quelles sont <code>immuables</code>.</p>
-<div id="e8a43fbb" class="cell" data-execution_count="5">
+<div id="012b90cb" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>texte[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;L&quot;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1984,7 +1984,7 @@ y</code></pre>
 <li><strong><code>replace(old, new)</code></strong> : Remplace une sous-chaîne par une autre.</li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="e465d3db" class="cell" data-execution_count="6">
+<div id="4d441a69" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a>texte <span class="op">=</span> <span class="st">&quot;Bonjour&quot;</span></span>
 <span id="cb15-2"><a href></a><span class="bu">print</span>(texte.upper())  </span>
 <span id="cb15-3"><a href></a><span class="bu">print</span>(texte.lower())  </span>
@@ -2008,7 +2008,7 @@ Génial est Génialique</code></pre>
 <li><strong><code>join(iterable)</code></strong> : Assemble une liste en chaîne.</li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="da88db7e" class="cell" data-execution_count="7">
+<div id="2ed468d5" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a>texte <span class="op">=</span> <span class="st">&quot;  Bonjour Python  &quot;</span></span>
 <span id="cb17-2"><a href></a><span class="bu">print</span>(texte.strip())  <span class="co"># Affiche : Bonjour Python</span></span>
 <span id="cb17-3"><a href></a></span>
@@ -2032,7 +2032,7 @@ Python est génial</code></pre>
 <li>Syntaxe : <strong><code>f&quot;texte {variable}&quot;</code></strong></li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="c18e36e1" class="cell" data-execution_count="8">
+<div id="58013376" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a>nom <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
 <span id="cb19-2"><a href></a>age <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb19-3"><a href></a><span class="bu">print</span>(<span class="ss">f&quot;Bonjour </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">, vous avez </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> ans.&quot;</span>)</span>
@@ -2090,7 +2090,7 @@ Python est génial</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-types-numériques" class="title-slide slide level1 center">
+<section id="types-numeriques" class="title-slide slide level1 center">
 <h1>Les types numériques</h1>
 
 </section>
@@ -2106,7 +2106,7 @@ Python est génial</code></pre>
 <li>Les flottants (<code>float</code>) utilisent une précision limitée (base 64 bits).</li>
 <li>Les conversions entre types se font facilement</li>
 </ul>
-<div id="bd69d155" class="cell" data-execution_count="9">
+<div id="016964db" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="dv">42</span>))  </span>
 <span id="cb21-2"><a href></a><span class="bu">print</span>(<span class="bu">int</span>(<span class="fl">3.14</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2124,7 +2124,7 @@ Python est génial</code></pre>
 <li>Puissance <code>**</code></li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="d5ab1001" class="cell" data-execution_count="10">
+<div id="f095790c" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">+</span> <span class="dv">3</span>)  </span>
 <span id="cb23-2"><a href></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">//</span> <span class="dv">3</span>) </span>
 <span id="cb23-3"><a href></a><span class="bu">print</span>(<span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span>)  </span>
@@ -2146,7 +2146,7 @@ Python est génial</code></pre>
 <li><code>divmod(a, b)</code> : Retourne <code>(a // b, a % b)</code>.</li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="ea72e5d3" class="cell" data-execution_count="11">
+<div id="0abe1f16" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a><span class="bu">print</span>(<span class="bu">abs</span>(<span class="op">-</span><span class="dv">42</span>))  </span>
 <span id="cb25-2"><a href></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">3.14159</span>, <span class="dv">2</span>))  </span>
 <span id="cb25-3"><a href></a><span class="bu">print</span>(<span class="bu">pow</span>(<span class="dv">2</span>, <span class="dv">3</span>)) </span>
@@ -2168,7 +2168,7 @@ Python est génial</code></pre>
 <li><code>sin(x)</code>, <code>cos(x)</code> : Fonctions trigonométriques.</li>
 <li><code>pi</code> : le nombre Pi</li>
 </ul>
-<div id="69deda09" class="cell" data-execution_count="12">
+<div id="de86f71c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a><span class="im">import</span> math</span>
 <span id="cb27-2"><a href></a></span>
 <span id="cb27-3"><a href></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))  <span class="co"># 4.0</span></span>
@@ -2187,7 +2187,7 @@ Python est génial</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)  <span class="co"># Affiche : 0.30000000000000004</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 <p>Le module decimal permet de manipuler des nombres en évitant ces erreurs.</p>
-<div id="f5136e69" class="cell" data-execution_count="13">
+<div id="acd5082d" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a><span class="im">from</span> decimal <span class="im">import</span> Decimal</span>
 <span id="cb30-2"><a href></a>x <span class="op">=</span> Decimal(<span class="st">&quot;0.1&quot;</span>)</span>
 <span id="cb30-3"><a href></a>y <span class="op">=</span> Decimal(<span class="st">&quot;0.2&quot;</span>)</span>
@@ -2213,7 +2213,7 @@ Python est génial</code></pre>
 <section id="le-module-decimal-22" class="slide level2">
 <h2>Le module <code>decimal</code> (2/2)</h2>
 <p>La précision peut être configurée avec <code>getcontext</code></p>
-<div id="0be7db7d" class="cell" data-execution_count="14">
+<div id="7e88b8f6" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href></a><span class="im">from</span> decimal <span class="im">import</span> Decimal, getcontext</span>
 <span id="cb32-2"><a href></a>getcontext().prec <span class="op">=</span> <span class="dv">50</span>  <span class="co"># Définit la précision à 50 chiffres</span></span>
 <span id="cb32-3"><a href></a></span>
@@ -2283,7 +2283,7 @@ Python est génial</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="le-type-booléen" class="title-slide slide level1 center">
+<section id="booleen" class="title-slide slide level1 center">
 <h1>Le type booléen</h1>
 
 </section>
@@ -2316,7 +2316,7 @@ Python est génial</code></pre>
 </ul></li>
 </ul>
 <p><em>Exemples</em> :</p>
-<div id="d4ae42fa" class="cell" data-execution_count="15">
+<div id="02ae3d08" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">0</span>))      <span class="co"># False</span></span>
 <span id="cb34-2"><a href></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">42</span>))     <span class="co"># True</span></span>
 <span id="cb34-3"><a href></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">&quot;&quot;</span>))     <span class="co"># False</span></span>
@@ -2405,7 +2405,7 @@ True</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="la-liste" class="title-slide slide level1 center">
+<section id="liste" class="title-slide slide level1 center">
 <h1>La liste</h1>
 
 </section>
@@ -2418,7 +2418,7 @@ True</code></pre>
 <li>Les éléments sont séparés par des virgules.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="25cb0746" class="cell" data-execution_count="16">
+<div id="c7d10fba" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>ma_liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">&quot;Python&quot;</span>, <span class="va">True</span>]</span>
 <span id="cb41-2"><a href></a><span class="bu">print</span>(ma_liste1)  <span class="co"># [1, 2, 3, &#39;Python&#39;, True]</span></span>
 <span id="cb41-3"><a href></a></span>
@@ -2440,7 +2440,7 @@ c</code></pre>
 <li><strong><code>insert(index, element)</code></strong> : Insère un élément à un index spécifique.</li>
 </ol>
 <p><em>Exemple</em> :</p>
-<div id="64ac5272" class="cell" data-execution_count="17">
+<div id="53700bd3" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb43-2"><a href></a>ma_liste.append(<span class="dv">4</span>)       <span class="co"># [1, 2, 3, 4]</span></span>
 <span id="cb43-3"><a href></a>ma_liste.extend([<span class="dv">5</span>, <span class="dv">6</span>])  <span class="co"># [1, 2, 3, 4, 5, 6]</span></span>
@@ -2458,7 +2458,7 @@ c</code></pre>
 <li><strong><code>pop(index)</code></strong> : Supprime l’élément à un index (par défaut, le dernier).</li>
 <li><strong><code>clear()</code></strong> : Vide complètement la liste.</li>
 </ul>
-<div id="18c7cc8c" class="cell" data-execution_count="18">
+<div id="d3be7be6" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb45-2"><a href></a>ma_liste.remove(<span class="dv">3</span>)   <span class="co"># [1, 2, 4]</span></span>
 <span id="cb45-3"><a href></a>ma_liste.pop(<span class="dv">1</span>)      <span class="co"># [1, 4]</span></span>
@@ -2476,7 +2476,7 @@ c</code></pre>
 <li><strong><code>reverse()</code></strong> : Inverse l’ordre des éléments.</li>
 </ol>
 <p><em>Exemple</em> :</p>
-<div id="991316b4" class="cell" data-execution_count="19">
+<div id="3ad88acf" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>ma_liste <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb47-2"><a href></a>ma_liste.sort()      <span class="co"># [1, 2, 3, 4]</span></span>
 <span id="cb47-3"><a href></a>ma_liste.reverse()   <span class="co"># [4, 3, 2, 1]</span></span>
@@ -2492,7 +2492,7 @@ c</code></pre>
 <li><strong><code>count(element)</code></strong> : Retourne le nombre d’occurrences d’un élément.</li>
 <li><strong><code>index(element)</code></strong> : Retourne l’index de la 1<sup>ère</sup> occurrence d’un élément.</li>
 </ul>
-<div id="402e9f43" class="cell" data-execution_count="20">
+<div id="7dbcb23c" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb49-2"><a href></a><span class="bu">print</span>(ma_liste.count(<span class="dv">2</span>))  </span>
 <span id="cb49-3"><a href></a><span class="bu">print</span>(ma_liste.index(<span class="dv">3</span>))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2505,7 +2505,7 @@ c</code></pre>
 <section id="accéder-à-des-sous-listes" class="slide level2">
 <h2>Accéder à des sous-listes</h2>
 <p><em>Découpage ou “slicing”</em></p>
-<div id="e97980bb" class="cell" data-execution_count="21">
+<div id="7d63a051" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>ma_liste <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb51-2"><a href></a><span class="bu">print</span>(ma_liste[<span class="dv">1</span>:<span class="dv">4</span>])  </span>
 <span id="cb51-3"><a href></a><span class="bu">print</span>(ma_liste[:<span class="dv">3</span>])   </span>
@@ -2520,7 +2520,7 @@ c</code></pre>
 <section id="parcourir-une-liste-avec-une-boucle-for" class="slide level2">
 <h2>Parcourir une liste avec une boucle for</h2>
 <p>Par valeur</p>
-<div id="4e1f62d3" class="cell" data-execution_count="22">
+<div id="d5cf0dc9" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>ma_liste <span class="op">=</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;est&quot;</span>, <span class="st">&quot;génial&quot;</span>]</span>
 <span id="cb53-2"><a href></a><span class="cf">for</span> element <span class="kw">in</span> ma_liste:</span>
 <span id="cb53-3"><a href></a>    <span class="bu">print</span>(element)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2531,7 +2531,7 @@ génial</code></pre>
 </div>
 </div>
 <p>Par index et valeur avec <code>enumerate</code></p>
-<div id="f88e4d84" class="cell" data-execution_count="23">
+<div id="f24a8c41" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href></a>ma_liste <span class="op">=</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;est&quot;</span>, <span class="st">&quot;génial&quot;</span>]</span>
 <span id="cb55-2"><a href></a><span class="cf">for</span> index, element <span class="kw">in</span> <span class="bu">enumerate</span>(ma_liste):</span>
 <span id="cb55-3"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>element<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2598,7 +2598,7 @@ génial</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="le-tuple" class="title-slide slide level1 center">
+<section id="tuple" class="title-slide slide level1 center">
 <h1>Le tuple</h1>
 
 </section>
@@ -2610,7 +2610,7 @@ génial</code></pre>
 <li>Délimité par des parenthèses <code>()</code>.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="c46647b5" class="cell" data-execution_count="24">
+<div id="5e40b100" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>mon_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">&quot;Python&quot;</span>, <span class="va">True</span>)</span>
 <span id="cb57-2"><a href></a><span class="bu">print</span>(mon_tuple)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2646,7 +2646,7 @@ génial</code></pre>
 <li><strong>Découpage (slicing)</strong> est également possible.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="96a094e6" class="cell" data-execution_count="25">
+<div id="17283d9c" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href></a>mon_tuple <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
 <span id="cb60-2"><a href></a><span class="bu">print</span>(mon_tuple[<span class="dv">1</span>])    </span>
 <span id="cb60-3"><a href></a><span class="bu">print</span>(mon_tuple[:<span class="dv">3</span>])  </span>
@@ -2664,7 +2664,7 @@ génial</code></pre>
 <li>Concaténation : Ajouter deux tuples ensemble.</li>
 <li>Répétition : Répéter un tuple plusieurs fois.</li>
 </ul>
-<div id="e23a08f6" class="cell" data-execution_count="26">
+<div id="01af9d9e" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href></a>t1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb62-2"><a href></a>t2 <span class="op">=</span> (<span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb62-3"><a href></a><span class="bu">print</span>(t1 <span class="op">+</span> t2)</span>
@@ -2678,7 +2678,7 @@ génial</code></pre>
 <section id="vérification-dappartenance" class="slide level2">
 <h2>Vérification d’appartenance</h2>
 <p><code>in</code> : Vérifie si un élément est dans un tuple.</p>
-<div id="2ff7f1b6" class="cell" data-execution_count="27">
+<div id="c82bac2b" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href></a>mon_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb64-2"><a href></a><span class="bu">print</span>(<span class="dv">3</span> <span class="kw">in</span> mon_tuple)   </span>
 <span id="cb64-3"><a href></a><span class="bu">print</span>(<span class="dv">5</span> <span class="kw">in</span> mon_tuple)   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2695,7 +2695,7 @@ False</code></pre>
 <li><strong><code>index(element)</code></strong> : Retourne l’index de la première occurrence d’un élément.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="650e222d" class="cell" data-execution_count="28">
+<div id="bf2368a1" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href></a>mon_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb66-2"><a href></a><span class="bu">print</span>(mon_tuple.count(<span class="dv">2</span>))  </span>
 <span id="cb66-3"><a href></a><span class="bu">print</span>(mon_tuple.index(<span class="dv">3</span>))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2708,7 +2708,7 @@ False</code></pre>
 <section id="conversion-entre-liste-et-tuple" class="slide level2">
 <h2>Conversion entre liste et tuple</h2>
 <p><strong>tuple vers liste</strong></p>
-<div id="234821b1" class="cell" data-execution_count="29">
+<div id="3fd96be1" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href></a>t <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb68-2"><a href></a>l <span class="op">=</span> <span class="bu">list</span>(t)</span>
 <span id="cb68-3"><a href></a><span class="bu">print</span>(l) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2717,7 +2717,7 @@ False</code></pre>
 </div>
 </div>
 <p><strong>liste vers tuple</strong></p>
-<div id="943af658" class="cell" data-execution_count="30">
+<div id="344ca438" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href></a>l <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb70-2"><a href></a>t <span class="op">=</span> <span class="bu">tuple</span>(l)</span>
 <span id="cb70-3"><a href></a><span class="bu">print</span>(t)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2729,7 +2729,7 @@ False</code></pre>
 <section id="itération-et-déballage" class="slide level2">
 <h2>Itération et déballage</h2>
 <p><strong>Itération</strong></p>
-<div id="7c388abb" class="cell" data-execution_count="31">
+<div id="528057a0" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href></a>mon_tuple <span class="op">=</span> (<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
 <span id="cb72-2"><a href></a><span class="cf">for</span> element <span class="kw">in</span> mon_tuple:</span>
 <span id="cb72-3"><a href></a>    <span class="bu">print</span>(element)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2740,7 +2740,7 @@ c</code></pre>
 </div>
 </div>
 <p><strong>Déballage</strong></p>
-<div id="5a3df542" class="cell" data-execution_count="32">
+<div id="94ac5639" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href></a>coordonnees <span class="op">=</span> (<span class="fl">43.6</span>, <span class="fl">3.9</span>)</span>
 <span id="cb74-2"><a href></a>latitude, longitude <span class="op">=</span> coordonnees</span>
 <span id="cb74-3"><a href></a><span class="bu">print</span>(latitude)  </span>
@@ -2760,7 +2760,7 @@ c</code></pre>
 <li>Si les collections ont des longueurs différentes, zip s’arrête au plus court.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="2019d7b6" class="cell" data-execution_count="33">
+<div id="88d2bb53" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href></a>noms <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>]</span>
 <span id="cb76-2"><a href></a>ages <span class="op">=</span> [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>]</span>
 <span id="cb76-3"><a href></a></span>
@@ -2774,7 +2774,7 @@ c</code></pre>
 <section id="unzip" class="slide level2">
 <h2>Unzip</h2>
 <p><code>*</code> pour “dézipper” des collections combinées.</p>
-<div id="140c323f" class="cell" data-execution_count="34">
+<div id="47a7f3fe" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href></a>combines <span class="op">=</span> [(<span class="st">&quot;Alice&quot;</span>, <span class="dv">25</span>), (<span class="st">&quot;Bob&quot;</span>, <span class="dv">30</span>), (<span class="st">&quot;Charlie&quot;</span>, <span class="dv">35</span>)]</span>
 <span id="cb78-2"><a href></a>noms, ages <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>combines)</span>
 <span id="cb78-3"><a href></a></span>
@@ -2840,7 +2840,7 @@ c</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="le-dictionnaire" class="title-slide slide level1 center">
+<section id="dictionnaire" class="title-slide slide level1 center">
 <h1>Le dictionnaire</h1>
 
 </section>
@@ -2852,7 +2852,7 @@ c</code></pre>
 <li>Délimité par des accolades <code>{}</code>.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="d88d3030" class="cell" data-execution_count="35">
+<div id="2e6b4c7b" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href></a>mon_dictionnaire <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>, <span class="st">&quot;ville&quot;</span>: <span class="st">&quot;Paris&quot;</span>}</span>
 <span id="cb80-2"><a href></a><span class="bu">print</span>(mon_dictionnaire[<span class="st">&quot;nom&quot;</span>])  <span class="co"># Alice</span></span>
 <span id="cb80-3"><a href></a><span class="bu">print</span>(mon_dictionnaire[<span class="st">&quot;age&quot;</span>])  <span class="co"># 25</span></span>
@@ -2881,7 +2881,7 @@ c</code></pre>
 <h2>Ajouter ou modifier une paire clé-valeur</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href></a>dictionnaire[<span class="st">&quot;nouvelle_cle&quot;</span>] <span class="op">=</span> <span class="st">&quot;nouvelle_valeur&quot;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Exemple</em> :</p>
-<div id="45b7d3c5" class="cell" data-execution_count="36">
+<div id="fb7bb166" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href></a>mon_dictionnaire <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>}</span>
 <span id="cb83-2"><a href></a>mon_dictionnaire[<span class="st">&quot;age&quot;</span>] <span class="op">=</span> <span class="dv">25</span>  <span class="co"># Ajout</span></span>
 <span id="cb83-3"><a href></a>mon_dictionnaire[<span class="st">&quot;nom&quot;</span>] <span class="op">=</span> <span class="st">&quot;Bob&quot;</span>  <span class="co"># Modification</span></span>
@@ -2897,7 +2897,7 @@ c</code></pre>
 <li><code>pop(key)</code> : Supprime une clé et retourne sa valeur.</li>
 <li><code>clear()</code> : Vide complètement le dictionnaire.</li>
 </ul>
-<div id="5df2f991" class="cell" data-execution_count="37">
+<div id="c1b9d0dc" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href></a>mon_dictionnaire <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
 <span id="cb85-2"><a href></a>mon_dictionnaire.pop(<span class="st">&quot;age&quot;</span>)         <span class="co"># Supprime et retourne 25</span></span>
 <span id="cb85-3"><a href></a>mon_dictionnaire.clear()            <span class="co"># Vide le dictionnaire</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2911,7 +2911,7 @@ c</code></pre>
 <li><strong><code>items()</code></strong> : Retourne les paires clé-valeur sous forme de tuples.</li>
 </ol>
 <p><em>Exemple</em> :</p>
-<div id="1efa8760" class="cell" data-execution_count="38">
+<div id="ebe19376" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href></a>mon_dictionnaire <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
 <span id="cb86-2"><a href></a><span class="bu">print</span>(mon_dictionnaire.keys())   </span>
 <span id="cb86-3"><a href></a><span class="bu">print</span>(mon_dictionnaire.values()) </span>
@@ -2926,7 +2926,7 @@ dict_items([(&#39;nom&#39;, &#39;Alice&#39;), (&#39;age&#39;, 25)])</code></pre>
 <section id="parcourir-les-clés-les-valeurs-et-les-paires-clé-valeur" class="slide level2">
 <h2>Parcourir les clés, les valeurs, et les paires clé-valeur</h2>
 <p><strong>Les clés</strong></p>
-<div id="119aa204" class="cell" data-execution_count="39">
+<div id="9a5750d4" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href></a>mon_dictionnaire <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;âge&quot;</span>: <span class="dv">25</span>, <span class="st">&quot;ville&quot;</span>: <span class="st">&quot;Paris&quot;</span>}</span>
 <span id="cb88-2"><a href></a><span class="cf">for</span> cle <span class="kw">in</span> mon_dictionnaire:</span>
 <span id="cb88-3"><a href></a>    <span class="bu">print</span>(cle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2937,7 +2937,7 @@ ville</code></pre>
 </div>
 </div>
 <p><strong>Les valeurs</strong></p>
-<div id="e50fe050" class="cell" data-execution_count="40">
+<div id="6d37c211" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href></a><span class="cf">for</span> valeur <span class="kw">in</span> mon_dictionnaire.values():</span>
 <span id="cb90-2"><a href></a>    <span class="bu">print</span>(valeur)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2950,7 +2950,7 @@ Paris</code></pre>
 <section class="slide level2">
 
 <p><strong>Les paires</strong></p>
-<div id="81ab7de9" class="cell" data-execution_count="41">
+<div id="0484102a" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href></a><span class="cf">for</span> cle, valeur <span class="kw">in</span> mon_dictionnaire.items():</span>
 <span id="cb92-2"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>cle<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>valeur<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2964,7 +2964,7 @@ ville: Paris</code></pre>
 <h2>Créer un dictionnaire depuis une liste</h2>
 <p>Si la liste comporte des itérables de taille 2, liste ou tuple, comme par exemple <code>[(&#39;nom&#39;, &#39;Alice&#39;), (&#39;âge&#39;, 25), (&#39;ville&#39;, &#39;Paris&#39;)]</code></p>
 <p><em>Exemple</em> :</p>
-<div id="2505db0f" class="cell" data-execution_count="42">
+<div id="717e66f9" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href></a>ma_liste <span class="op">=</span> [(<span class="st">&#39;nom&#39;</span>, <span class="st">&#39;Alice&#39;</span>), (<span class="st">&#39;age&#39;</span>, <span class="dv">25</span>), (<span class="st">&#39;ville&#39;</span>, <span class="st">&#39;Paris&#39;</span>)]</span>
 <span id="cb94-2"><a href></a>mon_dictionnaire <span class="op">=</span> <span class="bu">dict</span>(ma_liste)</span>
 <span id="cb94-3"><a href></a><span class="bu">print</span>(mon_dictionnaire)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2976,7 +2976,7 @@ ville: Paris</code></pre>
 <section id="créer-un-dictionnaire-avec-zip" class="slide level2">
 <h2>Créer un dictionnaire avec <code>zip</code></h2>
 <p><em>Exemple</em> :</p>
-<div id="acea3906" class="cell" data-execution_count="43">
+<div id="29115da3" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href></a>cles <span class="op">=</span> [<span class="st">&quot;nom&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;ville&quot;</span>]</span>
 <span id="cb96-2"><a href></a>valeurs <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="dv">25</span>, <span class="st">&quot;Paris&quot;</span>]</span>
 <span id="cb96-3"><a href></a>dictionnaire <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(cles, valeurs))</span>
@@ -2989,17 +2989,17 @@ ville: Paris</code></pre>
 <section id="trier-un-dictionnaire" class="slide level2">
 <h2>Trier un dictionnaire</h2>
 <p><strong>Par clé</strong></p>
-<div id="88564b6e" class="cell" data-execution_count="44">
+<div id="4bfe2c90" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href></a>scores <span class="op">=</span> {<span class="st">&quot;Bob&quot;</span>: <span class="dv">100</span>, <span class="st">&quot;Alice&quot;</span>: <span class="dv">75</span>, <span class="st">&quot;Charlie&quot;</span>: <span class="dv">50</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fdee3a89" class="cell" data-execution_count="45">
+<div id="41fb8ee3" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href></a><span class="bu">print</span>(<span class="bu">sorted</span>(scores.items()) )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[(&#39;Alice&#39;, 75), (&#39;Bob&#39;, 100), (&#39;Charlie&#39;, 50)]</code></pre>
 </div>
 </div>
 <p><strong>Par valeur</strong></p>
-<div id="4ccd4f9d" class="cell" data-execution_count="46">
+<div id="22c0d75e" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href></a><span class="bu">print</span>(<span class="bu">sorted</span>(scores.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[(&#39;Charlie&#39;, 50), (&#39;Alice&#39;, 75), (&#39;Bob&#39;, 100)]</code></pre>
@@ -3024,7 +3024,7 @@ ville: Paris</code></pre>
 <section id="fusionner-deux-dictionnaires" class="slide level2">
 <h2>Fusionner deux dictionnaires</h2>
 <p><em>Exemple</em> :</p>
-<div id="3a043c46" class="cell" data-execution_count="47">
+<div id="63c74b63" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href></a>dict1 <span class="op">=</span> {<span class="st">&quot;nom&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;âge&quot;</span>: <span class="dv">25</span>}</span>
 <span id="cb103-2"><a href></a>dict2 <span class="op">=</span> {<span class="st">&quot;ville&quot;</span>: <span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;profession&quot;</span>: <span class="st">&quot;Ingénieure&quot;</span>}</span>
 <span id="cb103-3"><a href></a>fusion <span class="op">=</span> {<span class="op">**</span>dict1, <span class="op">**</span>dict2}</span>
@@ -3112,7 +3112,7 @@ ville: Paris</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="le-set" class="title-slide slide level1 center">
+<section id="set" class="title-slide slide level1 center">
 <h1>Le set</h1>
 
 </section>
@@ -3124,7 +3124,7 @@ ville: Paris</code></pre>
 <li>Utile pour effectuer des opérations mathématiques comme les <strong>unions</strong>, <strong>intersections</strong>, et <strong>différences</strong>.</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="f5c8b511" class="cell" data-execution_count="48">
+<div id="d0fd7ef6" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
 <span id="cb105-2"><a href></a><span class="bu">print</span>(mon_set)  <span class="co"># les doublons sont supprimés</span></span>
 <span id="cb105-3"><a href></a></span>
@@ -3147,7 +3147,7 @@ ville: Paris</code></pre>
 </section>
 <section id="ajouter-des-éléments-1" class="slide level2">
 <h2>Ajouter des éléments</h2>
-<div id="3af8e928" class="cell" data-execution_count="49">
+<div id="412ac127" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a href></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb107-2"><a href></a>mon_set.add(<span class="dv">4</span>)</span>
 <span id="cb107-3"><a href></a><span class="bu">print</span>(mon_set) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3164,7 +3164,7 @@ ville: Paris</code></pre>
 <li><strong><code>pop()</code></strong> : Supprime un élément arbitraire (car le set est non ordonné).</li>
 <li><strong><code>clear()</code></strong> : Vide le set.</li>
 </ul>
-<div id="9593bc5a" class="cell" data-execution_count="50">
+<div id="2ed42ba9" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href></a>mon_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb109-2"><a href></a>mon_set.remove(<span class="dv">2</span>)   <span class="co"># Supprime 2</span></span>
 <span id="cb109-3"><a href></a>mon_set.discard(<span class="dv">4</span>)  <span class="co"># Ne fait rien (4 n&#39;existe pas)</span></span>
@@ -3178,7 +3178,7 @@ ville: Paris</code></pre>
 <h2>Opérations sur les ensembles</h2>
 <h3 id="union">Union</h3>
 <p>Combine les éléments de deux sets (<strong><code>|</code></strong> ou <strong><code>union()</code></strong>).</p>
-<div id="8007c89d" class="cell" data-execution_count="51">
+<div id="9b26fa62" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href></a>set1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb111-2"><a href></a>set2 <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
 <span id="cb111-3"><a href></a><span class="bu">print</span>(set1 <span class="op">|</span> set2)          <span class="co"># {1, 2, 3, 4, 5}</span></span>
@@ -3190,7 +3190,7 @@ ville: Paris</code></pre>
 </div>
 <h3 id="intersection">Intersection</h3>
 <p>Trouve les éléments communs (&amp; ou intersection()).</p>
-<div id="fae4fa7e" class="cell" data-execution_count="52">
+<div id="9e136e3a" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href></a><span class="bu">print</span>(set1 <span class="op">&amp;</span> set2)          <span class="co"># {3}</span></span>
 <span id="cb113-2"><a href></a><span class="bu">print</span>(set1.intersection(set2))  <span class="co"># {3}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3203,7 +3203,7 @@ ville: Paris</code></pre>
 
 <h3 id="différence">Différence</h3>
 <p>Trouve les éléments dans un set mais pas dans l’autre (- ou difference()).</p>
-<div id="059433b8" class="cell" data-execution_count="53">
+<div id="d2dfbe31" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href></a><span class="bu">print</span>(set1 <span class="op">-</span> set2)          </span>
 <span id="cb115-2"><a href></a><span class="bu">print</span>(set1.difference(set2)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3213,7 +3213,7 @@ ville: Paris</code></pre>
 </div>
 <h3 id="différence-symétrique">Différence symétrique</h3>
 <p>Trouve les éléments présents dans un seul des deux sets (^ ou symmetric_difference()).</p>
-<div id="014ced80" class="cell" data-execution_count="54">
+<div id="84c3ad16" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href></a><span class="bu">print</span>(set1 <span class="op">^</span> set2)                 </span>
 <span id="cb117-2"><a href></a><span class="bu">print</span>(set1.symmetric_difference(set2))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3225,7 +3225,7 @@ ville: Paris</code></pre>
 <section id="applications-pratiques" class="slide level2">
 <h2>Applications pratiques</h2>
 <h3 id="suppression-des-doublons">Suppression des doublons</h3>
-<div id="4424aff3" class="cell" data-execution_count="55">
+<div id="bb71107e" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
 <span id="cb119-2"><a href></a>unique <span class="op">=</span> <span class="bu">set</span>(liste)</span>
 <span id="cb119-3"><a href></a><span class="bu">print</span>(unique)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3234,7 +3234,7 @@ ville: Paris</code></pre>
 </div>
 </div>
 <h3 id="union-intersection-et-différence">Union, intersection et différence</h3>
-<div id="54820402" class="cell" data-execution_count="56">
+<div id="9a360c17" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href></a>maths <span class="op">=</span> {<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>}</span>
 <span id="cb121-2"><a href></a>informatique <span class="op">=</span> {<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Charlie&quot;</span>}</span>
 <span id="cb121-3"><a href></a></span>
@@ -3244,7 +3244,7 @@ ville: Paris</code></pre>
 <span id="cb121-7"><a href></a></span>
 <span id="cb121-8"><a href></a><span class="bu">print</span>(<span class="st">&quot;Inscrits uniquement en maths :&quot;</span>, maths <span class="op">-</span> informatique)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Inscrits à au moins une matière : {&#39;Charlie&#39;, &#39;Bob&#39;, &#39;Alice&#39;, &#39;David&#39;}
+<pre><code>Inscrits à au moins une matière : {&#39;Alice&#39;, &#39;Bob&#39;, &#39;David&#39;, &#39;Charlie&#39;}
 Inscrits aux deux matières : {&#39;Charlie&#39;, &#39;Alice&#39;}
 Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 </div>
@@ -3394,7 +3394,7 @@ Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb127"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href></a><span class="cf">while</span> condition:</span>
 <span id="cb127-2"><a href></a>    bloc_de_code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Exemple</em> (on ne sait pas à l’avance combien d’itérations seront nécessaires) :</p>
-<div id="12907003" class="cell" data-execution_count="57">
+<div id="b015eef3" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href></a>capital <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb128-2"><a href></a>annees <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb128-3"><a href></a></span>
@@ -3415,7 +3415,7 @@ Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb130"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb130-1"><a href></a><span class="cf">for</span> element <span class="kw">in</span> iterable:</span>
 <span id="cb130-2"><a href></a>    bloc_de_code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Exemple</em> :</p>
-<div id="f305df77" class="cell" data-execution_count="58">
+<div id="41a951b1" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb131-1"><a href></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb131-2"><a href></a><span class="cf">for</span> nombre <span class="kw">in</span> nombres:</span>
 <span id="cb131-3"><a href></a>    <span class="bu">print</span>(nombre)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3429,7 +3429,7 @@ Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 <section id="linstruction-break" class="slide level2">
 <h2>L’instruction <code>break</code></h2>
 <p>Interrompt une boucle immédiatement.</p>
-<div id="a3a44c2d" class="cell" data-execution_count="59">
+<div id="c0a36a69" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb133-1"><a href></a><span class="cf">for</span> nombre <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
 <span id="cb133-2"><a href></a>    <span class="cf">if</span> nombre <span class="op">==</span> <span class="dv">5</span>:</span>
 <span id="cb133-3"><a href></a>        <span class="cf">break</span></span>
@@ -3446,7 +3446,7 @@ Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 <section id="linstruction-continue" class="slide level2">
 <h2>L’instruction continue</h2>
 <p>Passe directement à l’itération suivante.</p>
-<div id="f0a102ca" class="cell" data-execution_count="60">
+<div id="258ab25b" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href></a><span class="cf">for</span> nombre <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb135-2"><a href></a>    <span class="cf">if</span> nombre <span class="op">==</span> <span class="dv">3</span>:</span>
 <span id="cb135-3"><a href></a>        <span class="cf">continue</span></span>
@@ -3462,7 +3462,7 @@ Inscrits uniquement en maths : {&#39;Bob&#39;}</code></pre>
 <section id="les-boucles-imbriquées" class="slide level2">
 <h2>Les Boucles Imbriquées</h2>
 <p><em>Exemple : Table de multiplication</em></p>
-<div id="5eed9cbe" class="cell" data-execution_count="61">
+<div id="0d9489fa" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):</span>
 <span id="cb137-2"><a href></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):</span>
 <span id="cb137-3"><a href></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>i <span class="op">*</span> j<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -3538,7 +3538,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-list-comprehension" class="title-slide slide level1 center">
+<section id="list-comprehension" class="title-slide slide level1 center">
 <h1>Les list-comprehension</h1>
 
 </section>
@@ -3547,7 +3547,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <p>permet de créer ou transformer une liste en une seule ligne de code</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb139"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb139-1"><a href></a>[expression <span class="cf">for</span> élément <span class="kw">in</span> iterable]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Création d’une nouvelle liste en appliquant une expression à chaque élément d’un itérable (liste, range, etc.).</p>
-<div id="c9e24218" class="cell" data-execution_count="62">
+<div id="b72e0390" class="cell" data-execution_count="62">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb140-1"><a href></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb140-2"><a href></a>carrés <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> nombres]</span>
 <span id="cb140-3"><a href></a><span class="bu">print</span>(carrés)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3559,7 +3559,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <section id="ajout-de-conditions" class="slide level2">
 <h2>Ajout de condition(s)</h2>
 <p>On peut filtrer les éléments avec une condition <code>if</code></p>
-<div id="83e0aad7" class="cell" data-execution_count="63">
+<div id="7090a3b8" class="cell" data-execution_count="63">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb142-1"><a href></a>nombres <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)</span>
 <span id="cb142-2"><a href></a>pairs <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> nombres <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
 <span id="cb142-3"><a href></a><span class="bu">print</span>(pairs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3568,7 +3568,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 </div>
 </div>
 <p><strong>Condition ternaire dans l’expression</strong></p>
-<div id="79ed91ee" class="cell" data-execution_count="64">
+<div id="a0eb200a" class="cell" data-execution_count="64">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb144-1"><a href></a>nombres <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)</span>
 <span id="cb144-2"><a href></a>double_ou_rien <span class="op">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span> <span class="cf">for</span> x <span class="kw">in</span> nombres]</span>
 <span id="cb144-3"><a href></a><span class="bu">print</span>(double_ou_rien)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3579,7 +3579,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 </section>
 <section id="les-set-comprehension" class="slide level2">
 <h2>Les set-comprehension</h2>
-<div id="89967e81" class="cell" data-execution_count="65">
+<div id="9946d205" class="cell" data-execution_count="65">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb146-1"><a href></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb146-2"><a href></a>unique <span class="op">=</span> {x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> nombres}</span>
 <span id="cb146-3"><a href></a><span class="bu">print</span>(unique)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3590,7 +3590,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 </section>
 <section id="les-dict-comprehension" class="slide level2">
 <h2>Les dict-comprehension</h2>
-<div id="dc1cd4f3" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="66">
+<div id="66f5fa06" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="66">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb148"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb148-1"><a href></a>noms <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>]</span>
 <span id="cb148-2"><a href></a>longueurs <span class="op">=</span> {nom: <span class="bu">len</span>(nom) <span class="cf">for</span> nom <span class="kw">in</span> noms}</span>
 <span id="cb148-3"><a href></a><span class="bu">print</span>(longueurs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3601,7 +3601,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 </section>
 <section id="exemple-dapplication-transformation-de-données" class="slide level2">
 <h2>Exemple d’application : transformation de données</h2>
-<div id="0f7e97c8" class="cell" data-execution_count="67">
+<div id="3b3d7c53" class="cell" data-execution_count="67">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb150-1"><a href></a>temperatures <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb150-2"><a href></a>en_fahrenheit <span class="op">=</span> [t <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span> <span class="cf">for</span> t <span class="kw">in</span> temperatures]</span>
 <span id="cb150-3"><a href></a><span class="bu">print</span>(en_fahrenheit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3623,7 +3623,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-fonctions" class="title-slide slide level1 center">
+<section id="fonctions" class="title-slide slide level1 center">
 <h1>Les fonctions</h1>
 
 </section>
@@ -3641,7 +3641,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <p><em>Exemple</em> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb152"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb152-1"><a href></a><span class="kw">def</span> nom_de_fonction(parametres):</span>
 <span id="cb152-2"><a href></a>    bloc_de_code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="1e46c1ee" class="cell" data-execution_count="68">
+<div id="7e4625fd" class="cell" data-execution_count="68">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb153-1"><a href></a><span class="kw">def</span> saluer():</span>
 <span id="cb153-2"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Bonjour, Python !&quot;</span>)</span>
 <span id="cb153-3"><a href></a></span>
@@ -3654,7 +3654,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <section id="paramètres" class="slide level2">
 <h2>Paramètres</h2>
 <p>Une fonction peut prendre des <strong>paramètres</strong> pour recevoir des données en entrée.</p>
-<div id="1730daa3" class="cell" data-execution_count="69">
+<div id="1ae39f8c" class="cell" data-execution_count="69">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb155-1"><a href></a><span class="kw">def</span> saluer(nom):</span>
 <span id="cb155-2"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss"> !&quot;</span>)</span>
 <span id="cb155-3"><a href></a></span>
@@ -3670,7 +3670,7 @@ La fonction <code>input()</code> retourne une chaîne de caractères.</p>
 <li>si l’argument n’est pas fourni lors de l’appel, utilisation du paramètre par défaut</li>
 <li>si l’argument est fourni, utilisation de la valeur fournie</li>
 </ul>
-<div id="46dab7db" class="cell" data-execution_count="70">
+<div id="db326e3f" class="cell" data-execution_count="70">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb157-1"><a href></a><span class="kw">def</span> saluer(nom<span class="op">=</span><span class="st">&quot;utilisateur&quot;</span>):</span>
 <span id="cb157-2"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss"> !&quot;</span>)</span>
 <span id="cb157-3"><a href></a></span>
@@ -3684,7 +3684,7 @@ Bonjour, Charlie !</code></pre>
 </section>
 <section id="paramètres-multiples" class="slide level2">
 <h2>Paramètres multiples</h2>
-<div id="e8c8352c" class="cell" data-execution_count="71">
+<div id="9f169054" class="cell" data-execution_count="71">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb159-1"><a href></a><span class="kw">def</span> addition(a, b):</span>
 <span id="cb159-2"><a href></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb159-3"><a href></a></span>
@@ -3697,7 +3697,7 @@ Bonjour, Charlie !</code></pre>
 <section id="valeur-de-retour" class="slide level2">
 <h2>Valeur de retour</h2>
 <p>Une fonction peut <strong>renvoyer une valeur</strong> avec <code>return</code></p>
-<div id="2d4b8535" class="cell" data-execution_count="72">
+<div id="b4563e2d" class="cell" data-execution_count="72">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb161-1"><a href></a><span class="kw">def</span> carre(x):</span>
 <span id="cb161-2"><a href></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb161-3"><a href></a></span>
@@ -3710,7 +3710,7 @@ Bonjour, Charlie !</code></pre>
 </section>
 <section id="plusieurs-valeurs-de-retour" class="slide level2">
 <h2>Plusieurs valeurs de retour</h2>
-<div id="e55caa22" class="cell" data-execution_count="73">
+<div id="a61c24d0" class="cell" data-execution_count="73">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb163-1"><a href></a><span class="kw">def</span> operations(a, b):</span>
 <span id="cb163-2"><a href></a>    <span class="cf">return</span> a <span class="op">+</span> b, a <span class="op">-</span> b, a <span class="op">*</span> b</span>
 <span id="cb163-3"><a href></a></span>
@@ -3727,7 +3727,7 @@ produit: 15</code></pre>
 <section id="variables-locales-vs-globales-13" class="slide level2">
 <h2>Variables locales vs globales (1/3)</h2>
 <p>Les variables définies dans une fonction sont <strong>locales</strong> : elles ne sont accessibles qu’à l’intérieur de cette fonction.</p>
-<div id="35507e7b" class="cell" data-execution_count="74">
+<div id="b2a99168" class="cell" data-execution_count="74">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href></a>x <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb165-2"><a href></a></span>
 <span id="cb165-3"><a href></a><span class="kw">def</span> ma_fonction():</span>
@@ -3745,7 +3745,7 @@ Valeur de x (global):  1000</code></pre>
 <section id="variables-locales-vs-globales-23" class="slide level2">
 <h2>Variables locales vs globales (2/3)</h2>
 <p>Une variable définie en dehors d’une fonction est <strong>globale</strong>, elle peut être utilisée dans une fonction :</p>
-<div id="8d0c7b98" class="cell" data-execution_count="75">
+<div id="2ed95c77" class="cell" data-execution_count="75">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href></a>x <span class="op">=</span> <span class="dv">5</span> </span>
 <span id="cb167-2"><a href></a><span class="kw">def</span> ma_fonction():</span>
 <span id="cb167-3"><a href></a>    <span class="bu">print</span>(x)</span>
@@ -3759,7 +3759,7 @@ Valeur de x (global):  1000</code></pre>
 <section id="variables-locales-vs-globales-33" class="slide level2">
 <h2>Variables locales vs globales (3/3)</h2>
 <p>Utilisation du <strong>mot clé <code>global</code></strong> pour modifier la valeur d’une variable globale dans une fonction</p>
-<div id="a4ceae91" class="cell" data-execution_count="76">
+<div id="aa9e1b52" class="cell" data-execution_count="76">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb169-1"><a href></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb169-2"><a href></a></span>
 <span id="cb169-3"><a href></a><span class="kw">def</span> ma_fonction():</span>
@@ -3784,7 +3784,7 @@ Valeur de x (global):  1000</code></pre>
 </ul>
 <p><em>Syntaxe</em> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb171"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href></a><span class="kw">lambda</span> paramètres : expression</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="b0a766a4" class="cell" data-execution_count="77">
+<div id="d0220254" class="cell" data-execution_count="77">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href></a>carre <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb172-2"><a href></a><span class="bu">print</span>(carre(<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3797,7 +3797,7 @@ Valeur de x (global):  1000</code></pre>
 <section id="exemple-avec-sorted" class="slide level2">
 <h2>Exemple avec <code>sorted</code></h2>
 <p>On trie la liste en fonction de la longueur des noms</p>
-<div id="1da2c2ec" class="cell" data-execution_count="78">
+<div id="9d470e18" class="cell" data-execution_count="78">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href></a>noms <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Charlie&quot;</span>, <span class="st">&quot;Bob&quot;</span>]</span>
 <span id="cb174-2"><a href></a>triés <span class="op">=</span> <span class="bu">sorted</span>(noms, key<span class="op">=</span><span class="kw">lambda</span> nom: <span class="bu">len</span>(nom))</span>
 <span id="cb174-3"><a href></a><span class="bu">print</span>(triés)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3839,7 +3839,7 @@ Valeur de x (global):  1000</code></pre>
 <li>Créez une fonction lambda pour calculer le cube d’un nombre.</li>
 <li>Utilisez cette fonction lambda avec map pour calculer les cubes des nombres de 1 à 5.</li>
 </ul>
-<div id="aa584023" class="cell" data-execution_count="79">
+<div id="5acfb4c3" class="cell" data-execution_count="79">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href></a><span class="bu">help</span>(<span class="bu">map</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on class map in module builtins:
@@ -3878,7 +3878,7 @@ class map(object)
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-modules" class="title-slide slide level1 center">
+<section id="modules" class="title-slide slide level1 center">
 <h1>Les modules</h1>
 
 </section>
@@ -3900,7 +3900,7 @@ class map(object)
 <section id="importer-un-module" class="slide level2">
 <h2>Importer un module</h2>
 <p>Utiliser <strong><code>import</code></strong> pour charger un module dans un programme.</p>
-<div id="8d190816" class="cell" data-execution_count="80">
+<div id="6b0a9c9f" class="cell" data-execution_count="80">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href></a><span class="im">import</span> math</span>
 <span id="cb178-2"><a href></a><span class="bu">print</span>(math.sqrt(<span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3931,7 +3931,7 @@ class map(object)
 </section>
 <section id="module-math" class="slide level2">
 <h2>Module math</h2>
-<div id="eb1477f3" class="cell" data-execution_count="81">
+<div id="81762b94" class="cell" data-execution_count="81">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href></a><span class="bu">print</span>(math.pi)</span>
 <span id="cb180-2"><a href></a><span class="bu">print</span>(math.factorial(<span class="dv">5</span>))  <span class="co">#  !5 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3942,7 +3942,7 @@ class map(object)
 </section>
 <section id="module-random" class="slide level2">
 <h2>Module random</h2>
-<div id="99595ae7" class="cell" data-execution_count="82">
+<div id="6a01bca5" class="cell" data-execution_count="82">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href></a><span class="im">import</span> random</span>
 <span id="cb182-2"><a href></a></span>
 <span id="cb182-3"><a href></a><span class="bu">print</span>(random.random())</span>
@@ -3957,39 +3957,39 @@ class map(object)
 <span id="cb182-12"><a href></a><span class="bu">print</span>(random.sample(<span class="bu">range</span>(<span class="dv">100</span>), <span class="dv">5</span>))</span>
 <span id="cb182-13"><a href></a><span class="co"># sélectionne k éléments dans la liste</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9167950615166417
-76
+<pre><code>0.5984288984548775
+23
 c
-[86, 43, 26, 38, 98]</code></pre>
+[31, 86, 54, 19, 80]</code></pre>
 </div>
 </div>
 </section>
 <section id="module-datetime" class="slide level2">
 <h2>Module datetime</h2>
-<div id="8e6cbf77" class="cell" data-execution_count="83">
+<div id="06603327" class="cell" data-execution_count="83">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb184-1"><a href></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
 <span id="cb184-2"><a href></a></span>
 <span id="cb184-3"><a href></a>today <span class="op">=</span> datetime.now()</span>
 <span id="cb184-4"><a href></a><span class="bu">print</span>(<span class="st">&quot;Aujourd&#39;hui: &quot;</span>, today)</span>
 <span id="cb184-5"><a href></a><span class="bu">print</span>(<span class="st">&quot;Année: &quot;</span>, today.year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Aujourd&#39;hui:  2026-10-04 11:16:41.839120
+<pre><code>Aujourd&#39;hui:  2026-10-04 12:28:39.435591
 Année:  2026</code></pre>
 </div>
 </div>
-<div id="f90627c0" class="cell" data-execution_count="84">
+<div id="7635cf5f" class="cell" data-execution_count="84">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb186-1"><a href></a>futur <span class="op">=</span> today <span class="op">+</span> timedelta(days<span class="op">=</span><span class="dv">30</span>)</span>
 <span id="cb186-2"><a href></a></span>
 <span id="cb186-3"><a href></a><span class="bu">print</span>(<span class="st">&quot;Dans 30 jours : &quot;</span>, futur)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dans 30 jours :  2026-11-03 11:16:41.839120</code></pre>
+<pre><code>Dans 30 jours :  2026-11-03 12:28:39.435591</code></pre>
 </div>
 </div>
 </section>
 <section id="module-pathlib" class="slide level2">
 <h2>Module pathlib</h2>
 <p>Manipulation moderne et orientée objet des chemins (gère automatiquement Windows et Mac/Linux) :</p>
-<div id="fb950d35" class="cell" data-execution_count="85">
+<div id="df63f8c8" class="cell" data-execution_count="85">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb188"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb188-1"><a href></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb188-2"><a href></a></span>
 <span id="cb188-3"><a href></a><span class="co"># L&#39;opérateur / assemble les chemins selon l&#39;OS</span></span>
@@ -4014,7 +4014,7 @@ Existe ?     : False</code></pre>
 <section id="module-collections" class="slide level2">
 <h2>Module collections</h2>
 <p>Fournit des structures de données enrichies pour compléter <code>dict</code>, <code>list</code> et <code>tuple</code> :</p>
-<div id="64abb8d6" class="cell" data-execution_count="86">
+<div id="76c39b50" class="cell" data-execution_count="86">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb190"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb190-1"><a href></a><span class="im">from</span> collections <span class="im">import</span> Counter, defaultdict</span>
 <span id="cb190-2"><a href></a></span>
 <span id="cb190-3"><a href></a><span class="co"># Counter : comptage simple et rapide d&#39;occurrences</span></span>
@@ -4102,7 +4102,7 @@ Le programme demande à l’utilisateur s’il souhaite : - Réviser une autre
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="manipulation-de-fichiers" class="title-slide slide level1 center">
+<section id="fichiers" class="title-slide slide level1 center">
 <h1>Manipulation de fichiers</h1>
 
 </section>
@@ -4227,7 +4227,7 @@ Charlie,18,17,19</code></pre>
 <!---------------------------------------------------------------------------->
 </section></section>
 <section>
-<section id="les-exceptions" class="title-slide slide level1 center">
+<section id="exceptions" class="title-slide slide level1 center">
 <h1>Les exceptions</h1>
 
 </section>
@@ -4238,7 +4238,7 @@ Charlie,18,17,19</code></pre>
 <li>Survient lorsque le programme rencontre une situation imprévue (erreur d’entrée, division par zéro, fichier introuvable, etc.).</li>
 </ul>
 <p><em>Exemple</em> :</p>
-<div id="0a96933c" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="87">
+<div id="cc38fd84" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="87">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb208"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb208-1"><a href></a><span class="bu">print</span>(<span class="dv">10</span><span class="op">/</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -4260,7 +4260,7 @@ Charlie,18,17,19</code></pre>
 <span id="cb209-2"><a href></a>    <span class="co"># Code susceptible de générer une exception</span></span>
 <span id="cb209-3"><a href></a><span class="cf">except</span> ErreurType:</span>
 <span id="cb209-4"><a href></a>    <span class="co"># Code exécuté si cette ErreurType est levée</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="1a788645" class="cell" data-execution_count="88">
+<div id="06fe4b49" class="cell" data-execution_count="88">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb210"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb210-1"><a href></a><span class="cf">try</span>:</span>
 <span id="cb210-2"><a href></a>    resultat <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span></span>
 <span id="cb210-3"><a href></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
@@ -4273,7 +4273,7 @@ Charlie,18,17,19</code></pre>
 </section>
 <section id="gérer-plusieurs-types-dexceptions" class="slide level2">
 <h2>Gérer Plusieurs Types d’Exceptions</h2>
-<div id="f285f1ed" class="cell" data-execution_count="89">
+<div id="b830d339" class="cell" data-execution_count="89">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb212"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb212-1"><a href></a>x <span class="op">=</span> <span class="st">&quot;coucou&quot;</span></span>
 <span id="cb212-2"><a href></a><span class="cf">try</span>:</span>
 <span id="cb212-3"><a href></a>    x <span class="op">=</span> <span class="bu">int</span>(x)</span>
@@ -4295,7 +4295,7 @@ Charlie,18,17,19</code></pre>
 <section id="bloc-else" class="slide level2">
 <h2>Bloc <code>else</code></h2>
 <p>S’exécute si <strong>aucune exception</strong> n’est levée dans le bloc <code>try</code>.</p>
-<div id="73cd5221" class="cell" data-execution_count="90">
+<div id="2f814aa4" class="cell" data-execution_count="90">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb214"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb214-1"><a href></a><span class="cf">try</span>:</span>
 <span id="cb214-2"><a href></a>    fichier <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemple.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
 <span id="cb214-3"><a href></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
@@ -4312,7 +4312,7 @@ Charlie,18,17,19</code></pre>
 <section id="bloc-finally" class="slide level2">
 <h2>Bloc finally</h2>
 <p>S’exécute toujours, qu’il y ait une exception ou non.</p>
-<div id="792a2afd" class="cell" data-execution_count="91">
+<div id="ec4c21dc" class="cell" data-execution_count="91">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb216"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb216-1"><a href></a><span class="cf">try</span>:</span>
 <span id="cb216-2"><a href></a>    fichier <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemple.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
 <span id="cb216-3"><a href></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
@@ -4328,7 +4328,7 @@ Bloc finally exécuté, même si exception.</code></pre>
 <section id="lever-une-exception-avec-raise" class="slide level2">
 <h2>Lever une exception avec <code>raise</code></h2>
 <p>Pour signaler un problème délibérément.</p>
-<div id="8a295e4c" class="cell" data-execution_count="92">
+<div id="58f83c80" class="cell" data-execution_count="92">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb218"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb218-1"><a href></a><span class="kw">def</span> verifier_age(age):</span>
 <span id="cb218-2"><a href></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb218-3"><a href></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;L&#39;âge ne peut pas être négatif.&quot;</span>)</span>
@@ -4351,7 +4351,7 @@ Bloc finally exécuté, même si exception.</code></pre>
 <li>Ajoutez des messages d’erreur clairs et utiles.</li>
 <li>Combinez exceptions avec la validation d’entrée.</li>
 </ol>
-<div id="70367ef3" class="cell" data-execution_count="93">
+<div id="2cb6606f" class="cell" data-execution_count="93">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb220"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb220-1"><a href></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
 <span id="cb220-2"><a href></a><span class="cf">try</span>:</span>
 <span id="cb220-3"><a href></a>    x <span class="op">=</span> <span class="bu">int</span>(x)</span>

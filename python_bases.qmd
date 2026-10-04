@@ -2129,7 +2129,7 @@ Ecrire une fonction `table_multiplication` qui prend un nombre en paramètre et 
 - Utilisez cette fonction lambda avec map pour calculer les cubes des nombres de 1 à 5.
 
 ```{python}
-?map
+help(map)
 ```
 
 

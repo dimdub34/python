@@ -58,7 +58,16 @@ execute:
 :::
 :::
 
+---
 
+## Slides
+
+Disponibles en ligne : [https://www.duboishome.info/dimitri/cours/python](https://www.duboishome.info/dimitri/cours/python)
+
+![](img/qrcode_python_slides.png){fig-align="center" width="250px"}
+
+
+<!---------------------------------------------------------------------------->
 # Introduction {#introduction}
 
 ## Création et gestion 
@@ -70,7 +79,7 @@ execute:
 - Python vient de "[Monty Python](https://fr.wikipedia.org/wiki/Monty_Python)" une troupe d'humoristes anglais
 - actuellement version 3.14
 
-![Guido Van Rossum](img/guido.jpg){fig-align="left" width=50%}
+![Guido Van Rossum](img/guido.jpg){fig-align="left" height="250px"}
 
 ---
 
